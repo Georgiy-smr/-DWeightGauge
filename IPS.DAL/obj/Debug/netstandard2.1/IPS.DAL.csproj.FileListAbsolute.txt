@@ -1,0 +1,20 @@
+D:\старый компьютер\source\repos\MVVM\IPS_CALC\IPS.DAL\bin\Debug\netstandard2.1\IPS.DAL.deps.json
+D:\старый компьютер\source\repos\MVVM\IPS_CALC\IPS.DAL\bin\Debug\netstandard2.1\IPS.DAL.dll
+D:\старый компьютер\source\repos\MVVM\IPS_CALC\IPS.DAL\bin\Debug\netstandard2.1\IPS.DAL.pdb
+D:\старый компьютер\source\repos\MVVM\IPS_CALC\IPS.DAL\obj\Debug\netstandard2.1\IPS.DAL.csproj.AssemblyReference.cache
+D:\старый компьютер\source\repos\MVVM\IPS_CALC\IPS.DAL\obj\Debug\netstandard2.1\IPS.DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\старый компьютер\source\repos\MVVM\IPS_CALC\IPS.DAL\obj\Debug\netstandard2.1\IPS.DAL.AssemblyInfoInputs.cache
+D:\старый компьютер\source\repos\MVVM\IPS_CALC\IPS.DAL\obj\Debug\netstandard2.1\IPS.DAL.AssemblyInfo.cs
+D:\старый компьютер\source\repos\MVVM\IPS_CALC\IPS.DAL\obj\Debug\netstandard2.1\IPS.DAL.csproj.CoreCompileInputs.cache
+D:\старый компьютер\source\repos\MVVM\IPS_CALC\IPS.DAL\obj\Debug\netstandard2.1\IPS.DAL.dll
+D:\старый компьютер\source\repos\MVVM\IPS_CALC\IPS.DAL\obj\Debug\netstandard2.1\IPS.DAL.pdb
+C:\Users\Альфапаскаль\Desktop\IPS_CALC\IPS.DAL\bin\Debug\netstandard2.1\IPS.DAL.deps.json
+C:\Users\Альфапаскаль\Desktop\IPS_CALC\IPS.DAL\bin\Debug\netstandard2.1\IPS.DAL.dll
+C:\Users\Альфапаскаль\Desktop\IPS_CALC\IPS.DAL\bin\Debug\netstandard2.1\IPS.DAL.pdb
+C:\Users\Альфапаскаль\Desktop\IPS_CALC\IPS.DAL\obj\Debug\netstandard2.1\IPS.DAL.csproj.AssemblyReference.cache
+C:\Users\Альфапаскаль\Desktop\IPS_CALC\IPS.DAL\obj\Debug\netstandard2.1\IPS.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Альфапаскаль\Desktop\IPS_CALC\IPS.DAL\obj\Debug\netstandard2.1\IPS.DAL.AssemblyInfoInputs.cache
+C:\Users\Альфапаскаль\Desktop\IPS_CALC\IPS.DAL\obj\Debug\netstandard2.1\IPS.DAL.AssemblyInfo.cs
+C:\Users\Альфапаскаль\Desktop\IPS_CALC\IPS.DAL\obj\Debug\netstandard2.1\IPS.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Альфапаскаль\Desktop\IPS_CALC\IPS.DAL\obj\Debug\netstandard2.1\IPS.DAL.dll
+C:\Users\Альфапаскаль\Desktop\IPS_CALC\IPS.DAL\obj\Debug\netstandard2.1\IPS.DAL.pdb
