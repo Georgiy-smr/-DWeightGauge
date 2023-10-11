@@ -11,4 +11,8 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.9" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\IPS.Interfaces\IPS.Interfaces.csproj" />
+  </ItemGroup>
+
 </Project>

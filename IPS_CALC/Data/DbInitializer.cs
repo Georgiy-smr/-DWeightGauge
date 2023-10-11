@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Media.Media3D;
 using IPS.DAL;
 using IPS.DAL.Context;
-using IPS_CALC.Extensions;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyModel;
 using Microsoft.Extensions.Logging;
 using ips = IPS.DAL;
 namespace IPS_CALC.Data
@@ -38,7 +33,7 @@ namespace IPS_CALC.Data
 
             if (await _db.iPs.AnyAsync())  return;
             //AddIps();
-
+            var timer = Stopwatch.StartNew();
             await InitializeIPsAsync();
 
             await InitializeCargoAsynk();
@@ -46,7 +41,9 @@ namespace IPS_CALC.Data
             if (await _db.iPs.AnyAsync()) 
                  await SettingUpLinksAsync();
 
-            var sdffgdijgd = _db.iPs.Include(c => c.IPS2Cargoes);
+            _Logger.LogInformation($"БД создана за {timer.Elapsed.TotalSeconds}");
+            //var sdffgdijgd = _db.iPs.Include(c => c.IPS2Cargoes);
+
         }
 
 
@@ -58,6 +55,7 @@ namespace IPS_CALC.Data
         /// </summary>
         private void SettingUpLinks()
         {
+            
             var ipss = _db.iPs.Include(c => c.IPS2Cargoes).Take(10).ToArray();
             var cargs = _db.Cargoes.Include(c => c.IPS2Cargoes).Take(10).ToArray();
             _IPS2Cargoes = new IPS2Cargo[__LinksCount];
@@ -75,6 +73,7 @@ namespace IPS_CALC.Data
             }
             _db.UpdateRange(ipss);
             _db.SaveChanges();
+            
         }
         /// <summary>
         /// Установка связей
@@ -82,6 +81,7 @@ namespace IPS_CALC.Data
         /// </summary>
         private async Task SettingUpLinksAsync()
         {
+            var timer = Stopwatch.StartNew();
             var ipss = _db.iPs.Include(c => c.IPS2Cargoes).Take(10).ToArray();
             var cargs = _db.Cargoes.Include(c => c.IPS2Cargoes).Take(10).ToArray();
             _IPS2Cargoes = new IPS2Cargo[__LinksCount];
@@ -99,6 +99,7 @@ namespace IPS_CALC.Data
             }
             _db.UpdateRange(ipss);
             await _db.SaveChangesAsync();
+            _Logger.LogInformation($"Связи установились за {timer.Elapsed.TotalSeconds}");
         }
 
         private const int __CargoCount = 10;
@@ -110,6 +111,7 @@ namespace IPS_CALC.Data
         /// <returns></returns>
         private async Task InitializeCargoAsynk()
         {
+            var timer = Stopwatch.StartNew();
             var rnd = new Random();
             _Cargos = new Cargo[__CargoCount];
             _Cargos = Enumerable.Range(1, __CargoCount).
@@ -121,7 +123,7 @@ namespace IPS_CALC.Data
 
             await _db.Cargoes.AddRangeAsync(_Cargos);
             await _db.SaveChangesAsync();
-
+            _Logger.LogInformation($"Грузы загрузились за {timer.Elapsed.TotalSeconds}");
         }
         private const int __IpsCount = 10;
         private ips.IPS[] _IPs;
@@ -132,6 +134,7 @@ namespace IPS_CALC.Data
         /// <returns></returns>
         private async Task InitializeIPsAsync()
         {
+            var timer = Stopwatch.StartNew();
             _IPs = new ips.IPS[__IpsCount];
             for (int i = 0; i < __IpsCount; i++)
                 _IPs[i] = new ips.IPS
@@ -142,6 +145,7 @@ namespace IPS_CALC.Data
 
             await _db.iPs.AddRangeAsync(_IPs);
             await _db.SaveChangesAsync();
+            _Logger.LogInformation($"Ипс загрузились {timer.Elapsed.TotalSeconds}");
         }
 
         #region Помойка
