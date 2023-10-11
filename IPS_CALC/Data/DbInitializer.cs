@@ -31,20 +31,20 @@ namespace IPS_CALC.Data
         }
         public async Task InitializeAsync()
         {
-            await _db.Database.EnsureDeletedAsync()
-               .ConfigureAwait(false);
+            //await _db.Database.EnsureDeletedAsync()
+            //   .ConfigureAwait(false);
 
             await _db.Database.MigrateAsync();
 
             if (await _db.iPs.AnyAsync())  return;
             //AddIps();
 
-            await InitializeIPs();
+            await InitializeIPsAsync();
 
-            await InitializeCargo();
+            await InitializeCargoAsynk();
 
             if (await _db.iPs.AnyAsync()) 
-                SettingUpLinks();
+                 await SettingUpLinksAsync();
 
             var sdffgdijgd = _db.iPs.Include(c => c.IPS2Cargoes);
         }
@@ -52,7 +52,10 @@ namespace IPS_CALC.Data
 
         private const int __LinksCount = 10;
         private IPS2Cargo[] _IPS2Cargoes;
-
+        /// <summary>
+        /// Установка связей
+        /// с грузами и ипс
+        /// </summary>
         private void SettingUpLinks()
         {
             var ipss = _db.iPs.Include(c => c.IPS2Cargoes).Take(10).ToArray();
@@ -73,7 +76,80 @@ namespace IPS_CALC.Data
             _db.UpdateRange(ipss);
             _db.SaveChanges();
         }
+        /// <summary>
+        /// Установка связей
+        /// с грузами и ипс
+        /// </summary>
+        private async Task SettingUpLinksAsync()
+        {
+            var ipss = _db.iPs.Include(c => c.IPS2Cargoes).Take(10).ToArray();
+            var cargs = _db.Cargoes.Include(c => c.IPS2Cargoes).Take(10).ToArray();
+            _IPS2Cargoes = new IPS2Cargo[__LinksCount];
+            for (int i = 0; i < ipss.Length; i++)
+            {
+                for (int j = 0; j < __LinksCount; j++)
+                {
+                    _IPS2Cargoes[j] = new IPS2Cargo()
+                    {
+                        IPS = ipss[i],
+                        Cargo = cargs[j],
+                    };
+                    ipss[i].IPS2Cargoes.Add(_IPS2Cargoes[j]);
+                }
+            }
+            _db.UpdateRange(ipss);
+            await _db.SaveChangesAsync();
+        }
 
+        private const int __CargoCount = 10;
+        private Cargo[] _Cargos;
+        /// <summary>
+        /// Инициализировании 10
+        /// грузов и добавление в БД
+        /// </summary>
+        /// <returns></returns>
+        private async Task InitializeCargoAsynk()
+        {
+            var rnd = new Random();
+            _Cargos = new Cargo[__CargoCount];
+            _Cargos = Enumerable.Range(1, __CargoCount).
+                Select(i => new Cargo
+                {
+                    Name = $"Груз {i}",
+                    Weight =rnd.Next(1000)
+                }).ToArray();
+
+            await _db.Cargoes.AddRangeAsync(_Cargos);
+            await _db.SaveChangesAsync();
+
+        }
+        private const int __IpsCount = 10;
+        private ips.IPS[] _IPs;
+        /// <summary>
+        /// Инициализирование 10 ипс
+        /// и добавление в БД
+        /// </summary>
+        /// <returns></returns>
+        private async Task InitializeIPsAsync()
+        {
+            _IPs = new ips.IPS[__IpsCount];
+            for (int i = 0; i < __IpsCount; i++)
+                _IPs[i] = new ips.IPS
+                {
+                    Name = $"ИПС: {i + 1}",
+                    Square = (decimal)0.5,
+                };
+
+            await _db.iPs.AddRangeAsync(_IPs);
+            await _db.SaveChangesAsync();
+        }
+
+        #region Помойка
+        /// <summary>
+        /// Тестовый метот создания
+        /// ипс и груза, а
+        /// так же связи между ними
+        /// </summary>
         private void AddIps()
         {
 
@@ -145,40 +221,6 @@ namespace IPS_CALC.Data
             //var cargNames = ipss.Select(c => c.IPS2Cargoes).FirstOrDefault().Select(g=>g.Cargo).Select(g=>g.Name).ToArray();
             //var Weights = ipss.Select(c => c.IPS2Cargoes).FirstOrDefault().Select(g => g.Cargo).Select(g => g.Weight).ToArray();
         }
-
-        private const int __CargoCount = 10;
-        private Cargo[] _Cargos;
-        private async Task InitializeCargo()
-        {
-            var rnd = new Random();
-            _Cargos = new Cargo[__CargoCount];
-            _Cargos = Enumerable.Range(1, __CargoCount).
-                Select(i => new Cargo
-                {
-                    Name = $"Груз {i}",
-                    Weight =rnd.Next(1000)
-                }).ToArray();
-
-            await _db.Cargoes.AddRangeAsync(_Cargos);
-            await _db.SaveChangesAsync();
-
-        }
-        private const int __IpsCount = 10;
-        private ips.IPS[] _IPs;
-        private async Task InitializeIPs()
-        {
-            _IPs = new ips.IPS[__IpsCount];
-            for (int i = 0; i < __IpsCount; i++)
-                _IPs[i] = new ips.IPS
-                {
-                    Name = $"ИПС: {i + 1}",
-                    Square = (decimal)0.5,
-                };
-
-            await _db.iPs.AddRangeAsync(_IPs);
-            await _db.SaveChangesAsync();
-
-        }
-
+        #endregion
     }
 }

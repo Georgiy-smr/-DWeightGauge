@@ -18,3 +18,13 @@ C:\Users\Альфапаскаль\Desktop\IPS_CALC\IPS.DAL\obj\Debug\netstandard
 C:\Users\Альфапаскаль\Desktop\IPS_CALC\IPS.DAL\obj\Debug\netstandard2.1\IPS.DAL.csproj.CoreCompileInputs.cache
 C:\Users\Альфапаскаль\Desktop\IPS_CALC\IPS.DAL\obj\Debug\netstandard2.1\IPS.DAL.dll
 C:\Users\Альфапаскаль\Desktop\IPS_CALC\IPS.DAL\obj\Debug\netstandard2.1\IPS.DAL.pdb
+C:\Users\Гоша и Аня\-DWeightGauge\IPS.DAL\bin\Debug\netstandard2.1\IPS.DAL.deps.json
+C:\Users\Гоша и Аня\-DWeightGauge\IPS.DAL\bin\Debug\netstandard2.1\IPS.DAL.dll
+C:\Users\Гоша и Аня\-DWeightGauge\IPS.DAL\bin\Debug\netstandard2.1\IPS.DAL.pdb
+C:\Users\Гоша и Аня\-DWeightGauge\IPS.DAL\obj\Debug\netstandard2.1\IPS.DAL.csproj.AssemblyReference.cache
+C:\Users\Гоша и Аня\-DWeightGauge\IPS.DAL\obj\Debug\netstandard2.1\IPS.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Гоша и Аня\-DWeightGauge\IPS.DAL\obj\Debug\netstandard2.1\IPS.DAL.AssemblyInfoInputs.cache
+C:\Users\Гоша и Аня\-DWeightGauge\IPS.DAL\obj\Debug\netstandard2.1\IPS.DAL.AssemblyInfo.cs
+C:\Users\Гоша и Аня\-DWeightGauge\IPS.DAL\obj\Debug\netstandard2.1\IPS.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Гоша и Аня\-DWeightGauge\IPS.DAL\obj\Debug\netstandard2.1\IPS.DAL.dll
+C:\Users\Гоша и Аня\-DWeightGauge\IPS.DAL\obj\Debug\netstandard2.1\IPS.DAL.pdb
