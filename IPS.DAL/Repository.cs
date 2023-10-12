@@ -72,6 +72,19 @@ namespace IPS.DAL
                await _DB.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
         }
 
-
     }
+
+    internal class RepositoryIPS : Repository<IPS>
+    {
+        public override IQueryable<IPS> Items => base.Items.Include(item => item.IPS2Cargoes);
+        public RepositoryIPS(DBContext DB) : base(DB) {}
+    }
+    internal class RepositoryCagro : Repository<Cargo>
+    {
+        public override IQueryable<Cargo> Items => base.Items.Include(item => item.IPS2Cargoes);
+        public RepositoryCagro(DBContext DB) : base(DB) {}
+    }
+
+
+
 }

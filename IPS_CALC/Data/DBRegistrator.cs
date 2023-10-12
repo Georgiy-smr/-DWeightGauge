@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using IPS.DAL.Context;
+using IPS.DAL;
 
 namespace IPS_CALC.Data
 {
@@ -39,9 +40,10 @@ namespace IPS_CALC.Data
                         throw new 
                         InvalidOperationException
                         ($"Тип подключения {type} не поддерживается");
-                        break;
                 }
-            }).AddTransient<DbInitializer>()
+            })
+            .AddTransient<DbInitializer>()
+            .AddRepository()
             ;
     }
 }
