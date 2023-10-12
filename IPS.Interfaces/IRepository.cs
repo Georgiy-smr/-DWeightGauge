@@ -47,14 +47,14 @@ namespace IPS.Interfaces
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
         Task UpdateAsync(T item, CancellationToken cancellationToken = default);
-        void Remove(T item);
+        void Remove(int id);
         /// <summary>
         /// Удаление из репозитория
         /// </summary>
         /// <param name="item"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        Task RemoveAsync(T item, CancellationToken cancellationToken = default);
+        Task RemoveAsync(int id, CancellationToken cancellationToken = default);
 
 
     }

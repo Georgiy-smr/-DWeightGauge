@@ -28,3 +28,6 @@ C:\Users\Гоша и Аня\-DWeightGauge\IPS.DAL\obj\Debug\netstandard2.1\IPS.D
 C:\Users\Гоша и Аня\-DWeightGauge\IPS.DAL\obj\Debug\netstandard2.1\IPS.DAL.csproj.CoreCompileInputs.cache
 C:\Users\Гоша и Аня\-DWeightGauge\IPS.DAL\obj\Debug\netstandard2.1\IPS.DAL.dll
 C:\Users\Гоша и Аня\-DWeightGauge\IPS.DAL\obj\Debug\netstandard2.1\IPS.DAL.pdb
+C:\Users\Гоша и Аня\-DWeightGauge\IPS.DAL\bin\Debug\netstandard2.1\IPS.Interfaces.dll
+C:\Users\Гоша и Аня\-DWeightGauge\IPS.DAL\bin\Debug\netstandard2.1\IPS.Interfaces.pdb
+C:\Users\Гоша и Аня\-DWeightGauge\IPS.DAL\obj\Debug\netstandard2.1\IPS.DAL.csproj.CopyComplete

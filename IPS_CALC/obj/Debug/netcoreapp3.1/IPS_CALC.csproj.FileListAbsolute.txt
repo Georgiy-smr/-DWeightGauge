@@ -301,3 +301,5 @@ C:\Users\Гоша и Аня\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1\IPS_C
 C:\Users\Гоша и Аня\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1\IPS_CALC.dll
 C:\Users\Гоша и Аня\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1\IPS_CALC.pdb
 C:\Users\Гоша и Аня\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1\IPS_CALC.genruntimeconfig.cache
+C:\Users\Гоша и Аня\-DWeightGauge\IPS_CALC\bin\Debug\netcoreapp3.1\IPS.Interfaces.dll
+C:\Users\Гоша и Аня\-DWeightGauge\IPS_CALC\bin\Debug\netcoreapp3.1\IPS.Interfaces.pdb

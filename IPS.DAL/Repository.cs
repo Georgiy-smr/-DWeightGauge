@@ -26,38 +26,52 @@ namespace IPS.DAL
         public async Task<T> GetAsync(int Id, CancellationToken cancellationToken = default) =>
             await Items.SingleOrDefaultAsync(x => x.Id == Id);
 
+        public bool AutoSaveChanged { get; set; } = true;
         public T Add(T item)
         {
-            throw new NotImplementedException();
+            if(item == null) throw new ArgumentNullException(nameof(item));
+            _DB.Entry(item).State = EntityState.Added;
+            if (AutoSaveChanged) _DB.SaveChanges();
+            return item;
         }
 
-        public Task<T> AddAsync(T item, CancellationToken cancellationToken = default)
+        public async Task<T> AddAsync(T item, CancellationToken cancellationToken = default)
         {
-            throw new NotImplementedException();
+            if (item == null) throw new ArgumentNullException(nameof(item));
+            _DB.Entry(item).State = EntityState.Added;
+            if (AutoSaveChanged) await _DB.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+            return item;
         }
-
-
-
-
-
-        public void Remove(T item)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task RemoveAsync(T item, CancellationToken cancellationToken = default)
-        {
-            throw new NotImplementedException();
-        }
-
         public void Update(T item)
         {
-            throw new NotImplementedException();
+            if (item == null) throw new ArgumentNullException(nameof(item));
+            _DB.Entry(item).State = EntityState.Modified;
+            if (AutoSaveChanged) _DB.SaveChanges();
         }
 
-        public Task UpdateAsync(T item, CancellationToken cancellationToken = default)
+        public async Task UpdateAsync(T item, CancellationToken cancellationToken = default)
         {
-            throw new NotImplementedException();
+            if (item == null) throw new ArgumentNullException(nameof(item));
+            _DB.Entry(item).State = EntityState.Modified;
+            if (AutoSaveChanged) 
+                await _DB.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
         }
+
+        public void Remove(int id)
+        {
+            _DB.Remove(new T { Id = id });
+            if (AutoSaveChanged) 
+                _DB.SaveChanges();
+
+        }
+
+        public async Task RemoveAsync(int id, CancellationToken cancellationToken = default)
+        {
+            _DB.Remove(new T { Id = id });
+            if (AutoSaveChanged)
+               await _DB.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+        }
+
+
     }
 }
