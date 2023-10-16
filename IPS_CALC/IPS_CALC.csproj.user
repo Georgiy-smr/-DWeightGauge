@@ -7,6 +7,23 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Veiws\IPsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Veiws\Windows\CargoView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Template\ModelMainTemplate.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Veiws\IPsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Veiws\Windows\CargoView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Veiws\Windows\MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>

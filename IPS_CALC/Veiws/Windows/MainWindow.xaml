@@ -6,7 +6,14 @@
         xmlns:local="clr-namespace:IPS_CALC" mc:Ignorable="d"
         DataContext="{Binding MainWindowViewModel, Source={StaticResource Locator}}"
         Title="{Binding Path=Title}" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+    <DockPanel>
+        <Menu IsMainMenu="True" DockPanel.Dock="Top">
+            <MenuItem Header="ИПС" Command="{Binding ShowIpsViewCommnad}"/>
+            <MenuItem Header="Грузы" Command="{Binding Path=ShowCargosCommand}"/>
+            <MenuItem Header="ГПМ"/>
+        </Menu>
+        <Grid>
+            <ContentControl Content="{Binding CurrentViewModel}"/>
+        </Grid>
+    </DockPanel>
 </Window>

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1\
+C:\Users\Гоша и Аня\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1\
 IPS_CALC
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
-C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\App.xaml
-1-1542151446
+C:\Users\Гоша и Аня\-DWeightGauge\IPS_CALC\App.xaml
+41912146455
 
-11-735946992
-2441585958170
-Veiws\Windows\MainWindow.xaml;
+19-995328820
+2451398099591
+Template\ModelMainTemplate.xaml;Veiws\IPsView.xaml;Veiws\Windows\CargoView.xaml;Veiws\Windows\MainWindow.xaml;
 
 False
 
