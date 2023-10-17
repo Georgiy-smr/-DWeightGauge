@@ -51,7 +51,7 @@ namespace IPS_CALC.VIewModels
             get => _CommandShowIPS != null ?
             _CommandShowIPS : new LambdaCommand(OnShowIpsViewCommnadExecuted, CanShowIpsViewCommnadExecute);
         }
-        private bool CanShowIpsViewCommnadExecute(Object p) => true;
+        private bool CanShowIpsViewCommnadExecute(Object p) => !(CurrentViewModel is IpsViewModel);
 
         private void OnShowIpsViewCommnadExecuted(Object p) => CurrentViewModel = new IpsViewModel(_RepositoryIPS);
 
@@ -65,12 +65,9 @@ namespace IPS_CALC.VIewModels
             get => _CommandShowCargos != null ?
             _CommandShowCargos : new LambdaCommand(OnShowCargosCommandExecuted, CanShowCargosCommandExecute);
         }
-        private bool CanShowCargosCommandExecute(Object p) => true;
+        private bool CanShowCargosCommandExecute(Object p) => !(CurrentViewModel is CargoViewModel);
 
-        private void OnShowCargosCommandExecuted(Object p)
-        {
-            CurrentViewModel = new CargoViewModel(_RepositoryCargo);
-        }
+        private void OnShowCargosCommandExecuted(Object p) => CurrentViewModel = new CargoViewModel(_RepositoryCargo);
 
         #endregion
         public MainViewModel(IRepository<Classes.IPS> RepositoryIPS, IRepository<Classes.Cargo> RepositoryCargo)

@@ -22,13 +22,14 @@
                     </Grid.ColumnDefinitions>
                     <GroupBox Header="Грузы">
                         <DockPanel>
-                            <TextBox DockPanel.Dock="Top" Text="Фильтр"/>
+                            <TextBox DockPanel.Dock="Top" 
+                                     Text="{Binding Path=CargoNameFilter,UpdateSourceTrigger=PropertyChanged}"/>
                             <UniformGrid DockPanel.Dock="Bottom" Rows="1">
                                 <Button Content="+" Margin="3"/>
                                 <Button Content="-" Margin="3"/>
                             </UniformGrid>
                             <ListBox MinWidth="150"
-                                     ItemsSource="{Binding Path=CargosCollections}">
+                                     ItemsSource="{Binding Path=CargosView}">
                                 <ListBox.ItemTemplate>
                                     <DataTemplate>
                                         <TextBlock Text="{Binding Name}" ToolTip="{Binding Path=Id}"/>
