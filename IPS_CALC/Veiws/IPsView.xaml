@@ -28,7 +28,8 @@
                                 <Button Content="-" Margin="3"/>
                             </UniformGrid>
                             <ListBox MinWidth="150"
-                                     ItemsSource="{Binding Path=IPScollectionView}">
+                                     ItemsSource="{Binding Path=IPScollectionView}"
+                                     SelectedItem="{Binding Path=SelectedIps}">
                                 <ListBox.ItemTemplate>
                                     <DataTemplate>
                                         <TextBlock Text="{Binding Name}" ToolTip="{Binding Path=Id}"/>
