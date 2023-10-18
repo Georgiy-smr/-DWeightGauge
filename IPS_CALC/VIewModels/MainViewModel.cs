@@ -71,7 +71,7 @@ namespace IPS_CALC.VIewModels
         }
         private bool CanShowCargosCommandExecute(Object p) => !(CurrentViewModel is CargoViewModel);
 
-        private void OnShowCargosCommandExecuted(Object p) => CurrentViewModel = new CargoViewModel(_RepositoryCargo);
+        private void OnShowCargosCommandExecuted(Object p) => CurrentViewModel = new CargoViewModel(_RepositoryCargo, _UserDialog);
 
         #endregion
         public MainViewModel(IRepository<Classes.IPS> RepositoryIPS,

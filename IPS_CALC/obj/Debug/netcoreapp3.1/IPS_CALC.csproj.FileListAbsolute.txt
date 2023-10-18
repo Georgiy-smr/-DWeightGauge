@@ -421,3 +421,5 @@ C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1
 C:\Users\Гоша и Аня\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1\Veiws\Windows\IPSEditorWindow.g.cs
 C:\Users\Гоша и Аня\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1\Veiws\Windows\IPSEditorWindow.baml
 C:\Users\Гоша и Аня\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1\Inftastructure\Commands\AppCommands.baml
+C:\Users\Гоша и Аня\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1\Veiws\Windows\CargoEditWindow.g.cs
+C:\Users\Гоша и Аня\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1\Veiws\Windows\CargoEditWindow.baml

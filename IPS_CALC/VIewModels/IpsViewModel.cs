@@ -117,6 +117,7 @@ namespace IPS_CALC.VIewModels
         #endregion
 
         #region Команда удаления ИПC
+
         private ICommand _CommandRemoveIPS;
         public ICommand CommandRemoveIPS => _CommandRemoveIPS ?? 
             new LambdaCommand(

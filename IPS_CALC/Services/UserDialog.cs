@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
+using IPS.DAL;
 using IPS_CALC.Services.Interfaces;
 using IPS_CALC.Veiws.Windows;
 using IPS_CALC.VIewModels;
@@ -24,7 +25,26 @@ namespace IPS_CALC.Services
 
                 case CLASSES.IPS IPS:
                     return EditIPS(IPS);
+
+                case Cargo Cargo:
+                    return EditCargo(Cargo);
             }
+        }
+
+        private bool EditCargo(Cargo cargo)
+        {
+            var cargoEditorViewModel = new CargoEditViewModel(cargo);
+
+            var cargo_Editor_Window = new CargoEditWindow
+            {
+                DataContext = cargoEditorViewModel
+            };
+
+            if (cargo_Editor_Window.ShowDialog() != true) return false;
+
+            cargo.Name = cargoEditorViewModel.Name;
+
+            return true;
         }
 
         private bool EditIPS(CLASSES.IPS iPS)

@@ -12,11 +12,15 @@ using System.Windows.Input;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel;
 using System.Windows.Data;
+using IPS_CALC.Services.Interfaces;
+using IPS_CALC.Services;
 
 namespace IPS_CALC.VIewModels
 {
     internal class CargoViewModel : ViewModel
     {
+        private IUserDialog _UserDialog;
+
         /// <summary>
         /// Репозиторий грузов
         /// </summary>
@@ -75,8 +79,60 @@ namespace IPS_CALC.VIewModels
 
         #endregion
 
-        public CargoViewModel(IRepository<Cargo> RepositoryCargo)
+        #region Add Cargo
+
+        private ICommand _CommandCargoAdded;
+        public ICommand CommandCargoAdded => _CommandCargoAdded ?? new LambdaCommand(OnCargoAddCommandExecuted, CanCargoAddCommandExecute);
+
+        private bool CanCargoAddCommandExecute(object p) => true;
+
+        private void OnCargoAddCommandExecuted(object p)
         {
+            var new_cargo = new Cargo();
+
+            if (!_UserDialog.Edit(new_cargo)) return;
+
+            CargosCollections.Add(_RepositoryCargo.Add(new_cargo));
+
+            CargoSelected = new_cargo;
+        }
+
+        #endregion
+
+        private Cargo _CargoSelected;
+        /// <summary>
+        /// Selected Cargo 
+        /// </summary>
+        public Cargo CargoSelected { get => _CargoSelected; set => Set(ref _CargoSelected, value);}
+
+        #region Remove Cargo
+
+        private ICommand _CommandCargoRemove;
+        public ICommand CommandCargoRemove => _CommandCargoRemove ?? new LambdaCommand(OnCommandCargoRemoveExecuted, CanCommandCargoRemoveExecute);
+
+        private bool CanCommandCargoRemoveExecute(object p) => !(CargoSelected is null) || !(p is null);
+
+        private void OnCommandCargoRemoveExecuted(object p) 
+        {
+            var cargo_to_remove = p ?? CargoSelected;
+
+            if (!_UserDialog.Confirm("Удаление груза", "Delite")) return;
+
+            var cargo_remove = CargoSelected;
+
+            _RepositoryCargo.Remove(cargo_remove.Id);
+            CargosCollections.Remove(cargo_remove);
+
+            if (ReferenceEquals(CargoSelected, cargo_to_remove))
+                CargoSelected = null;
+        }
+
+        #endregion
+
+
+        public CargoViewModel(IRepository<Cargo> RepositoryCargo, IUserDialog UserDialog)
+        {
+            _UserDialog = UserDialog;
             _RepositoryCargo = RepositoryCargo;
             _CargoViewSource = new CollectionViewSource
             {

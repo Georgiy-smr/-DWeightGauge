@@ -25,11 +25,12 @@
                             <TextBox DockPanel.Dock="Top" 
                                      Text="{Binding Path=CargoNameFilter,UpdateSourceTrigger=PropertyChanged}"/>
                             <UniformGrid DockPanel.Dock="Bottom" Rows="1">
-                                <Button Content="+" Margin="3"/>
-                                <Button Content="-" Margin="3"/>
+                                <Button Content="+" Margin="3" Command="{Binding CommandCargoAdded}"/>
+                                <Button Content="-" Margin="3" Command="{Binding CommandCargoRemove}"/>
                             </UniformGrid>
                             <ListBox MinWidth="150"
-                                     ItemsSource="{Binding Path=CargosView}">
+                                     ItemsSource="{Binding Path=CargosView}"
+                                     SelectedItem="{Binding CargoSelected}">
                                 <ListBox.ItemTemplate>
                                     <DataTemplate>
                                         <TextBlock Text="{Binding Name}" ToolTip="{Binding Path=Id}"/>
