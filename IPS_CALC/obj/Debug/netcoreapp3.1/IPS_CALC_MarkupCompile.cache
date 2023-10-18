@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\Гоша и Аня\-DWeightGauge\IPS_CALC\App.xaml
-41912146455
+6669969270
 
-19-995328820
+24-105740356
 2451398099591
-Template\ModelMainTemplate.xaml;Veiws\IPsView.xaml;Veiws\Windows\CargoView.xaml;Veiws\Windows\MainWindow.xaml;
+Inftastructure\Commands\AppCommands.xaml;Template\ModelMainTemplate.xaml;Veiws\IPsView.xaml;Veiws\Windows\CargoView.xaml;Veiws\Windows\IPSEditorWindow.xaml;Veiws\Windows\MainWindow.xaml;
 
 False
 

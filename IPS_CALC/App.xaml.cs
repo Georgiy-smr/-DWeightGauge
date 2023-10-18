@@ -18,6 +18,17 @@ namespace IPS_CALC
     /// </summary>
     public partial class App : Application
     {
+        public static Window ActiveWindow =>
+            Application.Current.Windows.OfType<Window>()
+                                       .FirstOrDefault(w => w.IsActive);
+
+        public static Window FocusedWindow =>
+            Application.Current.Windows.OfType<Window>()
+                                        .FirstOrDefault(w => w.IsFocused);
+
+        public static Window CurrentWindow => ActiveWindow ?? FocusedWindow;
+
+
         private static IHost _Host;
         public static IHost Host => _Host
             ?? program.CreateHostBuilder(Environment.GetCommandLineArgs()).Build();

@@ -7,7 +7,6 @@ namespace IPS_CALC.VIewModels
 {
     internal class ViewModelLocator
     {
-        public MainViewModel MainWindowViewModel =>
-            App.Host.Services.GetRequiredService<MainViewModel>();
+        public MainViewModel MainWindowViewModel => App.Host.Services.GetRequiredService<MainViewModel>();
     }
 }

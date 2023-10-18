@@ -1,6 +1,7 @@
 ﻿using IPS.DAL;
 using IPS.Interfaces;
 using IPS_CALC.Inftastructure.Commands;
+using IPS_CALC.Services.Interfaces;
 using IPS_CALC.VIewModels.Base;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,7 @@ namespace IPS_CALC.VIewModels
 {
     internal class MainViewModel : ViewModel
     {
+        private IUserDialog _UserDialog;
         private IRepository<Classes.IPS> _RepositoryIPS;
         private IRepository<Cargo> _RepositoryCargo;
 
@@ -53,7 +55,9 @@ namespace IPS_CALC.VIewModels
         }
         private bool CanShowIpsViewCommnadExecute(Object p) => !(CurrentViewModel is IpsViewModel);
 
-        private void OnShowIpsViewCommnadExecuted(Object p) => CurrentViewModel = new IpsViewModel(_RepositoryIPS);
+        private void OnShowIpsViewCommnadExecuted(Object p) => CurrentViewModel = new IpsViewModel(
+            RepositoryIPS: _RepositoryIPS,
+            UserDialog: _UserDialog);
 
         #endregion
 
@@ -70,8 +74,11 @@ namespace IPS_CALC.VIewModels
         private void OnShowCargosCommandExecuted(Object p) => CurrentViewModel = new CargoViewModel(_RepositoryCargo);
 
         #endregion
-        public MainViewModel(IRepository<Classes.IPS> RepositoryIPS, IRepository<Classes.Cargo> RepositoryCargo)
+        public MainViewModel(IRepository<Classes.IPS> RepositoryIPS,
+                             IRepository<Classes.Cargo> RepositoryCargo,
+                             IUserDialog UserDialog)
 		{
+            _UserDialog = UserDialog;
 			_RepositoryIPS = RepositoryIPS;
 			_RepositoryCargo = RepositoryCargo;
 

@@ -12,17 +12,21 @@ using CLASS = IPS.DAL;
 using System.Data;
 using System.Windows.Data;
 using System.ComponentModel;
+using IPS_CALC.Services.Interfaces;
+using IPS_CALC.Services;
 
 namespace IPS_CALC.VIewModels
 {
     internal class IpsViewModel : ViewModel
     {
+        private readonly IUserDialog _UserDialog;
+
         /// <summary>
         /// репозитоий ИПС
         /// </summary>
         private readonly IRepository<CLASS.IPS> _RepositoryIPS;
 
-        #region ИПС
+        #region Логика связанная с ИСП
         /// <summary>
         /// Коллекция отображения ИПС
         /// </summary>
@@ -80,7 +84,8 @@ namespace IPS_CALC.VIewModels
         }
 
         #endregion
-        #region LoadIpsCommand
+
+        #region Команда запрашивающая грузы по загрузке окна
 
         private ICommand _CommandLoadIPS;
         public ICommand LoadIPSCommand => _CommandLoadIPS ?? new LambdaCommandAsync(OnLoadIPSCommandExecuted, CaLoadIPSCommandExecute);
@@ -89,22 +94,83 @@ namespace IPS_CALC.VIewModels
         private async Task OnLoadIPSCommandExecuted(Object p) => CollectionIPS = new ObservableCollection<CLASS.IPS>(await _RepositoryIPS.Items.ToArrayAsync());
 
         #endregion
-        public IpsViewModel(IRepository<CLASS.IPS> RepositoryIPS) 
+
+        #region Команда добавления ИПС 
+
+        private ICommand _CommandAddIPS;
+        public ICommand CommandAddIPS => _CommandAddIPS ??
+            new LambdaCommand(OnAddIPSCommandExecuted,
+                              CanAddIPSCommandExecute);
+        private bool CanAddIPSCommandExecute(Object p) => true;
+        private void OnAddIPSCommandExecuted(Object p)
         {
+            var new_ips = new CLASS.IPS();
+
+            if (!_UserDialog.Edit(new_ips)) return;
+
+            CollectionIPS.Add(_RepositoryIPS.Add(new_ips));
+
+            SelectedIps = new_ips;
+
+        }
+
+        #endregion
+
+        #region Команда удаления ИПC
+        private ICommand _CommandRemoveIPS;
+        public ICommand CommandRemoveIPS => _CommandRemoveIPS ?? 
+            new LambdaCommand(
+            OnCommandRemoveIPSExecuted,
+            CanCommandRemoveIPSExecute);
+        private bool CanCommandRemoveIPSExecute(Object p) => !(p is null) || !(SelectedIps is null);
+
+        private void OnCommandRemoveIPSExecuted(Object p)
+        {
+            var ips_to_remove = p ?? SelectedIps;
+
+            var remove_book = SelectedIps;
+            if (!_UserDialog.Confirm(
+                $"Желаете удалить ИПС {remove_book.Name}", "Удаление"))
+                return;
+
+            _RepositoryIPS.Remove(remove_book.Id);
+            CollectionIPS.Remove(remove_book);
+
+            if (ReferenceEquals(SelectedIps, ips_to_remove))
+                SelectedIps = null;
+        }
+
+        #endregion
+
+        public IpsViewModel(IRepository<CLASS.IPS> RepositoryIPS,
+                            IUserDialog UserDialog) 
+        {
+            _UserDialog = UserDialog;
+
             _RepositoryIPS = RepositoryIPS;
             _Colletcion_IPS_ViewSourse = new CollectionViewSource
             {
                SortDescriptions =
                 {
-                    new SortDescription(nameof(CLASS.IPS.Name), ListSortDirection.Ascending)
+                    new SortDescription(
+                        nameof(CLASS.IPS.Name),
+                        ListSortDirection.Ascending)
                 }
             };
             _Colletcion_IPS_ViewSourse.Filter += _Colletcion_IPS_ViewSourse_Filter;
         }
 
-        private void _Colletcion_IPS_ViewSourse_Filter(object sender, FilterEventArgs e)
+        /// <summary>
+        /// Фильтрация 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void _Colletcion_IPS_ViewSourse_Filter(object sender,
+                                                       FilterEventArgs e)
         {
-            if (!(e.Item is CLASS.IPS ips) || string.IsNullOrEmpty(FilterNameIPS)) return;
+           
+            if (!(e.Item is CLASS.IPS ips)
+                || string.IsNullOrEmpty(FilterNameIPS)) return;
 
             if (!(ips.Name.Contains(FilterNameIPS)))
                 e.Accepted = false;

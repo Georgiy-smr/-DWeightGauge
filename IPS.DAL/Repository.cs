@@ -59,7 +59,12 @@ namespace IPS.DAL
 
         public void Remove(int id)
         {
-            _DB.Remove(new T { Id = id });
+            var item = _Set.FirstOrDefault(i => i.Id == id)
+                ?? new T { Id = id };
+
+
+            _DB.Remove(item);
+
             if (AutoSaveChanged) 
                 _DB.SaveChanges();
 
@@ -84,7 +89,4 @@ namespace IPS.DAL
         public override IQueryable<Cargo> Items => base.Items.Include(item => item.IPS2Cargoes);
         public RepositoryCagro(DBContext DB) : base(DB) {}
     }
-
-
-
 }

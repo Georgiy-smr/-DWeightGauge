@@ -24,8 +24,8 @@
                         <DockPanel>
                             <TextBox DockPanel.Dock="Top" Text="{Binding Path=FilterNameIPS, UpdateSourceTrigger=PropertyChanged}"/>
                             <UniformGrid DockPanel.Dock="Bottom" Rows="1">
-                                <Button Content="+" Margin="3"/>
-                                <Button Content="-" Margin="3"/>
+                                <Button Content="+" Margin="3" Command="{Binding Path=CommandAddIPS}"/>
+                                <Button Content="-" Margin="3" Command="{Binding Path=CommandRemoveIPS}"/>
                             </UniformGrid>
                             <ListBox MinWidth="150"
                                      ItemsSource="{Binding Path=IPScollectionView}"
