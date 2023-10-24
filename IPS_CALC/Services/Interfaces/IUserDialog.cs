@@ -8,5 +8,7 @@ namespace IPS_CALC.Services.Interfaces
     {
         bool Edit(object item);
         bool Confirm(string Message, string Caption, bool Exlamination = false);
+
+        bool Redact(object item, IEnumerable<object> Additionally);
     }
 }

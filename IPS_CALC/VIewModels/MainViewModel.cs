@@ -57,7 +57,8 @@ namespace IPS_CALC.VIewModels
 
         private void OnShowIpsViewCommnadExecuted(Object p) => CurrentViewModel = new IpsViewModel(
             RepositoryIPS: _RepositoryIPS,
-            UserDialog: _UserDialog);
+            UserDialog: _UserDialog,
+            RepositoryCargos: _RepositoryCargo);
 
         #endregion
 

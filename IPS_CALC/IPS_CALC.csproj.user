@@ -10,6 +10,9 @@
     <Compile Update="Veiws\IPsView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Veiws\Windows\CargoEditToSelectedIpsWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Veiws\Windows\CargoEditWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -24,10 +27,16 @@
     <Page Update="Inftastructure\Commands\AppCommands.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Style\Main.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Template\ModelMainTemplate.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Veiws\IPsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Veiws\Windows\CargoEditToSelectedIpsWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Veiws\Windows\CargoEditWindow.xaml">

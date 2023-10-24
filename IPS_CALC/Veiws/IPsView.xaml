@@ -19,8 +19,10 @@
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
-                    <GroupBox Header="ИПС">
+                    <GroupBox Header="{Binding SelectedIps.Name, FallbackValue='ИПС', TargetNullValue='ИПС не выбрана'}" Grid.Column="0">
                         <DockPanel>
                             <TextBox DockPanel.Dock="Top" Text="{Binding Path=FilterNameIPS, UpdateSourceTrigger=PropertyChanged}"/>
                             <UniformGrid DockPanel.Dock="Bottom" Rows="1">
@@ -38,6 +40,53 @@
                             </ListBox>
                         </DockPanel>
                     </GroupBox>
+                    <GroupBox Grid.Column="1" 
+                              Header="В состеве грузы:">
+                        <DockPanel>
+                            <!--<TextBox DockPanel.Dock="Top" Text="Фильтр"/>-->
+                            <UniformGrid DockPanel.Dock="Bottom" Rows="1">
+                                <Button Content="+" Margin="3" Command="{Binding Path=CommandAddCargoToTheSelectedIps}"/>
+                                <Button Content="-" Margin="3"/>
+                            </UniformGrid>
+                            <DataGrid ItemsSource="{Binding SelectedIps.IPS2Cargoes}"
+                                      AutoGenerateColumns="False">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header = "Наименование" 
+                                     Binding = "{Binding Cargo.Name}" 
+                                     IsReadOnly = "True"/>
+                                    <DataGridTextColumn Header = "Масса" 
+                                     Binding = "{Binding Cargo.Weight}" 
+                                     IsReadOnly = "True"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </DockPanel>
+                    </GroupBox>
+                    <DockPanel Grid.Column="2">
+                        <UniformGrid DockPanel.Dock="Bottom" Rows="1">
+                            <Button Content="Редактировать" Margin="3,9"/>
+                        </UniformGrid>
+                        
+                            <Grid Margin="5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <TextBlock  Grid.Column="0" Grid.Row="0" Text="Модификация" Margin="5"/>
+                                <TextBlock  Grid.Column="1" Grid.Row="0"  Text="{Binding SelectedIps.Name}" Margin="5"/>
+
+                                <TextBlock  Grid.Column="0" Grid.Row="1" Text="Площадь" Margin="5"/>
+                                <TextBlock  Grid.Column="1" Grid.Row="1"  Text="{Binding SelectedIps.Square}" Margin="5"/>
+                            </Grid>  
+                            
+   
+                    </DockPanel>
+                    
+
                 </Grid>
             </TabItem>
         </TabControl>

@@ -1,0 +1,39 @@
+﻿<Window x:Class="IPS_CALC.Veiws.Windows.CargoEditToSelectedIpsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IPS_CALC.Veiws.Windows" mc:Ignorable="d"
+        xmlns:ViewModels="clr-namespace:IPS_CALC.VIewModels"
+        d:DataContext="{d:DesignInstance {x:Type ViewModels:CargoEditorToSelectedIpsViewModel}}"
+        Title="{Binding Path=TitleWindow}" Height="450" Width="300">
+    <Grid>
+        <DockPanel>
+            <GroupBox Header="МП-250">
+                <DockPanel>
+                    <TextBox DockPanel.Dock="Top" Text="Фильтруемое слово"/>
+                    <UniformGrid Rows="1" 
+                     DockPanel.Dock="Bottom"
+                     HorizontalAlignment="Right"
+                     Margin="5">
+                        <Button Content="OK" Margin="3" Padding="20,3"
+                    Command="{StaticResource DialogResultCommand}"
+                    CommandParameter="True"/>
+                        <Button Content="NO" Margin="3" Padding="20,3" 
+                    Command="{StaticResource DialogResultCommand}"
+                    CommandParameter="False"/>
+                    </UniformGrid>
+                    <ListBox MinWidth="150"
+                             ItemsSource="{Binding Path=Cargos}"
+                             SelectedItem="{Binding Path=SelectedCargo}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Name}"/>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </DockPanel>
+            </GroupBox>
+        </DockPanel>
+    </Grid>
+</Window>

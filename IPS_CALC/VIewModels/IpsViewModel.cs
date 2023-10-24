@@ -14,6 +14,8 @@ using System.Windows.Data;
 using System.ComponentModel;
 using IPS_CALC.Services.Interfaces;
 using IPS_CALC.Services;
+using IPS.DAL;
+using System.Linq;
 
 namespace IPS_CALC.VIewModels
 {
@@ -25,8 +27,10 @@ namespace IPS_CALC.VIewModels
         /// репозитоий ИПС
         /// </summary>
         private readonly IRepository<CLASS.IPS> _RepositoryIPS;
+        private readonly IRepository<Cargo> _RepositoryCargos;
 
-        #region Логика связанная с ИСП
+
+        #region Логика связанная с ИПС
         /// <summary>
         /// Коллекция отображения ИПС
         /// </summary>
@@ -80,18 +84,23 @@ namespace IPS_CALC.VIewModels
         public CLASS.IPS SelectedIps
         {
             get => _SelectedIps;
-            set => Set(ref _SelectedIps, value);
+
+            set => Set(ref _SelectedIps, value); 
         }
 
         #endregion
 
-        #region Команда запрашивающая грузы по загрузке окна
+        #region Команда запрашивающая коллекцию ИПС и Грузов
 
         private ICommand _CommandLoadIPS;
         public ICommand LoadIPSCommand => _CommandLoadIPS ?? new LambdaCommandAsync(OnLoadIPSCommandExecuted, CaLoadIPSCommandExecute);
         private bool CaLoadIPSCommandExecute(Object p) => true;
 
-        private async Task OnLoadIPSCommandExecuted(Object p) => CollectionIPS = new ObservableCollection<CLASS.IPS>(await _RepositoryIPS.Items.ToArrayAsync());
+        private async Task OnLoadIPSCommandExecuted(Object p)
+        {
+            CollectionIPS = new ObservableCollection<CLASS.IPS>(await _RepositoryIPS.Items.ToArrayAsync());
+            CollectionCargos = new ObservableCollection<Cargo>(await _RepositoryCargos.Items.ToArrayAsync());
+        }
 
         #endregion
 
@@ -143,12 +152,51 @@ namespace IPS_CALC.VIewModels
 
         #endregion
 
+        #region Команда добавления груза к выбранной ИПС
+
+        private ICommand _CommandAddCargoToTheSelectedIps;
+        public ICommand CommandAddCargoToTheSelectedIps
+        {
+            get => _CommandAddCargoToTheSelectedIps != null ?
+            _CommandAddCargoToTheSelectedIps : new LambdaCommand(On_AddCargoToTheSelectedIps_CommandExecuted, Can_AddCargoToTheSelectedIps_CommandExecute);
+        }
+        private bool Can_AddCargoToTheSelectedIps_CommandExecute(object p) => SelectedIps != null;
+
+        private void On_AddCargoToTheSelectedIps_CommandExecuted(object p)
+        {
+            var selected_ips = SelectedIps;
+            if (!_UserDialog.Redact(selected_ips, CollectionCargos)) return;
+
+            _RepositoryIPS.Update(selected_ips);
+
+            CollectionIPS = new ObservableCollection<CLASS.IPS>(_RepositoryIPS.Items.ToArray());
+
+            SelectedIps = selected_ips;
+        }
+
+        #endregion
+
+        /// <summary>
+        /// Коллекция грузов выбранной ипс
+        /// </summary>
+        private ObservableCollection<Cargo> _CollectionCargos;
+        /// <summary>
+        /// Коллекция грузов выбранной ипс
+        /// </summary>
+        public ObservableCollection<Cargo> CollectionCargos
+        {
+            get => _CollectionCargos;
+            set => Set(ref _CollectionCargos, value);
+        }
+
         public IpsViewModel(IRepository<CLASS.IPS> RepositoryIPS,
-                            IUserDialog UserDialog) 
+                            IUserDialog UserDialog,
+                            IRepository<Cargo> RepositoryCargos) 
         {
             _UserDialog = UserDialog;
 
             _RepositoryIPS = RepositoryIPS;
+            _RepositoryCargos = RepositoryCargos;
             _Colletcion_IPS_ViewSourse = new CollectionViewSource
             {
                SortDescriptions =

@@ -9,9 +9,12 @@
             <locator:ViewModelLocator x:Key="Locator"/>
             
             <ResourceDictionary.MergedDictionaries>
-                    <ResourceDictionary Source="Template\ModelMainTemplate.xaml"/>
+                <ResourceDictionary Source="Template\ModelMainTemplate.xaml"/>
                 <ResourceDictionary Source="Inftastructure\Commands\AppCommands.xaml"/>
+                <ResourceDictionary Source="Style\Main.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+            
+            
 
         </ResourceDictionary>
     </Application.Resources>

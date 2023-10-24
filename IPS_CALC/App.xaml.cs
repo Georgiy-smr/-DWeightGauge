@@ -7,7 +7,9 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -51,12 +53,16 @@ namespace IPS_CALC
 
             base.OnStartup(e);
             await host.RunAsync();
+
         }
         protected override async void OnExit(ExitEventArgs e)
         {
             var host = Host;
             base.OnExit(e);
-            using(Host) await host.StopAsync();
+            using(Host)
+                await host.StopAsync();
+            Thread.Sleep(500);
+            Process.GetCurrentProcess().Kill();
         }
     }
 }
