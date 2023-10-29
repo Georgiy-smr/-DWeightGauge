@@ -9,6 +9,7 @@
       "IPS_CALC/1.0.0": {
         "dependencies": {
           "IPS.DAL": "1.0.0",
+          "MediatR": "12.1.1",
           "Microsoft.EntityFrameworkCore.InMemory": "3.1.9",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.9",
           "Microsoft.EntityFrameworkCore.Sqlite": "3.1.9",
@@ -20,11 +21,32 @@
           "IPS_CALC.dll": {}
         }
       },
-      "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
+      "MediatR/12.1.1": {
+        "dependencies": {
+          "MediatR.Contracts": "2.0.1",
+          "Microsoft.Bcl.AsyncInterfaces": "6.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/MediatR.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.1.1.0"
+          }
+        }
+      },
+      "MediatR.Contracts/2.0.1": {
+        "runtime": {
+          "lib/netstandard2.0/MediatR.Contracts.dll": {
+            "assemblyVersion": "2.0.1.0",
+            "fileVersion": "2.0.1.0"
+          }
+        }
+      },
+      "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
         "runtime": {
           "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "4.700.20.21406"
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
           }
         }
       },
@@ -91,7 +113,7 @@
       },
       "Microsoft.EntityFrameworkCore/3.1.9": {
         "dependencies": {
-          "Microsoft.Bcl.AsyncInterfaces": "1.1.1",
+          "Microsoft.Bcl.AsyncInterfaces": "6.0.0",
           "Microsoft.Bcl.HashCode": "1.1.0",
           "Microsoft.EntityFrameworkCore.Abstractions": "3.1.9",
           "Microsoft.EntityFrameworkCore.Analyzers": "3.1.9",
@@ -203,7 +225,7 @@
       "Microsoft.Extensions.Caching.Memory/3.1.9": {
         "dependencies": {
           "Microsoft.Extensions.Caching.Abstractions": "3.1.9",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.9",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
           "Microsoft.Extensions.Logging.Abstractions": "3.1.9",
           "Microsoft.Extensions.Options": "3.1.9"
         },
@@ -306,7 +328,7 @@
       },
       "Microsoft.Extensions.DependencyInjection/3.1.9": {
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.9"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0"
         },
         "runtime": {
           "lib/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.dll": {
@@ -315,11 +337,11 @@
           }
         }
       },
-      "Microsoft.Extensions.DependencyInjection.Abstractions/3.1.9": {
+      "Microsoft.Extensions.DependencyInjection.Abstractions/6.0.0": {
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
-            "assemblyVersion": "3.1.9.0",
-            "fileVersion": "3.100.920.47302"
+          "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
           }
         }
       },
@@ -390,7 +412,7 @@
       "Microsoft.Extensions.Hosting.Abstractions/3.1.6": {
         "dependencies": {
           "Microsoft.Extensions.Configuration.Abstractions": "3.1.9",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.9",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
           "Microsoft.Extensions.FileProviders.Abstractions": "3.1.6",
           "Microsoft.Extensions.Logging.Abstractions": "3.1.9"
         },
@@ -484,7 +506,7 @@
       },
       "Microsoft.Extensions.Options/3.1.9": {
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.9",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
           "Microsoft.Extensions.Primitives": "3.1.9"
         },
         "runtime": {
@@ -498,7 +520,7 @@
         "dependencies": {
           "Microsoft.Extensions.Configuration.Abstractions": "3.1.9",
           "Microsoft.Extensions.Configuration.Binder": "3.1.9",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.9",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
           "Microsoft.Extensions.Options": "3.1.9"
         },
         "runtime": {
@@ -1733,12 +1755,26 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
+    "MediatR/12.1.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-yuvf07qFWFqtK3P/MRkEKLhn5r2UbSpVueRziSqj0yJQIKFwG1pq9mOayK3zE5qZCTs0CbrwL9M6R8VwqyGy2w==",
-      "path": "microsoft.bcl.asyncinterfaces/1.1.1",
-      "hashPath": "microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512"
+      "sha512": "sha512-1AbwzzeS6gn4NdcO6A9LfKS5TXXgAiUQM3J18dREHa7O7TrdCXJ5dNFeRBpzPZY7UWl5Kby+n9pWrPJe3SDiMA==",
+      "path": "mediatr/12.1.1",
+      "hashPath": "mediatr.12.1.1.nupkg.sha512"
+    },
+    "MediatR.Contracts/2.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FYv95bNT4UwcNA+G/J1oX5OpRiSUxteXaUt2BJbRSdRNiIUNbggJF69wy6mnk2wYToaanpdXZdCwVylt96MpwQ==",
+      "path": "mediatr.contracts/2.0.1",
+      "hashPath": "mediatr.contracts.2.0.1.nupkg.sha512"
+    },
+    "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UcSjPsst+DfAdJGVDsu346FX0ci0ah+lw3WRtn18NUwEqRt70HaOQ7lI72vy3+1LxtqI3T5GWwV39rQSrCzAeg==",
+      "path": "microsoft.bcl.asyncinterfaces/6.0.0",
+      "hashPath": "microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512"
     },
     "Microsoft.Bcl.HashCode/1.1.0": {
       "type": "package",
@@ -1922,12 +1958,12 @@
       "path": "microsoft.extensions.dependencyinjection/3.1.9",
       "hashPath": "microsoft.extensions.dependencyinjection.3.1.9.nupkg.sha512"
     },
-    "Microsoft.Extensions.DependencyInjection.Abstractions/3.1.9": {
+    "Microsoft.Extensions.DependencyInjection.Abstractions/6.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-8PkcaPwiTPOhqshoY4+rQUbz86X6YpLDLUqXOezh7L2A3pgpBmeBBByYIffofBlvQxDdQ0zB2DkWjbZWyCxRWg==",
-      "path": "microsoft.extensions.dependencyinjection.abstractions/3.1.9",
-      "hashPath": "microsoft.extensions.dependencyinjection.abstractions.3.1.9.nupkg.sha512"
+      "sha512": "sha512-xlzi2IYREJH3/m6+lUrQlujzX8wDitm4QGnUu6kUXTQAWPuZY8i+ticFJbzfqaetLA6KR/rO6Ew/HuYD+bxifg==",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/6.0.0",
+      "hashPath": "microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512"
     },
     "Microsoft.Extensions.DependencyModel/3.1.6": {
       "type": "package",

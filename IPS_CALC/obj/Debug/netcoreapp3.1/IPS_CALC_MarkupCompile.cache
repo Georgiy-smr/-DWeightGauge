@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\Гоша и Аня\-DWeightGauge\IPS_CALC\App.xaml
-9-541102786
+10247029704
 
-2814981365
-2451398099591
-Inftastructure\Commands\AppCommands.xaml;Style\Main.xaml;Template\ModelMainTemplate.xaml;Veiws\IPsView.xaml;Veiws\Windows\CargoEditToSelectedIpsWindow.xaml;Veiws\Windows\CargoEditWindow.xaml;Veiws\Windows\CargoView.xaml;Veiws\Windows\IPSEditorWindow.xaml;Veiws\Windows\MainWindow.xaml;
+33-58991363
+2471987820791
+Inftastructure\Commands\AppCommands.xaml;Style\Main.xaml;Template\ModelMainTemplate.xaml;Veiws\IPsView.xaml;Veiws\Windows\CargoEditToSelectedIpsWindow.xaml;Veiws\Windows\CargoEditWindow.xaml;Veiws\Windows\CargoRemoveToSelectedIpsWindow.xaml;Veiws\Windows\CargoView.xaml;Veiws\Windows\IPSEditorWindow.xaml;Veiws\Windows\MainWindow.xaml;
 
 False
 

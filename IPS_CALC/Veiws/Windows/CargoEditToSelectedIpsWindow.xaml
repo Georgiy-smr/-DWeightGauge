@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IPS_CALC.Veiws.Windows" mc:Ignorable="d"
         xmlns:ViewModels="clr-namespace:IPS_CALC.VIewModels"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors" 
         d:DataContext="{d:DesignInstance {x:Type ViewModels:CargoEditorToSelectedIpsViewModel}}"
         Title="{Binding Path=TitleWindow}" Height="450" Width="300">
     <Grid>
@@ -16,22 +17,51 @@
                      DockPanel.Dock="Bottom"
                      HorizontalAlignment="Right"
                      Margin="5">
-                        <Button Content="OK" Margin="3" Padding="20,3"
+                        <Button Content="SAVE" Margin="3" Padding="20,3"
                     Command="{StaticResource DialogResultCommand}"
                     CommandParameter="True"/>
-                        <Button Content="NO" Margin="3" Padding="20,3" 
+                        <Button Content="CANCEL" Margin="3" Padding="20,3" 
                     Command="{StaticResource DialogResultCommand}"
                     CommandParameter="False"/>
                     </UniformGrid>
-                    <ListBox MinWidth="150"
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <GroupBox Grid.Column="0" Header="Все грузы">
+                            <ListBox  MinWidth="150"
                              ItemsSource="{Binding Path=Cargos}"
                              SelectedItem="{Binding Path=SelectedCargo}">
-                        <ListBox.ItemTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Name}"/>
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
-                    </ListBox>
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Name}"/>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="MouseDoubleClick">
+                                        <i:InvokeCommandAction Command="{Binding Path=CommandAddCargoToSelectedCargos}"/>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </ListBox>
+                        </GroupBox>
+                        <GroupBox Header="Для добавления" Grid.Column="1">
+                            <ListBox  MinWidth="150"
+                             ItemsSource="{Binding Path=SelectedCargos}"
+                                 SelectedItem="{Binding Path=SelectedRemoveCargo}">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Name}"/>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="MouseDoubleClick">
+                                        <i:InvokeCommandAction Command="{Binding Path=RemoveCargoSelectedCommand}"/>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </ListBox>
+                        </GroupBox>
+                    </Grid>
                 </DockPanel>
             </GroupBox>
         </DockPanel>

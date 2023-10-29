@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "apfUiAOuWu/6GxB/oOkKia+913YjRLCXsBRAZZHifFHdE6ZMmFSfntNPich9B0u4T7km0DIfRTDasYTUCxXBRA==",
+  "dgSpecHash": "hJox126rxEhZ5EiQFy7v9o+lRjwhD7uNQ66obehGTaCT6Gjaxzz5Y4QO+m8qSbECXPdkPdG1Rm+n48XRsIydtw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Гоша и Аня\\-DWeightGauge\\IPS_CALC\\IPS_CALC.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Гоша и Аня\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
+    "C:\\Users\\Гоша и Аня\\.nuget\\packages\\mediatr\\12.1.1\\mediatr.12.1.1.nupkg.sha512",
+    "C:\\Users\\Гоша и Аня\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\Гоша и Аня\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\Гоша и Аня\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
     "C:\\Users\\Гоша и Аня\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Гоша и Аня\\.nuget\\packages\\microsoft.data.sqlclient\\1.1.3\\microsoft.data.sqlclient.1.1.3.nupkg.sha512",
@@ -31,7 +33,7 @@
     "C:\\Users\\Гоша и Аня\\.nuget\\packages\\microsoft.extensions.configuration.json\\3.1.6\\microsoft.extensions.configuration.json.3.1.6.nupkg.sha512",
     "C:\\Users\\Гоша и Аня\\.nuget\\packages\\microsoft.extensions.configuration.usersecrets\\3.1.6\\microsoft.extensions.configuration.usersecrets.3.1.6.nupkg.sha512",
     "C:\\Users\\Гоша и Аня\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.9\\microsoft.extensions.dependencyinjection.3.1.9.nupkg.sha512",
-    "C:\\Users\\Гоша и Аня\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.9\\microsoft.extensions.dependencyinjection.abstractions.3.1.9.nupkg.sha512",
+    "C:\\Users\\Гоша и Аня\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\Гоша и Аня\\.nuget\\packages\\microsoft.extensions.dependencymodel\\3.1.6\\microsoft.extensions.dependencymodel.3.1.6.nupkg.sha512",
     "C:\\Users\\Гоша и Аня\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\3.1.6\\microsoft.extensions.fileproviders.abstractions.3.1.6.nupkg.sha512",
     "C:\\Users\\Гоша и Аня\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\3.1.6\\microsoft.extensions.fileproviders.physical.3.1.6.nupkg.sha512",

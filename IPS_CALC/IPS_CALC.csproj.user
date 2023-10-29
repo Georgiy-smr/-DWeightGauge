@@ -16,6 +16,9 @@
     <Compile Update="Veiws\Windows\CargoEditWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Veiws\Windows\CargoRemoveToSelectedIpsWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Veiws\Windows\CargoView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -40,6 +43,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Veiws\Windows\CargoEditWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Veiws\Windows\CargoRemoveToSelectedIpsWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Veiws\Windows\CargoView.xaml">

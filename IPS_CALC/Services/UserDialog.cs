@@ -8,6 +8,7 @@ using IPS_CALC.Services.Interfaces;
 using IPS_CALC.Veiws.Windows;
 using IPS_CALC.VIewModels;
 using CLASSES = IPS.DAL;
+using System.Linq;
 
 namespace IPS_CALC.Services
 {
@@ -63,7 +64,7 @@ namespace IPS_CALC.Services
             return true;
         }
 
-        public bool Redact(object item, IEnumerable<object> add)
+        public bool RedactToAdded(object item, IEnumerable<object> add)
         {
             if (item == null)
                 throw new ArgumentNullException(nameof(item));
@@ -78,7 +79,6 @@ namespace IPS_CALC.Services
                     return AddCargoToTheSelectedIps(IPS, (ObservableCollection<Cargo>)add);
             }
         }
-
         private bool AddCargoToTheSelectedIps(CLASSES.IPS IPS, ObservableCollection<Cargo> Cargos)
         {
 
@@ -92,16 +92,55 @@ namespace IPS_CALC.Services
 
             if (cargoEditToSelectedIpsWindow.ShowDialog() != true) return false;
 
-            var b3lib4 = new IPS2Cargo();
-            b3lib4.Cargo = cargoEditorToSelectedIpsViewModel.SelectedCargo;
-            b3lib4.IPS = IPS;
-
-            IPS.IPS2Cargoes.Add(b3lib4);
+            foreach (var item in cargoEditorToSelectedIpsViewModel.SelectedCargos)
+            {
+                var ipsToCargo = new IPS2Cargo()
+                {
+                    Cargo = item,
+                    IPS = IPS
+                };
+                IPS.IPS2Cargoes.Add(ipsToCargo);
+            }
 
             return true;
         }
 
+        public bool RedactToRemoved(object item, IEnumerable<object> Removeitionally)
+        {
+            if (item == null)
+                throw new ArgumentNullException(nameof(item));
 
+            switch (item)
+            {
+                default:
+                    throw new NotSupportedException(
+                        $"редактирование элемента не возможно");
+
+                case CLASSES.IPS IPS:
+                    return RemoveCargoToTheSelectedIps(IPS, (ObservableCollection<Cargo>)Removeitionally);
+            }
+        }
+        private bool RemoveCargoToTheSelectedIps(CLASSES.IPS IPS, ObservableCollection<Cargo> Cargos)
+        {
+
+            var cargoEditorToSelectedIpsViewModel = new CargoRemovedToSelectedIpsViewModel(IPS);
+            var cargoEditToSelectedIpsWindow = new CargoRemoveToSelectedIpsWindow()
+            {
+                DataContext = cargoEditorToSelectedIpsViewModel,
+                WindowStartupLocation = WindowStartupLocation.CenterOwner,
+                Owner = Application.Current.MainWindow
+            };
+
+            if (cargoEditToSelectedIpsWindow.ShowDialog() != true) return false;
+
+            foreach (var item in cargoEditorToSelectedIpsViewModel.SelectedCargos)
+            {
+                var item_to_remove = IPS.IPS2Cargoes.FirstOrDefault(carg => carg.Cargo == item && carg.IPS == IPS);
+                IPS.IPS2Cargoes.Remove(item_to_remove);
+            }
+
+            return true;
+        }
 
         public bool Confirm(string Message,
                             string Caption,
@@ -109,5 +148,7 @@ namespace IPS_CALC.Services
                                                                           Caption,
                                                                           MessageBoxButton.YesNo,
                                                                           Exlamination ? MessageBoxImage.Exclamation : MessageBoxImage.Question) == MessageBoxResult.Yes;
+
+
     }
 }

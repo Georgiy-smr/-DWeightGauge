@@ -16,12 +16,32 @@ using IPS_CALC.Services.Interfaces;
 using IPS_CALC.Services;
 using IPS.DAL;
 using System.Linq;
+using MediatR;
+using IPS_CALC.Inftastructure.Mediatr;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace IPS_CALC.VIewModels
 {
     internal class IpsViewModel : ViewModel
     {
+        private string _TestTitle = "Какое то название";
+        public string TestTitle
+        {
+            get => _TestTitle;
+            set
+            {
+                if(Set(ref _TestTitle, value))
+                {
+                    _EventService.RaiseEvent(nameof(TestTitle), this);
+                }
+            }
+        }
+
+
+
         private readonly IUserDialog _UserDialog;
+        private readonly IEventService _EventService;
+        private readonly IMediator _Mediator;
 
         /// <summary>
         /// репозитоий ИПС
@@ -149,10 +169,33 @@ namespace IPS_CALC.VIewModels
             if (ReferenceEquals(SelectedIps, ips_to_remove))
                 SelectedIps = null;
         }
-
         #endregion
 
-        #region Команда добавления груза к выбранной ИПС
+        private ICommand _Command_RemoveCargoSelectedIPS;
+        public ICommand RemoveCargoSelectedIPSCommand
+        {
+            get => _Command_RemoveCargoSelectedIPS != null ?
+            _Command_RemoveCargoSelectedIPS : new LambdaCommand(On_Command_RemoveCargoSelectedIPS_CommandExecuted, Can_Command_RemoveCargoSelectedIPS_CommandExecute);
+        }
+
+        private bool Can_Command_RemoveCargoSelectedIPS_CommandExecute(Object p) => true;
+
+        private void On_Command_RemoveCargoSelectedIPS_CommandExecuted(Object p)
+        {
+            var selected_ips = SelectedIps;
+
+            if (!(_UserDialog.RedactToRemoved(selected_ips, CollectionCargos))) return;
+
+
+            _RepositoryIPS.Update(selected_ips);
+
+            CollectionIPS = new ObservableCollection<CLASS.IPS>(_RepositoryIPS.Items.ToArray());
+
+            SelectedIps = selected_ips;
+
+        }
+
+        #region Команда добавления грузов выбранной ИПС
 
         private ICommand _CommandAddCargoToTheSelectedIps;
         public ICommand CommandAddCargoToTheSelectedIps
@@ -165,7 +208,7 @@ namespace IPS_CALC.VIewModels
         private void On_AddCargoToTheSelectedIps_CommandExecuted(object p)
         {
             var selected_ips = SelectedIps;
-            if (!_UserDialog.Redact(selected_ips, CollectionCargos)) return;
+            if (!_UserDialog.RedactToAdded(selected_ips, CollectionCargos)) return;
 
             _RepositoryIPS.Update(selected_ips);
 
@@ -175,6 +218,8 @@ namespace IPS_CALC.VIewModels
         }
 
         #endregion
+
+
 
         /// <summary>
         /// Коллекция грузов выбранной ипс
@@ -191,10 +236,11 @@ namespace IPS_CALC.VIewModels
 
         public IpsViewModel(IRepository<CLASS.IPS> RepositoryIPS,
                             IUserDialog UserDialog,
-                            IRepository<Cargo> RepositoryCargos) 
+                            IRepository<Cargo> RepositoryCargos,
+                            IEventService EventService) 
         {
             _UserDialog = UserDialog;
-
+            _EventService = EventService;
             _RepositoryIPS = RepositoryIPS;
             _RepositoryCargos = RepositoryCargos;
             _Colletcion_IPS_ViewSourse = new CollectionViewSource

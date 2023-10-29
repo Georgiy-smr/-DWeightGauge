@@ -46,7 +46,7 @@
                             <!--<TextBox DockPanel.Dock="Top" Text="Фильтр"/>-->
                             <UniformGrid DockPanel.Dock="Bottom" Rows="1">
                                 <Button Content="+" Margin="3" Command="{Binding Path=CommandAddCargoToTheSelectedIps}"/>
-                                <Button Content="-" Margin="3"/>
+                                <Button Content="-" Margin="3" Command="{Binding Path=RemoveCargoSelectedIPSCommand}"/>
                             </UniformGrid>
                             <DataGrid ItemsSource="{Binding SelectedIps.IPS2Cargoes}"
                                       AutoGenerateColumns="False">
@@ -74,6 +74,7 @@
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
 
                                 <TextBlock  Grid.Column="0" Grid.Row="0" Text="Модификация" Margin="5"/>
@@ -81,7 +82,9 @@
 
                                 <TextBlock  Grid.Column="0" Grid.Row="1" Text="Площадь" Margin="5"/>
                                 <TextBlock  Grid.Column="1" Grid.Row="1"  Text="{Binding SelectedIps.Square}" Margin="5"/>
-                            </Grid>  
+                                <TextBlock  Grid.Column="0" Grid.Row="2" Text="Заголовок программы" Margin="5"/>
+                                <TextBox  Grid.Column="1" Grid.Row="2"  Text="{Binding Path=TestTitle, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+                        </Grid>  
                             
    
                     </DockPanel>
