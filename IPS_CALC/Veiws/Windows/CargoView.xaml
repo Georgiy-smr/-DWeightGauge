@@ -19,8 +19,9 @@
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <GroupBox Header="Грузы">
+                    <GroupBox Header="Грузы" Grid.Column="0">
                         <DockPanel>
                             <TextBox DockPanel.Dock="Top" 
                                      Text="{Binding Path=CargoNameFilter,UpdateSourceTrigger=PropertyChanged}"/>
@@ -39,6 +40,30 @@
                             </ListBox>
                         </DockPanel>
                     </GroupBox>
+                    
+                    <DockPanel Grid.Column="1">
+                        <UniformGrid DockPanel.Dock="Bottom" Rows="1">
+                            <Button Content="Редактировать" Margin="3,9" Command="{Binding RedactCargoSelectedCommand}"/>
+                        </UniformGrid>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock  Grid.Column="0" Grid.Row="0" Text="название" Margin="5"/>
+                            <TextBlock  Grid.Column="1" Grid.Row="0"  Text="{Binding CargoSelected.Name}" Margin="5"/>
+
+                            <TextBlock  Grid.Column="0" Grid.Row="1" Text="Масса" Margin="5"/>
+                            <TextBlock  Grid.Column="1" Grid.Row="1"  Text="{Binding CargoSelected.Weight}" Margin="5"/>
+
+                        </Grid>
+                    </DockPanel>
                 </Grid>
             </TabItem>
         </TabControl>

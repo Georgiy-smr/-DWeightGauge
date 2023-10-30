@@ -430,3 +430,17 @@ C:\Users\Гоша и Аня\-DWeightGauge\IPS_CALC\bin\Debug\netcoreapp3.1\Media
 C:\Users\Гоша и Аня\-DWeightGauge\IPS_CALC\bin\Debug\netcoreapp3.1\MediatR.Contracts.dll
 C:\Users\Гоша и Аня\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1\Veiws\Windows\CargoRemoveToSelectedIpsWindow.g.cs
 C:\Users\Гоша и Аня\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1\Veiws\Windows\CargoRemoveToSelectedIpsWindow.baml
+C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\bin\Debug\netcoreapp3.1\MediatR.dll
+C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\bin\Debug\netcoreapp3.1\MediatR.Contracts.dll
+C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1\Style\Main.baml
+C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1\Veiws\Windows\CargoEditToSelectedIpsWindow.g.cs
+C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1\Veiws\Windows\CargoEditWindow.g.cs
+C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1\Veiws\Windows\CargoRemoveToSelectedIpsWindow.g.cs
+C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1\Veiws\Windows\IPSEditorWindow.g.cs
+C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1\Inftastructure\Commands\AppCommands.baml
+C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1\Veiws\Windows\CargoEditToSelectedIpsWindow.baml
+C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1\Veiws\Windows\CargoEditWindow.baml
+C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1\Veiws\Windows\CargoRemoveToSelectedIpsWindow.baml
+C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1\Veiws\Windows\IPSEditorWindow.baml
+C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1\Veiws\Windows\IpsRedactWindow.g.cs
+C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1\Veiws\Windows\IpsRedactWindow.baml

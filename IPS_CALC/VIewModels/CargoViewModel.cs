@@ -99,6 +99,41 @@ namespace IPS_CALC.VIewModels
 
         #endregion
 
+        #region Redact Cargo
+
+        private ICommand _Command_RedactCagroSelected;
+        public ICommand RedactCargoSelectedCommand
+        {
+            get => _Command_RedactCagroSelected != null ?
+            _Command_RedactCagroSelected : new LambdaCommand(On_RedactCargoSelected_CommandExecuted, Can_NAME_CommandExecute);
+        }
+
+        private bool Can_NAME_CommandExecute(Object p) => true;
+
+        private void On_RedactCargoSelected_CommandExecuted(Object p) 
+        {
+            var cargo_redact = CargoSelected;
+
+            if (!_UserDialog.Edit(cargo_redact)) return;
+
+            _RepositoryCargo.Update(cargo_redact);
+
+            CargosCollections = new ObservableCollection<Cargo>(_RepositoryCargo.Items);
+
+            CargoSelected = cargo_redact;
+        }
+
+
+        #endregion
+
+
+
+
+
+
+
+
+
         private Cargo _CargoSelected;
         /// <summary>
         /// Selected Cargo 

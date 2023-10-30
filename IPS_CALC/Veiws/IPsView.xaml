@@ -63,7 +63,7 @@
                     </GroupBox>
                     <DockPanel Grid.Column="2">
                         <UniformGrid DockPanel.Dock="Bottom" Rows="1">
-                            <Button Content="Редактировать" Margin="3,9"/>
+                            <Button Content="Редактировать" Margin="3,9" Command="{Binding RedactSelectedIpsCommand}"/>
                         </UniformGrid>
                         
                             <Grid Margin="5">

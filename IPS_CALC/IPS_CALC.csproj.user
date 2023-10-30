@@ -25,6 +25,9 @@
     <Compile Update="Veiws\Windows\IPSEditorWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Veiws\Windows\IpsRedactWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Inftastructure\Commands\AppCommands.xaml">
@@ -52,6 +55,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Veiws\Windows\IPSEditorWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Veiws\Windows\IpsRedactWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Veiws\Windows\MainWindow.xaml">

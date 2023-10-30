@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Альфапаскаль\Desktop\IPS_CALC\IPS_CALC\obj\Release\netcoreapp3.1\
+C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\obj\Release\netcoreapp3.1\
 IPS_CALC
 none
 false
 TRACE;RELEASE;NETCOREAPP;NETCOREAPP3_1;
-C:\Users\Альфапаскаль\Desktop\IPS_CALC\IPS_CALC\App.xaml
-1-1542151446
+C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\App.xaml
+11192572854
 
-13162649374
-243-499985324
-Veiws\Windows\MainWindow.xaml;
+37-2086016269
+247-1789445583
+Inftastructure\Commands\AppCommands.xaml;Style\Main.xaml;Template\ModelMainTemplate.xaml;Veiws\IPsView.xaml;Veiws\Windows\CargoEditToSelectedIpsWindow.xaml;Veiws\Windows\CargoEditWindow.xaml;Veiws\Windows\CargoRemoveToSelectedIpsWindow.xaml;Veiws\Windows\CargoView.xaml;Veiws\Windows\IPSEditorWindow.xaml;Veiws\Windows\IpsRedactWindow.xaml;Veiws\Windows\MainWindow.xaml;
 
 True
 

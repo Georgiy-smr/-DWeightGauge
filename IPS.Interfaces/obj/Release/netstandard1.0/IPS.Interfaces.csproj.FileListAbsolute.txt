@@ -1,0 +1,10 @@
+C:\Users\Альфапаскаль\-DWeightGauge\IPS.Interfaces\bin\Release\netstandard1.0\IPS.Interfaces.deps.json
+C:\Users\Альфапаскаль\-DWeightGauge\IPS.Interfaces\bin\Release\netstandard1.0\IPS.Interfaces.dll
+C:\Users\Альфапаскаль\-DWeightGauge\IPS.Interfaces\bin\Release\netstandard1.0\IPS.Interfaces.pdb
+C:\Users\Альфапаскаль\-DWeightGauge\IPS.Interfaces\obj\Release\netstandard1.0\IPS.Interfaces.csproj.AssemblyReference.cache
+C:\Users\Альфапаскаль\-DWeightGauge\IPS.Interfaces\obj\Release\netstandard1.0\IPS.Interfaces.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Альфапаскаль\-DWeightGauge\IPS.Interfaces\obj\Release\netstandard1.0\IPS.Interfaces.AssemblyInfoInputs.cache
+C:\Users\Альфапаскаль\-DWeightGauge\IPS.Interfaces\obj\Release\netstandard1.0\IPS.Interfaces.AssemblyInfo.cs
+C:\Users\Альфапаскаль\-DWeightGauge\IPS.Interfaces\obj\Release\netstandard1.0\IPS.Interfaces.csproj.CoreCompileInputs.cache
+C:\Users\Альфапаскаль\-DWeightGauge\IPS.Interfaces\obj\Release\netstandard1.0\IPS.Interfaces.dll
+C:\Users\Альфапаскаль\-DWeightGauge\IPS.Interfaces\obj\Release\netstandard1.0\IPS.Interfaces.pdb

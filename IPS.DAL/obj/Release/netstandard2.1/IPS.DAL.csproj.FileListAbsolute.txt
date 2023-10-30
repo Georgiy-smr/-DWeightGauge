@@ -8,3 +8,16 @@ C:\Users\Альфапаскаль\Desktop\IPS_CALC\IPS.DAL\obj\Release\netstanda
 C:\Users\Альфапаскаль\Desktop\IPS_CALC\IPS.DAL\obj\Release\netstandard2.1\IPS.DAL.csproj.CoreCompileInputs.cache
 C:\Users\Альфапаскаль\Desktop\IPS_CALC\IPS.DAL\obj\Release\netstandard2.1\IPS.DAL.dll
 C:\Users\Альфапаскаль\Desktop\IPS_CALC\IPS.DAL\obj\Release\netstandard2.1\IPS.DAL.pdb
+C:\Users\Альфапаскаль\-DWeightGauge\IPS.DAL\bin\Release\netstandard2.1\IPS.DAL.deps.json
+C:\Users\Альфапаскаль\-DWeightGauge\IPS.DAL\bin\Release\netstandard2.1\IPS.DAL.dll
+C:\Users\Альфапаскаль\-DWeightGauge\IPS.DAL\bin\Release\netstandard2.1\IPS.DAL.pdb
+C:\Users\Альфапаскаль\-DWeightGauge\IPS.DAL\bin\Release\netstandard2.1\IPS.Interfaces.dll
+C:\Users\Альфапаскаль\-DWeightGauge\IPS.DAL\bin\Release\netstandard2.1\IPS.Interfaces.pdb
+C:\Users\Альфапаскаль\-DWeightGauge\IPS.DAL\obj\Release\netstandard2.1\IPS.DAL.csproj.AssemblyReference.cache
+C:\Users\Альфапаскаль\-DWeightGauge\IPS.DAL\obj\Release\netstandard2.1\IPS.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Альфапаскаль\-DWeightGauge\IPS.DAL\obj\Release\netstandard2.1\IPS.DAL.AssemblyInfoInputs.cache
+C:\Users\Альфапаскаль\-DWeightGauge\IPS.DAL\obj\Release\netstandard2.1\IPS.DAL.AssemblyInfo.cs
+C:\Users\Альфапаскаль\-DWeightGauge\IPS.DAL\obj\Release\netstandard2.1\IPS.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Альфапаскаль\-DWeightGauge\IPS.DAL\obj\Release\netstandard2.1\IPS.DAL.csproj.CopyComplete
+C:\Users\Альфапаскаль\-DWeightGauge\IPS.DAL\obj\Release\netstandard2.1\IPS.DAL.dll
+C:\Users\Альфапаскаль\-DWeightGauge\IPS.DAL\obj\Release\netstandard2.1\IPS.DAL.pdb

@@ -171,6 +171,7 @@ namespace IPS_CALC.VIewModels
         }
         #endregion
 
+        #region Команда удаления грузов выбранный ИПС
         private ICommand _Command_RemoveCargoSelectedIPS;
         public ICommand RemoveCargoSelectedIPSCommand
         {
@@ -194,6 +195,7 @@ namespace IPS_CALC.VIewModels
             SelectedIps = selected_ips;
 
         }
+        #endregion
 
         #region Команда добавления грузов выбранной ИПС
 
@@ -219,7 +221,33 @@ namespace IPS_CALC.VIewModels
 
         #endregion
 
+        #region Команда редактирования ИПС
 
+        private ICommand _CommandRedactSelectedIps;
+        public ICommand RedactSelectedIpsCommand
+        {
+            get => _CommandRedactSelectedIps != null ?
+            _CommandRedactSelectedIps : new LambdaCommand(On_RedactSelectedIpsCommand_CommandExecuted, Can_RedactSelectedIpsCommand_CommandExecute);
+        }
+        private bool Can_RedactSelectedIpsCommand_CommandExecute(object p) => !(SelectedIps is null);
+
+        private void On_RedactSelectedIpsCommand_CommandExecuted(object p)
+        {
+            var edit_ips = SelectedIps;
+
+            if (!_UserDialog.Edit(edit_ips)) return;
+
+            _RepositoryIPS.Update(edit_ips);
+
+            CollectionIPS = new ObservableCollection<CLASS.IPS>(_RepositoryIPS.Items.ToArray());
+
+            SelectedIps = edit_ips;
+        }
+
+
+
+
+        #endregion
 
         /// <summary>
         /// Коллекция грузов выбранной ипс

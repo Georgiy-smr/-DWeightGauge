@@ -149,6 +149,5 @@ namespace IPS_CALC.Services
                                                                           MessageBoxButton.YesNo,
                                                                           Exlamination ? MessageBoxImage.Exclamation : MessageBoxImage.Question) == MessageBoxResult.Yes;
 
-
     }
 }
