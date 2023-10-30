@@ -5,7 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:IPS_CALC.Veiws.Windows" mc:Ignorable="d" 
              xmlns:vm="clr-namespace:IPS_CALC.VIewModels"
-              xmlns:i="http://schemas.microsoft.com/xaml/behaviors" 
+             xmlns:font="http://schemas.fontawesome.com/icons/"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors" 
              d:DataContext="{d:DesignInstance {x:Type vm:CargoViewModel}}"
              d:DesignHeight="450" d:DesignWidth="800"
              Style="{StaticResource MyWindowStyle}">
@@ -44,7 +45,13 @@
                     
                     <DockPanel Grid.Column="1">
                         <UniformGrid DockPanel.Dock="Bottom" Rows="1">
-                            <Button Content="Редактировать" Margin="3,9" Command="{Binding RedactCargoSelectedCommand}"/>
+                            <Button  Command="{Binding RedactCargoSelectedCommand}" HorizontalAlignment="Right">
+                                <Button.Content>
+                                    <StackPanel>
+                                        <font:ImageAwesome Icon="Regular_Edit" Height="20"/>
+                                    </StackPanel>
+                                </Button.Content>
+                            </Button>
                         </UniformGrid>
                         <Grid Margin="5">
                             <Grid.ColumnDefinitions>

@@ -134,8 +134,6 @@ namespace IPS_CALC.VIewModels
             //Фильтр грузов из репозитория по грузам которые уже есть у нашей ипс
             var CargosFilt = Cargos.Where(c => !Ips.IPS2Cargoes.Select(g => g.Cargo).Contains(c)).ToArray();
 
-            if (CargosFilt.Length == 0) throw new ArgumentNullException("Нет свободных грузов для добавления");
-
             this.Cargos = new ObservableCollection<Models.Cargo>(CargosFilt);
         }
 	}

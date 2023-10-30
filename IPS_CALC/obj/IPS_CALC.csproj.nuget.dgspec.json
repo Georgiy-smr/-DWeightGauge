@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Альфапаскаль\\-DWeightGauge\\IPS_CALC\\IPS_CALC.csproj": {}
+    "C:\\Users\\Гоша и Аня\\-DWeightGauge\\IPS_CALC\\IPS_CALC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Альфапаскаль\\-DWeightGauge\\IPS.DAL\\IPS.DAL.csproj": {
+    "C:\\Users\\Гоша и Аня\\-DWeightGauge\\IPS.DAL\\IPS.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Альфапаскаль\\-DWeightGauge\\IPS.DAL\\IPS.DAL.csproj",
+        "projectUniqueName": "C:\\Users\\Гоша и Аня\\-DWeightGauge\\IPS.DAL\\IPS.DAL.csproj",
         "projectName": "IPS.DAL",
-        "projectPath": "C:\\Users\\Альфапаскаль\\-DWeightGauge\\IPS.DAL\\IPS.DAL.csproj",
-        "packagesPath": "C:\\Users\\Альфапаскаль\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Альфапаскаль\\-DWeightGauge\\IPS.DAL\\obj\\",
+        "projectPath": "C:\\Users\\Гоша и Аня\\-DWeightGauge\\IPS.DAL\\IPS.DAL.csproj",
+        "packagesPath": "C:\\Users\\Гоша и Аня\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Гоша и Аня\\-DWeightGauge\\IPS.DAL\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Альфапаскаль\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Гоша и Аня\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -32,8 +28,8 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "C:\\Users\\Альфапаскаль\\-DWeightGauge\\IPS.Interfaces\\IPS.Interfaces.csproj": {
-                "projectPath": "C:\\Users\\Альфапаскаль\\-DWeightGauge\\IPS.Interfaces\\IPS.Interfaces.csproj"
+              "C:\\Users\\Гоша и Аня\\-DWeightGauge\\IPS.Interfaces\\IPS.Interfaces.csproj": {
+                "projectPath": "C:\\Users\\Гоша и Аня\\-DWeightGauge\\IPS.Interfaces\\IPS.Interfaces.csproj"
               }
             }
           }
@@ -48,6 +44,14 @@
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
           "dependencies": {
+            "FontAwesome.WPF": {
+              "target": "Package",
+              "version": "[4.7.0.9, )"
+            },
+            "FontAwesome5": {
+              "target": "Package",
+              "version": "[2.1.11, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.9, )"
@@ -77,25 +81,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Альфапаскаль\\-DWeightGauge\\IPS.Interfaces\\IPS.Interfaces.csproj": {
+    "C:\\Users\\Гоша и Аня\\-DWeightGauge\\IPS.Interfaces\\IPS.Interfaces.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Альфапаскаль\\-DWeightGauge\\IPS.Interfaces\\IPS.Interfaces.csproj",
+        "projectUniqueName": "C:\\Users\\Гоша и Аня\\-DWeightGauge\\IPS.Interfaces\\IPS.Interfaces.csproj",
         "projectName": "IPS.Interfaces",
-        "projectPath": "C:\\Users\\Альфапаскаль\\-DWeightGauge\\IPS.Interfaces\\IPS.Interfaces.csproj",
-        "packagesPath": "C:\\Users\\Альфапаскаль\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Альфапаскаль\\-DWeightGauge\\IPS.Interfaces\\obj\\",
+        "projectPath": "C:\\Users\\Гоша и Аня\\-DWeightGauge\\IPS.Interfaces\\IPS.Interfaces.csproj",
+        "packagesPath": "C:\\Users\\Гоша и Аня\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Гоша и Аня\\-DWeightGauge\\IPS.Interfaces\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Альфапаскаль\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Гоша и Аня\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -127,25 +127,21 @@
               "autoReferenced": true
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Альфапаскаль\\-DWeightGauge\\IPS_CALC\\IPS_CALC.csproj": {
+    "C:\\Users\\Гоша и Аня\\-DWeightGauge\\IPS_CALC\\IPS_CALC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Альфапаскаль\\-DWeightGauge\\IPS_CALC\\IPS_CALC.csproj",
+        "projectUniqueName": "C:\\Users\\Гоша и Аня\\-DWeightGauge\\IPS_CALC\\IPS_CALC.csproj",
         "projectName": "IPS_CALC",
-        "projectPath": "C:\\Users\\Альфапаскаль\\-DWeightGauge\\IPS_CALC\\IPS_CALC.csproj",
-        "packagesPath": "C:\\Users\\Альфапаскаль\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Альфапаскаль\\-DWeightGauge\\IPS_CALC\\obj\\",
+        "projectPath": "C:\\Users\\Гоша и Аня\\-DWeightGauge\\IPS_CALC\\IPS_CALC.csproj",
+        "packagesPath": "C:\\Users\\Гоша и Аня\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Гоша и Аня\\-DWeightGauge\\IPS_CALC\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Альфапаскаль\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Гоша и Аня\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -159,8 +155,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Альфапаскаль\\-DWeightGauge\\IPS.DAL\\IPS.DAL.csproj": {
-                "projectPath": "C:\\Users\\Альфапаскаль\\-DWeightGauge\\IPS.DAL\\IPS.DAL.csproj"
+              "C:\\Users\\Гоша и Аня\\-DWeightGauge\\IPS.DAL\\IPS.DAL.csproj": {
+                "projectPath": "C:\\Users\\Гоша и Аня\\-DWeightGauge\\IPS.DAL\\IPS.DAL.csproj"
               }
             }
           }
@@ -175,6 +171,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "FontAwesome": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            },
             "MaterialDesignThemes": {
               "target": "Package",
               "version": "[4.9.0, )"
@@ -229,7 +229,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

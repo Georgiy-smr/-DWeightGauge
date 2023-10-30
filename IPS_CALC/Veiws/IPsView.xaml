@@ -7,6 +7,8 @@
              xmlns:local="clr-namespace:IPS_CALC.Veiws" mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              xmlns:vm="clr-namespace:IPS_CALC.VIewModels"
+             xmlns:font="http://schemas.fontawesome.com/icons/"
+             
              d:DataContext="{d:DesignInstance {x:Type vm:IpsViewModel}}"
              Style="{StaticResource MyWindowStyle}">
     <i:Interaction.Triggers>
@@ -52,7 +54,7 @@
                             <DataGrid ItemsSource="{Binding SelectedIps.IPS2Cargoes}"
                                       AutoGenerateColumns="False">
                                 <DataGrid.Columns>
-                                    <DataGridTextColumn Header = "Наименование" 
+                                    <DataGridTextColumn Header = "Наименование " 
                                      Binding = "{Binding Cargo.Name}" 
                                      IsReadOnly = "True"/>
                                     <DataGridTextColumn Header = "Масса" 
@@ -63,8 +65,19 @@
                         </DockPanel>
                     </GroupBox>
                     <DockPanel Grid.Column="2">
-                        <UniformGrid DockPanel.Dock="Bottom" Rows="1">
-                            <Button Content="Редактировать" Margin="3,9" Command="{Binding RedactSelectedIpsCommand}"/>
+                        <UniformGrid DockPanel.Dock="Bottom" Rows="1" HorizontalAlignment="Right">
+                            
+                            <UniformGrid DockPanel.Dock="Bottom" Rows="1">
+                                <Button  Command="{Binding RedactSelectedIpsCommand}" HorizontalAlignment="Right">
+                                    <Button.Content>
+                                        <StackPanel>
+                                            <font:ImageAwesome Icon="Regular_Edit" Height="20"/>
+                                        </StackPanel>
+                                    </Button.Content>
+                                </Button>
+                            </UniformGrid>
+
+
                         </UniformGrid>
                         
                             <Grid Margin="5">

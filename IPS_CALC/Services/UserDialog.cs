@@ -38,7 +38,9 @@ namespace IPS_CALC.Services
 
             var cargo_Editor_Window = new CargoEditWindow
             {
-                DataContext = cargoEditorViewModel
+                DataContext = cargoEditorViewModel,
+                WindowStartupLocation = WindowStartupLocation.CenterOwner,
+                Owner = Application.Current.MainWindow
             };
 
             if (cargo_Editor_Window.ShowDialog() != true) return false;
@@ -54,7 +56,9 @@ namespace IPS_CALC.Services
 
             var ips_editor_window = new IPSEditorWindow
             {
-                DataContext = ips_editor_ViewModel
+                DataContext = ips_editor_ViewModel,
+                WindowStartupLocation = WindowStartupLocation.CenterOwner,
+                Owner = Application.Current.MainWindow
             };
 
             if (ips_editor_window.ShowDialog() != true) return false;
@@ -81,8 +85,9 @@ namespace IPS_CALC.Services
         }
         private bool AddCargoToTheSelectedIps(CLASSES.IPS IPS, ObservableCollection<Cargo> Cargos)
         {
-
+            
             var cargoEditorToSelectedIpsViewModel = new CargoEditorToSelectedIpsViewModel(IPS, Cargos);
+            
             var cargoEditToSelectedIpsWindow = new CargoEditToSelectedIpsWindow()
             {
                 DataContext = cargoEditorToSelectedIpsViewModel,
@@ -93,6 +98,7 @@ namespace IPS_CALC.Services
             if (cargoEditToSelectedIpsWindow.ShowDialog() != true) return false;
 
             var selected_cargos = cargoEditorToSelectedIpsViewModel.SelectedCargos;
+            if(selected_cargos is null) return false;
             if(!selected_cargos.Any()) return false;
             foreach (var item in selected_cargos)
             {
