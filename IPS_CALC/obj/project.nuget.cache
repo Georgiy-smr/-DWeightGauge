@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "0vZjUrJrac+epIvKG+75bCvMYYr39GCv2sfhe2WhuaT0MjTeUEutAR82sXuU9ectJIavPkzCiWCzd6r4dIAxFA==",
+  "dgSpecHash": "uJpUHgfyNILUik9y2zsgpxmfYFsMNBiMMoUxtGgMrqk/w6oxyjdbec2K9nc36yw0JwkKg9Tu9nLJnfPGzfhFTQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Альфапаскаль\\-DWeightGauge\\IPS_CALC\\IPS_CALC.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Альфапаскаль\\.nuget\\packages\\materialdesigncolors\\2.1.4\\materialdesigncolors.2.1.4.nupkg.sha512",
+    "C:\\Users\\Альфапаскаль\\.nuget\\packages\\materialdesignthemes\\4.9.0\\materialdesignthemes.4.9.0.nupkg.sha512",
     "C:\\Users\\Альфапаскаль\\.nuget\\packages\\mediatr\\12.1.1\\mediatr.12.1.1.nupkg.sha512",
     "C:\\Users\\Альфапаскаль\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\Альфапаскаль\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",

@@ -222,3 +222,5 @@ C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\obj\Release\netcoreapp3
 C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\obj\Release\netcoreapp3.1\IPS_CALC.dll
 C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\obj\Release\netcoreapp3.1\IPS_CALC.pdb
 C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\obj\Release\netcoreapp3.1\IPS_CALC.genruntimeconfig.cache
+C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\bin\Release\netcoreapp3.1\MaterialDesignColors.dll
+C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\bin\Release\netcoreapp3.1\MaterialDesignThemes.Wpf.dll

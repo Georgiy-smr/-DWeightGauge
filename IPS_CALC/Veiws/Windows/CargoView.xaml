@@ -7,7 +7,8 @@
              xmlns:vm="clr-namespace:IPS_CALC.VIewModels"
               xmlns:i="http://schemas.microsoft.com/xaml/behaviors" 
              d:DataContext="{d:DesignInstance {x:Type vm:CargoViewModel}}"
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             Style="{StaticResource MyWindowStyle}">
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding LoadCargoCommand}"/>

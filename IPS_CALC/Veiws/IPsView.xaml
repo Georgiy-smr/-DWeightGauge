@@ -7,7 +7,8 @@
              xmlns:local="clr-namespace:IPS_CALC.Veiws" mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              xmlns:vm="clr-namespace:IPS_CALC.VIewModels"
-             d:DataContext="{d:DesignInstance {x:Type vm:IpsViewModel}}">
+             d:DataContext="{d:DesignInstance {x:Type vm:IpsViewModel}}"
+             Style="{StaticResource MyWindowStyle}">
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding Path=LoadIPSCommand}"/>
@@ -20,7 +21,7 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <GroupBox Header="{Binding SelectedIps.Name, FallbackValue='ИПС', TargetNullValue='ИПС не выбрана'}" Grid.Column="0">
                         <DockPanel>
@@ -81,9 +82,7 @@
                                 <TextBlock  Grid.Column="1" Grid.Row="0"  Text="{Binding SelectedIps.Name}" Margin="5"/>
 
                                 <TextBlock  Grid.Column="0" Grid.Row="1" Text="Площадь" Margin="5"/>
-                                <TextBlock  Grid.Column="1" Grid.Row="1"  Text="{Binding SelectedIps.Square}" Margin="5"/>
-                                <TextBlock  Grid.Column="0" Grid.Row="2" Text="Заголовок программы" Margin="5"/>
-                                <TextBox  Grid.Column="1" Grid.Row="2"  Text="{Binding Path=TestTitle, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+                            <TextBlock  Grid.Column="1" Grid.Row="1"  Text="{Binding SelectedIps.Square}" Margin="5"/>
                         </Grid>  
                             
    

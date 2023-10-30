@@ -92,7 +92,9 @@ namespace IPS_CALC.Services
 
             if (cargoEditToSelectedIpsWindow.ShowDialog() != true) return false;
 
-            foreach (var item in cargoEditorToSelectedIpsViewModel.SelectedCargos)
+            var selected_cargos = cargoEditorToSelectedIpsViewModel.SelectedCargos;
+            if(!selected_cargos.Any()) return false;
+            foreach (var item in selected_cargos)
             {
                 var ipsToCargo = new IPS2Cargo()
                 {
@@ -133,7 +135,11 @@ namespace IPS_CALC.Services
 
             if (cargoEditToSelectedIpsWindow.ShowDialog() != true) return false;
 
-            foreach (var item in cargoEditorToSelectedIpsViewModel.SelectedCargos)
+
+            var selected_cargos = cargoEditorToSelectedIpsViewModel.SelectedCargos;
+            if (selected_cargos is null) return false;
+
+            foreach (var item in selected_cargos)
             {
                 var item_to_remove = IPS.IPS2Cargoes.FirstOrDefault(carg => carg.Cargo == item && carg.IPS == IPS);
                 IPS.IPS2Cargoes.Remove(item_to_remove);

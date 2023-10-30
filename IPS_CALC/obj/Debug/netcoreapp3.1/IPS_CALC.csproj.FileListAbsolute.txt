@@ -444,3 +444,5 @@ C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1
 C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1\Veiws\Windows\IPSEditorWindow.baml
 C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1\Veiws\Windows\IpsRedactWindow.g.cs
 C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1\Veiws\Windows\IpsRedactWindow.baml
+C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\bin\Debug\netcoreapp3.1\MaterialDesignColors.dll
+C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\bin\Debug\netcoreapp3.1\MaterialDesignThemes.Wpf.dll
