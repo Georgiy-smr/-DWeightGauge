@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:IPS_CALC.VIewModels"
         xmlns:local="clr-namespace:IPS_CALC.Veiws.Windows" mc:Ignorable="d"
-        Title="Добавление ИПС" Height="300" Width="300"
+        Title="Добавление ИПС" Height="450" Width="800"
         d:DataContext="{d:DesignInstance {x:Type vm:IPSEditorViewModel}}">
     <DockPanel>
         <TextBlock Text="{Binding IPS_id, StringFormat=ИПС:{0}}" 

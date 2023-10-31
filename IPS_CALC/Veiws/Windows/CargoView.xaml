@@ -7,8 +7,11 @@
              xmlns:vm="clr-namespace:IPS_CALC.VIewModels"
              xmlns:font="http://schemas.fontawesome.com/icons/"
              xmlns:i="http://schemas.microsoft.com/xaml/behaviors" 
+             
+             
              d:DataContext="{d:DesignInstance {x:Type vm:CargoViewModel}}"
              d:DesignHeight="450" d:DesignWidth="800"
+             
              Style="{StaticResource MyWindowStyle}">
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
@@ -33,7 +36,9 @@
                             </UniformGrid>
                             <ListBox MinWidth="150"
                                      ItemsSource="{Binding Path=CargosView}"
-                                     SelectedItem="{Binding CargoSelected}">
+                                     SelectedItem="{Binding CargoSelected}"
+                                     SelectionMode="Extended">
+                                     
                                 <ListBox.ItemTemplate>
                                     <DataTemplate>
                                         <TextBlock Text="{Binding Name}" ToolTip="{Binding Path=Id}"/>

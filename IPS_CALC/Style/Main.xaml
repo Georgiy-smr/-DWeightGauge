@@ -6,7 +6,7 @@
         <Setter Property="CanUserDeleteRows" Value="False"/>
         <Setter Property="GridLinesVisibility" Value="Vertical"/>
         <Setter Property="VerticalGridLinesBrush" Value="DarkGray"/>
-        <Setter Property="AlternatingRowBackground" Value="DarkKhaki"/>
+        <Setter Property="AlternatingRowBackground" Value="Transparent"/>
         <Setter Property="HeadersVisibility" Value="Column"/>
         <Setter Property="Background" Value="Gray"/>
         <Setter Property="RowBackground" Value="Gray"/>
@@ -38,7 +38,7 @@
         <Setter Property="Background">
             <Setter.Value>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#383B40"/>
                     <GradientStop Color="#FF7F7E7E" Offset="1"/>
                 </LinearGradientBrush>
             </Setter.Value>

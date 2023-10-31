@@ -6,8 +6,11 @@
         xmlns:local="clr-namespace:IPS_CALC.Veiws.Windows" mc:Ignorable="d"
         xmlns:ViewModels="clr-namespace:IPS_CALC.VIewModels"
         xmlns:i="http://schemas.microsoft.com/xaml/behaviors" 
+        xmlns:font="http://schemas.fontawesome.com/icons/"
+        
+        
         d:DataContext="{d:DesignInstance {x:Type ViewModels:CargoEditorToSelectedIpsViewModel}}"
-        Title="{Binding Path=TitleWindow}" Height="450" Width="300">
+        Title="{Binding Path=TitleWindow}" Height="450" Width="800">
     <Grid>
         <DockPanel>
             <GroupBox Header="МП-250">
@@ -29,7 +32,11 @@
                             <ColumnDefinition />
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
-                        <GroupBox Grid.Column="0" Header="Все грузы">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition Height ="Auto"/>
+                        </Grid.RowDefinitions>
+                        <GroupBox Grid.Column="0" Grid.Row="0" Header="Все грузы">
                             <ListBox  MinWidth="150"
                              ItemsSource="{Binding Path=Cargos}"
                              SelectedItem="{Binding Path=SelectedCargo}">
@@ -45,6 +52,22 @@
                                 </i:Interaction.Triggers>
                             </ListBox>
                         </GroupBox>
+                        <UniformGrid Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right">
+                            <Button  Padding="10,3" Command="{Binding CommandAddCargoToSelectedCargos}">
+                                <Button.Content>
+                                    <StackPanel>
+                                        <font:ImageAwesome Icon="Solid_AngleRight" Height="20"/>
+                                    </StackPanel>
+                                </Button.Content>
+                            </Button>
+                            <Button  Padding="10,3">
+                                <Button.Content>
+                                    <StackPanel>
+                                        <font:ImageAwesome Icon="Solid_AngleDoubleRight" Height="20"/>
+                                    </StackPanel>
+                                </Button.Content>
+                            </Button>
+                        </UniformGrid>
                         <GroupBox Header="Для добавления" Grid.Column="1">
                             <ListBox  MinWidth="150"
                              ItemsSource="{Binding Path=SelectedCargos}"
@@ -61,6 +84,22 @@
                                 </i:Interaction.Triggers>
                             </ListBox>
                         </GroupBox>
+                        <UniformGrid Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left">
+                            <Button  Padding="10,3" Command="{Binding Path=RemoveCargoSelectedCommand}">
+                                <Button.Content>
+                                    <StackPanel>
+                                        <font:ImageAwesome Icon="Solid_AngleLeft" Height="20"/>
+                                    </StackPanel>
+                                </Button.Content>
+                            </Button>
+                            <Button  Padding="10,3">
+                                <Button.Content>
+                                    <StackPanel>
+                                        <font:ImageAwesome Icon="Solid_AngleDoubleLeft" Height="20"/>
+                                    </StackPanel>
+                                </Button.Content>
+                            </Button>
+                        </UniformGrid>
                     </Grid>
                 </DockPanel>
             </GroupBox>

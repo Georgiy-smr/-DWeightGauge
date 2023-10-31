@@ -102,6 +102,9 @@ namespace IPS_CALC.VIewModels
 
             SelectedCargos.Add(cargo_To_Add);
             Cargos.Remove(SelectedCargo);
+
+            SelectedCargo = Cargos.FirstOrDefault();
+
         }
         #endregion
 
@@ -124,6 +127,9 @@ namespace IPS_CALC.VIewModels
 
             SelectedCargos.Remove(cargo_To_Add);
             Cargos.Add(cargo_To_Add);
+
+            SelectedRemoveCargo = SelectedCargos.FirstOrDefault();
+
         }
         #endregion
 

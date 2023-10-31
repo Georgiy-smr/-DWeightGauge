@@ -18,7 +18,7 @@
     </i:Interaction.Triggers>
     <Grid>
         <TabControl>
-            <TabItem Header="ИПС">
+            <Grid>
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
@@ -66,7 +66,7 @@
                     </GroupBox>
                     <DockPanel Grid.Column="2">
                         <UniformGrid DockPanel.Dock="Bottom" Rows="1" HorizontalAlignment="Right">
-                            
+
                             <UniformGrid DockPanel.Dock="Bottom" Rows="1">
                                 <Button  Command="{Binding RedactSelectedIpsCommand}" HorizontalAlignment="Right">
                                     <Button.Content>
@@ -79,31 +79,31 @@
 
 
                         </UniformGrid>
-                        
-                            <Grid Margin="5">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto"/>
-                                    <RowDefinition Height="Auto"/>
-                                    <RowDefinition Height="Auto"/>
-                                </Grid.RowDefinitions>
 
-                                <TextBlock  Grid.Column="0" Grid.Row="0" Text="Модификация" Margin="5"/>
-                                <TextBlock  Grid.Column="1" Grid.Row="0"  Text="{Binding SelectedIps.Name}" Margin="5"/>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
 
-                                <TextBlock  Grid.Column="0" Grid.Row="1" Text="Площадь" Margin="5"/>
+                            <TextBlock  Grid.Column="0" Grid.Row="0" Text="Модификация" Margin="5"/>
+                            <TextBlock  Grid.Column="1" Grid.Row="0"  Text="{Binding SelectedIps.Name}" Margin="5"/>
+
+                            <TextBlock  Grid.Column="0" Grid.Row="1" Text="Площадь" Margin="5"/>
                             <TextBlock  Grid.Column="1" Grid.Row="1"  Text="{Binding SelectedIps.Square}" Margin="5"/>
-                        </Grid>  
-                            
-   
+                        </Grid>
+
+
                     </DockPanel>
-                    
+
 
                 </Grid>
-            </TabItem>
+            </Grid>
         </TabControl>
     </Grid>
 </UserControl>
