@@ -298,5 +298,7 @@ namespace IPS_CALC.VIewModels
             if (!(ips.Name.Contains(FilterNameIPS)))
                 e.Accepted = false;
         }
+
+
     }
 }

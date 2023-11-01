@@ -453,3 +453,6 @@ C:\Users\Гоша и Аня\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1\Veiws
 C:\Users\Гоша и Аня\-DWeightGauge\IPS_CALC\bin\Debug\netcoreapp3.1\FontAwesome.WPF.dll
 C:\Users\Гоша и Аня\-DWeightGauge\IPS_CALC\bin\Debug\netcoreapp3.1\FontAwesome5.Net.dll
 C:\Users\Гоша и Аня\-DWeightGauge\IPS_CALC\bin\Debug\netcoreapp3.1\FontAwesome5.dll
+C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\bin\Debug\netcoreapp3.1\FontAwesome.WPF.dll
+C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\bin\Debug\netcoreapp3.1\FontAwesome5.Net.dll
+C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\bin\Debug\netcoreapp3.1\FontAwesome5.dll

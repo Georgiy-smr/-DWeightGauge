@@ -15,7 +15,8 @@
         <DockPanel>
             <GroupBox Header="МП-250">
                 <DockPanel>
-                    <TextBox DockPanel.Dock="Top" Text="Фильтруемое слово"/>
+                    <TextBox DockPanel.Dock="Top" 
+                             Text="{Binding Path=FilterKey, UpdateSourceTrigger=PropertyChanged}"/>
                     <UniformGrid Rows="1" 
                      DockPanel.Dock="Bottom"
                      HorizontalAlignment="Right"
@@ -38,7 +39,7 @@
                         </Grid.RowDefinitions>
                         <GroupBox Grid.Column="0" Grid.Row="0" Header="Все грузы">
                             <ListBox  MinWidth="150"
-                             ItemsSource="{Binding Path=Cargos}"
+                             ItemsSource="{Binding Path=CargosСollectionView}"
                              SelectedItem="{Binding Path=SelectedCargo}">
                                 <ListBox.ItemTemplate>
                                     <DataTemplate>
@@ -60,7 +61,7 @@
                                     </StackPanel>
                                 </Button.Content>
                             </Button>
-                            <Button  Padding="10,3">
+                            <Button  Padding="10,3" Command="{Binding Path=AddAllCargoCommand}">
                                 <Button.Content>
                                     <StackPanel>
                                         <font:ImageAwesome Icon="Solid_AngleDoubleRight" Height="20"/>
@@ -70,7 +71,7 @@
                         </UniformGrid>
                         <GroupBox Header="Для добавления" Grid.Column="1">
                             <ListBox  MinWidth="150"
-                             ItemsSource="{Binding Path=SelectedCargos}"
+                             ItemsSource="{Binding Path=Cargos_Selected_СollectionView}"
                                  SelectedItem="{Binding Path=SelectedRemoveCargo}">
                                 <ListBox.ItemTemplate>
                                     <DataTemplate>
@@ -85,17 +86,17 @@
                             </ListBox>
                         </GroupBox>
                         <UniformGrid Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left">
+                            <Button  Padding="10,3" Command="{Binding Path=RemoveAllCargoSelectedCollectionsCommand}">
+                                <Button.Content>
+                                    <StackPanel>
+                                        <font:ImageAwesome Icon="Solid_AngleDoubleLeft" Height="20"/>
+                                    </StackPanel>
+                                </Button.Content>
+                            </Button>
                             <Button  Padding="10,3" Command="{Binding Path=RemoveCargoSelectedCommand}">
                                 <Button.Content>
                                     <StackPanel>
                                         <font:ImageAwesome Icon="Solid_AngleLeft" Height="20"/>
-                                    </StackPanel>
-                                </Button.Content>
-                            </Button>
-                            <Button  Padding="10,3">
-                                <Button.Content>
-                                    <StackPanel>
-                                        <font:ImageAwesome Icon="Solid_AngleDoubleLeft" Height="20"/>
                                     </StackPanel>
                                 </Button.Content>
                             </Button>
