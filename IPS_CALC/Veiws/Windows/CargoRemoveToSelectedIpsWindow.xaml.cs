@@ -15,11 +15,8 @@ namespace IPS_CALC.Veiws.Windows
     /// <summary>
     /// Логика взаимодействия для CargoRemoveToSelectedIpsWindow.xaml
     /// </summary>
-    public partial class CargoRemoveToSelectedIpsWindow : Window
+    public partial class CargoRemoveToSelectedIpsWindow
     {
-        public CargoRemoveToSelectedIpsWindow()
-        {
-            InitializeComponent();
-        }
+        public CargoRemoveToSelectedIpsWindow() => InitializeComponent();
     }
 }

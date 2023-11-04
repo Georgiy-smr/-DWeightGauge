@@ -5,18 +5,63 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IPS_CALC.Veiws.Windows" mc:Ignorable="d"
         xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+         xmlns:font="http://schemas.fontawesome.com/icons/"
         Title="{Binding TitleWindow}" Height="450" Width="800"
         xmlns:vm="clr-namespace:IPS_CALC.VIewModels"
         d:DataContext = "{d:DesignInstance Type={x:Type vm:CargoRemovedToSelectedIpsViewModel}}">
     <Grid>
         <DockPanel>
-            <GroupBox Header="МП-250">
+            <GroupBox Header="{Binding IpsName}">
                 <DockPanel>
-                    <TextBox DockPanel.Dock="Top" Text="Фильтруемое слово"/>
+                    <TextBox DockPanel.Dock="Top" Text="{Binding Path=FilterKey, UpdateSourceTrigger=PropertyChanged}"/>
                     <UniformGrid Rows="1" 
                      DockPanel.Dock="Bottom"
                      HorizontalAlignment="Right"
                      Margin="5">
+
+                        <Button  Padding="10,3" Command="{Binding CommandAddCargoToSelectedCargos}">
+                            <Button.Content>
+                                <StackPanel>
+                                    <font:ImageAwesome Icon="Solid_AngleRight" Height="20"/>
+                                </StackPanel>
+                            </Button.Content>
+                            <Button.ToolTip>
+                                <ToolTip Content="{Binding Path=SelectedCargo.Name}"
+                                             ContentStringFormat="Перенести груз: {0}"/>
+                            </Button.ToolTip>
+                        </Button>
+
+                        <Button  Padding="10,3" Command="{Binding Path=AddAllCargoToSelectedCargosCommand}">
+                            <Button.Content>
+                                <StackPanel>
+                                    <font:ImageAwesome Icon="Solid_AngleDoubleRight" Height="20"/>
+                                </StackPanel>
+                            </Button.Content>
+                        </Button>
+
+                        <Button  Padding="10,3" Command="{Binding Path=CommandRemoveAllCargoCommand}">
+                            <Button.Content>
+                                <StackPanel>
+                                    <font:ImageAwesome Icon="Solid_AngleDoubleLeft" Height="20"/>
+                                </StackPanel>
+                            </Button.Content>
+                        </Button>
+
+                        <Button  Padding="10,3" Command="{Binding Path=RemoveCargoSelectedCommand}">
+                            <Button.Content>
+                                <StackPanel>
+                                    <font:ImageAwesome Icon="Solid_AngleLeft" Height="20"/>
+                                </StackPanel>
+                            </Button.Content>
+                            <Button.ToolTip>
+                                <ToolTip Content="{Binding Path=SelectedRemoveCargo.Name}"
+                                             ContentStringFormat="Перенести груз: {0}"/>
+                            </Button.ToolTip>
+                        </Button>
+
+
+
+
                         <Button Content="SAVE" Margin="3" Padding="20,3"
                     Command="{StaticResource DialogResultCommand}"
                     CommandParameter="True"/>
@@ -31,7 +76,7 @@
                         </Grid.ColumnDefinitions>
                         <GroupBox Grid.Column="0" Header="В составе грузы">
                             <ListBox  MinWidth="150"
-                             ItemsSource="{Binding Path=Cargos}"
+                             ItemsSource="{Binding Path=CargosViewCollection}"
                              SelectedItem="{Binding Path=SelectedCargo}">
                                 <ListBox.ItemTemplate>
                                     <DataTemplate>
@@ -40,14 +85,15 @@
                                 </ListBox.ItemTemplate>
                                 <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="MouseDoubleClick">
-                                        <i:InvokeCommandAction Command="{Binding Path=CommandAddCargoToSelectedCargos}"/>
+                                        <i:InvokeCommandAction Command="{Binding Path=CommandAddCargoToSelectedCargos}"
+                                                               PassEventArgsToCommand="True"/>
                                     </i:EventTrigger>
                                 </i:Interaction.Triggers>
                             </ListBox>
                         </GroupBox>
                         <GroupBox Header="На удаление" Grid.Column="1">
                             <ListBox  MinWidth="150"
-                             ItemsSource="{Binding Path=SelectedCargos}"
+                             ItemsSource="{Binding Path=SelectedCargosView}"
                                  SelectedItem="{Binding Path=SelectedRemoveCargo}">
                                 <ListBox.ItemTemplate>
                                     <DataTemplate>

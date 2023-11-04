@@ -7,10 +7,12 @@
         xmlns:ViewModels="clr-namespace:IPS_CALC.VIewModels"
         xmlns:i="http://schemas.microsoft.com/xaml/behaviors" 
         xmlns:font="http://schemas.fontawesome.com/icons/"
-        
-        
         d:DataContext="{d:DesignInstance {x:Type ViewModels:CargoEditorToSelectedIpsViewModel}}"
         Title="{Binding Path=TitleWindow}" Height="450" Width="800">
+    <Window.InputBindings>
+        <KeyBinding Key="Right" Command="{Binding Path=CommandAddCargoToSelectedCargos}"/>
+        <KeyBinding Key="Left" Command="{Binding RemoveCargoSelectedCommand}"/>
+    </Window.InputBindings>
     <Grid>
         <DockPanel>
             <GroupBox Header="МП-250">
@@ -21,6 +23,47 @@
                      DockPanel.Dock="Bottom"
                      HorizontalAlignment="Right"
                      Margin="5">
+                        <Button  Padding="10,3" Command="{Binding CommandAddCargoToSelectedCargos}">
+                            <Button.Content>
+                                <StackPanel>
+                                    <font:ImageAwesome Icon="Solid_AngleRight" Height="20"/>
+                                </StackPanel>
+                            </Button.Content>
+                            <Button.ToolTip>
+                                <ToolTip Content="{Binding Path=SelectedCargo.Name}"
+                                             ContentStringFormat="Перенести груз: {0}"/>
+                            </Button.ToolTip>
+                        </Button>
+
+                        <Button  Padding="10,3" Command="{Binding Path=AddAllCargoCommand}">
+                            <Button.Content>
+                                <StackPanel>
+                                    <font:ImageAwesome Icon="Solid_AngleDoubleRight" Height="20"/>
+                                </StackPanel>
+                            </Button.Content>
+                        </Button>
+
+                        <Button  Padding="10,3" Command="{Binding Path=RemoveAllCargoSelectedCollectionsCommand}">
+                            <Button.Content>
+                                <StackPanel>
+                                    <font:ImageAwesome Icon="Solid_AngleDoubleLeft" Height="20"/>
+                                </StackPanel>
+                            </Button.Content>
+                        </Button>
+
+                        <Button  Padding="10,3" Command="{Binding Path=RemoveCargoSelectedCommand}">
+                            <Button.Content>
+                                <StackPanel>
+                                    <font:ImageAwesome Icon="Solid_AngleLeft" Height="20"/>
+                                </StackPanel>
+                            </Button.Content>
+                            <Button.ToolTip>
+                                <ToolTip Content="{Binding Path=SelectedRemoveCargo.Name}"
+                                             ContentStringFormat="Перенести груз: {0}"/>
+                            </Button.ToolTip>
+                        </Button>
+
+
                         <Button Content="SAVE" Margin="3" Padding="20,3"
                     Command="{StaticResource DialogResultCommand}"
                     CommandParameter="True"/>
@@ -37,7 +80,7 @@
                             <RowDefinition />
                             <RowDefinition Height ="Auto"/>
                         </Grid.RowDefinitions>
-                        <GroupBox Grid.Column="0" Grid.Row="0" Header="Все грузы">
+                        <GroupBox Grid.Column="0" Grid.Row="0" Header="Свободные грузы">
                             <ListBox  MinWidth="150"
                              ItemsSource="{Binding Path=CargosСollectionView}"
                              SelectedItem="{Binding Path=SelectedCargo}">
@@ -54,20 +97,8 @@
                             </ListBox>
                         </GroupBox>
                         <UniformGrid Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right">
-                            <Button  Padding="10,3" Command="{Binding CommandAddCargoToSelectedCargos}">
-                                <Button.Content>
-                                    <StackPanel>
-                                        <font:ImageAwesome Icon="Solid_AngleRight" Height="20"/>
-                                    </StackPanel>
-                                </Button.Content>
-                            </Button>
-                            <Button  Padding="10,3" Command="{Binding Path=AddAllCargoCommand}">
-                                <Button.Content>
-                                    <StackPanel>
-                                        <font:ImageAwesome Icon="Solid_AngleDoubleRight" Height="20"/>
-                                    </StackPanel>
-                                </Button.Content>
-                            </Button>
+                            
+  
                         </UniformGrid>
                         <GroupBox Header="Для добавления" Grid.Column="1">
                             <ListBox  MinWidth="150"
@@ -85,22 +116,6 @@
                                 </i:Interaction.Triggers>
                             </ListBox>
                         </GroupBox>
-                        <UniformGrid Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left">
-                            <Button  Padding="10,3" Command="{Binding Path=RemoveAllCargoSelectedCollectionsCommand}">
-                                <Button.Content>
-                                    <StackPanel>
-                                        <font:ImageAwesome Icon="Solid_AngleDoubleLeft" Height="20"/>
-                                    </StackPanel>
-                                </Button.Content>
-                            </Button>
-                            <Button  Padding="10,3" Command="{Binding Path=RemoveCargoSelectedCommand}">
-                                <Button.Content>
-                                    <StackPanel>
-                                        <font:ImageAwesome Icon="Solid_AngleLeft" Height="20"/>
-                                    </StackPanel>
-                                </Button.Content>
-                            </Button>
-                        </UniformGrid>
                     </Grid>
                 </DockPanel>
             </GroupBox>

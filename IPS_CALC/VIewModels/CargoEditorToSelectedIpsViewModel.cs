@@ -49,16 +49,16 @@ namespace IPS_CALC.VIewModels
         /// <summary>
         /// Отображение свободных грузов 
         /// </summary>
-        private ObservableCollection<Models.Cargo> _Cargos;
+        private ObservableCollection<Models.Cargo> _FreeCargos;
         /// <summary>
         /// Отображение свободных грузов 
         /// </summary>
         public ObservableCollection<Models.Cargo> FreeCargos
         {
-            get => _Cargos;
+            get => _FreeCargos;
             set
             {
-                if (Set(ref _Cargos, value))
+                if (Set(ref _FreeCargos, value))
                 {
                     _Colletcion_Cargos_ViewSourse.Source = value;
                     OnPropertyChanged(nameof(CargosСollectionView));
@@ -253,8 +253,6 @@ namespace IPS_CALC.VIewModels
 
             //SelectedCargos.Clear();
 
-
-
             if (!Cargos_Selected_СollectionView.Any()) return;
 
             var cargos = Cargos_Selected_СollectionView;
@@ -264,15 +262,15 @@ namespace IPS_CALC.VIewModels
             foreach (var item in cargos)
             {
                 var cargo = item as Models.Cargo;
-                if (cargo != null)
+                if (cargo != null && !FreeCargos.Contains(cargo))
                     FreeCargos.Add(cargo);
-
+                
                 temp_coolections_cargo.Remove(cargo);
 
             }
 
-            this.SelectedCargos = new ObservableCollection<Models.Cargo>(FreeCargos.Where(c => temp_coolections_cargo.Contains(c)).ToArray());
-
+            //this.SelectedCargos = new ObservableCollection<Models.Cargo>(SelectedCargos.Where(c => temp_coolections_cargo.Contains(c)).ToArray());
+            this.SelectedCargos = new ObservableCollection<Models.Cargo>(temp_coolections_cargo);
 
         }
 

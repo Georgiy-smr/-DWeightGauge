@@ -20,7 +20,7 @@
     </i:Interaction.Triggers>
     <Grid>
         <TabControl>
-            <TabItem Header="Грузы">
+            <TabItem Header="Редактирование грузов">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto"/>

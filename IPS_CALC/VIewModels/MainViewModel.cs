@@ -29,7 +29,7 @@ namespace IPS_CALC.VIewModels
         private IRepository<Cargo> _RepositoryCargo;
         private readonly IMediator _Mediator;
         private readonly IEventService _EventService;
-        private string _Title = "БД ИПС";
+        private string _Title = "Калькулятор ГПМ";
 
         public string Title
         {
@@ -46,10 +46,6 @@ namespace IPS_CALC.VIewModels
             set => _testPropy = value;
         }
 
-
-
-
-
         /// <summary>
         /// Текущая модель предстваления
         /// </summary>
@@ -62,11 +58,12 @@ namespace IPS_CALC.VIewModels
             get => _CurrentViewModel;
             set
             {
-                if(Set(ref _CurrentViewModel, value))
-                    Title = $"{CurrentViewModel.GetType()}";
+                Set(ref _CurrentViewModel, value);
+                    //Title = $"{CurrentViewModel.GetType()}";
             }
         }
         #region ShowIpsViewCommnad
+
         private ICommand _CommandShowIPS;
         public ICommand ShowIpsViewCommnad
         {
@@ -109,8 +106,6 @@ namespace IPS_CALC.VIewModels
         }
         private async Task HandeNotificationAsync(string title) => await Task.Run(() => Title = title);
 
-
-
         public MainViewModel(IRepository<Classes.IPS> RepositoryIPS,
                              IRepository<Classes.Cargo> RepositoryCargo,
                              IUserDialog UserDialog,
@@ -133,9 +128,7 @@ namespace IPS_CALC.VIewModels
             switch (view_model)
             {
                 case IpsViewModel ipsViewModel:
-
-                    await IpsViewModelHandeNotificationAsync(ipsViewModel, PropName);
-
+                    await IpsViewModelHandeNotificationAsync(ipsViewModel, PropName).ConfigureAwait(false);
                     break;
                 default:
                     break;
