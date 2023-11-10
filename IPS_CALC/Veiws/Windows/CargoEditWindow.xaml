@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IPS_CALC.Veiws.Windows" mc:Ignorable="d"
         xmlns:vm="clr-namespace:IPS_CALC.VIewModels"
-        Title="CargoEditWindow" Height="450" Width="800"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        Title="CargoEditWindow" Height="310" Width="500"
         d:DataContext="{d:DesignInstance {x:Type vm:CargoEditViewModel}}"
         >
     <Grid>
         <DockPanel>
             <TextBlock Text="{Binding Id, StringFormat=Грузик:{0}}" 
                    DockPanel.Dock="Top"
-                   HorizontalAlignment="Center"
-                   Margin="10"/>
+                   HorizontalAlignment="Center"/>
 
             <UniformGrid Rows="1" 
                      DockPanel.Dock="Bottom"
@@ -31,17 +31,56 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
-                <TextBlock  Grid.Column="0"
+                <TextBlock  Grid.Row="0" Grid.Column="0"
                         Text="Название"
                         Margin="5"/>
-                <TextBox  Grid.Column="1" 
+                <TextBox  Grid.Row="0" Grid.Column="1" 
                       Text="{Binding Path=Name}"
                       Margin="3"/>
+
+                <TextBlock  Grid.Row="1" Grid.Column="0"
+                        Text="Условная масса"
+                        Margin="5"/>
+                <TextBox  Grid.Row="1" Grid.Column="1" 
+                      Text="{Binding Path=Weight}"
+                      Margin="3"/>
+                <TextBlock  Grid.Row="1" Grid.Column="2"
+                        Text="кг"
+                        Margin="5"/>
+
+                <TextBlock  Grid.Row="2" Grid.Column="0"
+                        Text="Плотность"
+                        Margin="5"/>
+                <TextBox  Grid.Row="2" Grid.Column="1" 
+                      Text="{Binding Path=Density}"
+                      Margin="3"/>
+                <TextBlock  Grid.Row="2" Grid.Column="2"
+                        Text="кг/м^3"
+                        Margin="5"/>
+
+                <TextBlock  Grid.Row="3" Grid.Column="0"
+                        Text="Тип"
+                        Margin="5"/>
+                <xctk:SplitButton Grid.Row="3" Grid.Column="1"
+                                  FontWeight="Regular"
+                                  Content="ХУЙ"
+                                  
+                    />
+
+
             </Grid>
         </DockPanel>
     </Grid>

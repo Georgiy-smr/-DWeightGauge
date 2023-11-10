@@ -2,6 +2,18 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "DotNetProjects.Extended.Wpf.Toolkit/5.0.106": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/DotNetProjects.Wpf.Extended.Toolkit.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/DotNetProjects.Wpf.Extended.Toolkit.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
       "FontAwesome/4.7.0": {
         "type": "package"
       },
@@ -3012,6 +3024,20 @@
     }
   },
   "libraries": {
+    "DotNetProjects.Extended.Wpf.Toolkit/5.0.106": {
+      "sha512": "EX5uG2TIlX3MvPPKiePY9rwsOuVqlUmCF4DKxouv+c4Y+YP3G/tEj3TDwKMlAoWVNX3slphHGURswuIJr6D28w==",
+      "type": "package",
+      "path": "dotnetprojects.extended.wpf.toolkit/5.0.106",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "dotnetprojects.extended.wpf.toolkit.5.0.106.nupkg.sha512",
+        "dotnetprojects.extended.wpf.toolkit.nuspec",
+        "lib/net40/DotNetProjects.Wpf.Extended.Toolkit.dll",
+        "lib/net6.0-windows7.0/DotNetProjects.Wpf.Extended.Toolkit.dll",
+        "lib/netcoreapp3.0/DotNetProjects.Wpf.Extended.Toolkit.dll"
+      ]
+    },
     "FontAwesome/4.7.0": {
       "sha512": "n4H/brfszElyoZ4kmGh8E75uqvLzLvFr3h2PFVdPH1LwUmWIpeqdaW2pcC4oZAhg7sESyObh0IZpAI8COCNeUg==",
       "type": "package",
@@ -8895,6 +8921,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "DotNetProjects.Extended.Wpf.Toolkit >= 5.0.106",
       "FontAwesome >= 4.7.0",
       "IPS.DAL >= 1.0.0",
       "MaterialDesignThemes >= 4.9.0",
@@ -8908,19 +8935,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Гоша и Аня\\.nuget\\packages\\": {}
+    "C:\\Users\\Альфапаскаль\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Гоша и Аня\\-DWeightGauge\\IPS_CALC\\IPS_CALC.csproj",
+      "projectUniqueName": "C:\\Users\\Альфапаскаль\\-DWeightGauge\\IPS_CALC\\IPS_CALC.csproj",
       "projectName": "IPS_CALC",
-      "projectPath": "C:\\Users\\Гоша и Аня\\-DWeightGauge\\IPS_CALC\\IPS_CALC.csproj",
-      "packagesPath": "C:\\Users\\Гоша и Аня\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Гоша и Аня\\-DWeightGauge\\IPS_CALC\\obj\\",
+      "projectPath": "C:\\Users\\Альфапаскаль\\-DWeightGauge\\IPS_CALC\\IPS_CALC.csproj",
+      "packagesPath": "C:\\Users\\Альфапаскаль\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Альфапаскаль\\-DWeightGauge\\IPS_CALC\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Гоша и Аня\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Альфапаскаль\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8934,8 +8966,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Гоша и Аня\\-DWeightGauge\\IPS.DAL\\IPS.DAL.csproj": {
-              "projectPath": "C:\\Users\\Гоша и Аня\\-DWeightGauge\\IPS.DAL\\IPS.DAL.csproj"
+            "C:\\Users\\Альфапаскаль\\-DWeightGauge\\IPS.DAL\\IPS.DAL.csproj": {
+              "projectPath": "C:\\Users\\Альфапаскаль\\-DWeightGauge\\IPS.DAL\\IPS.DAL.csproj"
             }
           }
         }
@@ -8950,6 +8982,10 @@
       "netcoreapp3.1": {
         "targetAlias": "netcoreapp3.1",
         "dependencies": {
+          "DotNetProjects.Extended.Wpf.Toolkit": {
+            "target": "Package",
+            "version": "[5.0.106, )"
+          },
           "FontAwesome": {
             "target": "Package",
             "version": "[4.7.0, )"
@@ -9008,7 +9044,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   },

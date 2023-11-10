@@ -16,12 +16,30 @@ namespace IPS_CALC.VIewModels
             set => Set(ref _Name, value);
         }
 
+        private decimal _Weight;
+
+        public decimal Weight
+        {
+            get => _Weight;
+            set => Set(ref _Weight, value);
+        }
+
+        private decimal _Density;
+
+        public decimal Density
+        {
+            get => _Density;
+            set => Set(ref _Density, value);
+        }
+
         public int Id { get; set; }
 
         public CargoEditViewModel(Cargo Cargo)
         {
             Name = Cargo.Name;
             Id = Cargo.Id;
+            Weight = Cargo.Weight;
+            Density = Cargo.Density;
         }
     }
 }

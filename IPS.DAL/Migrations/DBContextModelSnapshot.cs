@@ -25,12 +25,18 @@ namespace IPS.DAL.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<decimal>("Density")
+                        .HasColumnType("decimal(18,6)");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Type")
+                        .HasColumnType("int");
+
                     b.Property<decimal>("Weight")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18,6)");
 
                     b.HasKey("Id");
 
@@ -44,12 +50,30 @@ namespace IPS.DAL.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<decimal>("AlfaCoefficient")
+                        .HasColumnType("decimal(18,3)");
+
+                    b.Property<decimal>("BettaCoefficient")
+                        .HasColumnType("decimal(18,3)");
+
+                    b.Property<decimal>("Density")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("LowLimit")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("MaxLimit")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Square")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18,7)");
+
+                    b.Property<decimal>("Weight")
+                        .HasColumnType("decimal(18,7)");
 
                     b.HasKey("Id");
 

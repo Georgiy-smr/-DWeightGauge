@@ -95,13 +95,39 @@
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
 
-                            <TextBlock  Grid.Column="0" Grid.Row="0" Text="Модификация" Margin="5"/>
+                            <TextBlock  Grid.Column="0" Grid.Row="0" Text="Название" Margin="5"/>
                             <TextBlock  Grid.Column="1" Grid.Row="0"  Text="{Binding SelectedIps.Name}" Margin="5"/>
 
                             <TextBlock  Grid.Column="0" Grid.Row="1" Text="Площадь" Margin="5"/>
                             <TextBlock  Grid.Column="1" Grid.Row="1"  Text="{Binding SelectedIps.Square}" Margin="5"/>
+
+                            <TextBlock  Grid.Column="0" Grid.Row="2" Text="ВПИ" Margin="5"/>
+                            <TextBlock  Grid.Column="1" Grid.Row="2"  Text="{Binding SelectedIps.MaxLimit}" Margin="5"/>
+
+
+                            <TextBlock  Grid.Column="0" Grid.Row="3" Text="НПИ" Margin="5"/>
+                            <TextBlock  Grid.Column="1" Grid.Row="3"  Text="{Binding SelectedIps.LowLimit}" Margin="5"/>
+
+                            <TextBlock  Grid.Column="0" Grid.Row="4" Text="Масса поршня" Margin="5"/>
+                            <TextBlock  Grid.Column="1" Grid.Row="4"  Text="{Binding SelectedIps.Weight}" Margin="5"/>
+
+                            <TextBlock  Grid.Column="0" Grid.Row="5" Text="Плотность" Margin="5"/>
+                            <TextBlock  Grid.Column="1" Grid.Row="5"  Text="{Binding SelectedIps.Density}" Margin="5"/>
+
+                            <TextBlock  Grid.Column="0" Grid.Row="6" Text="альфа " Margin="5"/>
+                            <TextBlock  Grid.Column="1" Grid.Row="6"  Text="{Binding SelectedIps.AlfaCoefficient}" Margin="5"/>
+
+                            <TextBlock  Grid.Column="0" Grid.Row="7" Text="бетта" Margin="5"/>
+                            <TextBlock  Grid.Column="1" Grid.Row="7"  Text="{Binding SelectedIps.BettaCoefficient}" Margin="5"/>
+
+
                         </Grid>
 
 

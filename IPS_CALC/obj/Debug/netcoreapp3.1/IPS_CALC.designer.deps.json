@@ -6,6 +6,14 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "DotNetProjects.Extended.Wpf.Toolkit/5.0.106": {
+        "runtime": {
+          "lib/netcoreapp3.0/DotNetProjects.Wpf.Extended.Toolkit.dll": {
+            "assemblyVersion": "5.0.106.0",
+            "fileVersion": "5.0.106.0"
+          }
+        }
+      },
       "FontAwesome/4.7.0": {},
       "FontAwesome.WPF/4.7.0.9": {
         "runtime": {
@@ -2336,6 +2344,13 @@
     }
   },
   "libraries": {
+    "DotNetProjects.Extended.Wpf.Toolkit/5.0.106": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EX5uG2TIlX3MvPPKiePY9rwsOuVqlUmCF4DKxouv+c4Y+YP3G/tEj3TDwKMlAoWVNX3slphHGURswuIJr6D28w==",
+      "path": "dotnetprojects.extended.wpf.toolkit/5.0.106",
+      "hashPath": "dotnetprojects.extended.wpf.toolkit.5.0.106.nupkg.sha512"
+    },
     "FontAwesome/4.7.0": {
       "type": "package",
       "serviceable": true,

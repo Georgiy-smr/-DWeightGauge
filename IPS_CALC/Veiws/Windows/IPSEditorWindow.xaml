@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:IPS_CALC.VIewModels"
         xmlns:local="clr-namespace:IPS_CALC.Veiws.Windows" mc:Ignorable="d"
-        Title="Добавление ИПС" Height="450" Width="800"
+        Title="Добавление ИПС" Height="310" Width="500"
         d:DataContext="{d:DesignInstance {x:Type vm:IPSEditorViewModel}}">
     <DockPanel>
         <TextBlock Text="{Binding IPS_id, StringFormat=ИПС:{0}}" 
@@ -29,8 +29,16 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
@@ -40,6 +48,77 @@
             <TextBox  Grid.Column="1" 
                       Text="{Binding Path=IpsName}"
                       Margin="3"/>
+
+            <TextBlock  Grid.Row="1" Grid.Column="0"
+                        Text="Верхний предел измерений"
+                        Margin="5"/>
+            <TextBox  Grid.Row="1" Grid.Column="1" 
+                      Text="{Binding Path=MaxLimit}"
+                      Margin="3"/>
+            <TextBlock  Grid.Row="1" Grid.Column="2"
+                        Text="МПа"
+                        Margin="5"/>
+
+            <TextBlock  Grid.Row="2" Grid.Column="0"
+                        Text="Нижний предел измерений"
+                        Margin="5"/>
+            <TextBox  Grid.Row="2" Grid.Column="1" 
+                      Text="{Binding Path=LowLimit}"
+                      Margin="3"/>
+            <TextBlock  Grid.Row="2" Grid.Column="2"
+                        Text="МПа"
+                        Margin="5"/>
+
+            <TextBlock  Grid.Row="3" Grid.Column="0"
+                        Text="Эффективная площадь поршня"
+                        Margin="5"/>
+            <TextBox  Grid.Row="3" Grid.Column="1" 
+                      Text="{Binding Path=Square}"
+                      Margin="3"/>
+            <TextBlock  Grid.Row="3" Grid.Column="2"
+                        Text="См2"
+                        Margin="5"/>
+
+            <TextBlock  Grid.Row="4" Grid.Column="0"
+                        Text="Масса поршня"
+                        Margin="5"/>
+            <TextBox  Grid.Row="4" Grid.Column="1" 
+                      Text="{Binding Path=Weight}"
+                      Margin="3"/>
+            <TextBlock  Grid.Row="4" Grid.Column="2"
+                        Text="Кг"
+                        Margin="5"/>
+
+            <TextBlock  Grid.Row="5" Grid.Column="0"
+                        Text="Плотность"
+                        Margin="5"/>
+            <TextBox  Grid.Row="5" Grid.Column="1" 
+                      Text="{Binding Path=Dencity}"
+                      Margin="3"/>
+            <TextBlock  Grid.Row="5" Grid.Column="2"
+                        Text="Кг/м3"
+                        Margin="5"/>
+
+            <TextBlock  Grid.Row="6" Grid.Column="0"
+                        Text="Коэффициент a"
+                        Margin="5"/>
+            <TextBox  Grid.Row="6" Grid.Column="1" 
+                      Text="{Binding Path=a_Coef}"
+                      Margin="3"/>
+            <TextBlock  Grid.Row="6" Grid.Column="2"
+                        Text="x10^-6"
+                        Margin="5"/>
+
+            <TextBlock  Grid.Row="7" Grid.Column="0"
+                        Text="Коэффициент b"
+                        Margin="5"/>
+            <TextBox  Grid.Row="7" Grid.Column="1" 
+                      Text="{Binding Path=b_Coef}"
+                      Margin="3"/>
+            <TextBlock  Grid.Row="7" Grid.Column="2"
+                        Text="x10^-13"
+                        Margin="5"/>
+
         </Grid>
     </DockPanel>
 

@@ -46,7 +46,8 @@ namespace IPS_CALC.Services
             if (cargo_Editor_Window.ShowDialog() != true) return false;
 
             cargo.Name = cargoEditorViewModel.Name;
-
+            cargo.Density= cargoEditorViewModel.Density;
+            cargo.Weight= cargoEditorViewModel.Weight;
             return true;
         }
 
@@ -64,7 +65,13 @@ namespace IPS_CALC.Services
             if (ips_editor_window.ShowDialog() != true) return false;
 
             iPS.Name = ips_editor_ViewModel.IpsName;
-
+            iPS.MaxLimit= ips_editor_ViewModel.MaxLimit;
+            iPS.LowLimit = ips_editor_ViewModel.LowLimit;
+            iPS.Square = ips_editor_ViewModel.Square;
+            iPS.Weight= ips_editor_ViewModel.Weight;
+            iPS.Density = ips_editor_ViewModel.Dencity;
+            iPS.AlfaCoefficient = ips_editor_ViewModel.a_Coef;
+            iPS.BettaCoefficient = ips_editor_ViewModel.b_Coef;
             return true;
         }
 

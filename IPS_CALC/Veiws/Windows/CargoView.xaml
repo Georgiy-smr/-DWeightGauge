@@ -75,6 +75,9 @@
                             <TextBlock  Grid.Column="0" Grid.Row="1" Text="Масса" Margin="5"/>
                             <TextBlock  Grid.Column="1" Grid.Row="1"  Text="{Binding CargoSelected.Weight}" Margin="5"/>
 
+                            <TextBlock  Grid.Column="0" Grid.Row="2" Text="Плотность" Margin="5"/>
+                            <TextBlock  Grid.Column="1" Grid.Row="2"  Text="{Binding CargoSelected.Density}" Margin="5"/>
+
                         </Grid>
                     </DockPanel>
                 </Grid>

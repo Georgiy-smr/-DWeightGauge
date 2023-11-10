@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v3.1": {
       "IPS_CALC/1.0.0": {
         "dependencies": {
+          "DotNetProjects.Extended.Wpf.Toolkit": "5.0.106",
           "FontAwesome": "4.7.0",
           "IPS.DAL": "1.0.0",
           "MaterialDesignThemes": "4.9.0",
@@ -21,6 +22,14 @@
         },
         "runtime": {
           "IPS_CALC.dll": {}
+        }
+      },
+      "DotNetProjects.Extended.Wpf.Toolkit/5.0.106": {
+        "runtime": {
+          "lib/netcoreapp3.0/DotNetProjects.Wpf.Extended.Toolkit.dll": {
+            "assemblyVersion": "5.0.106.0",
+            "fileVersion": "5.0.106.0"
+          }
         }
       },
       "FontAwesome/4.7.0": {},
@@ -1799,6 +1808,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "DotNetProjects.Extended.Wpf.Toolkit/5.0.106": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EX5uG2TIlX3MvPPKiePY9rwsOuVqlUmCF4DKxouv+c4Y+YP3G/tEj3TDwKMlAoWVNX3slphHGURswuIJr6D28w==",
+      "path": "dotnetprojects.extended.wpf.toolkit/5.0.106",
+      "hashPath": "dotnetprojects.extended.wpf.toolkit.5.0.106.nupkg.sha512"
     },
     "FontAwesome/4.7.0": {
       "type": "package",
