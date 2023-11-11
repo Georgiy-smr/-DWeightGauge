@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IPS_CALC.EnumsAndDictinary;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -25,9 +26,14 @@ namespace IPS_CALC.VIewModels.Base
             return true;
         }
 
-
-
-
+        public Dictionary<CargoType, string> CargoEnumDictinary { get; set; } = new Dictionary<CargoType, string>()
+        {
+            { CargoType.Cargo, "Груз" },
+            { CargoType.PlateIsTransitional, "Тарелка переходная" },
+            { CargoType.Bell, "Колокол" },
+            { CargoType.Сup, "Чаша" },
+            { CargoType.Kettlebell, "Гиря" }
+        };
 
     }
 }

@@ -3,6 +3,8 @@ using IPS_CALC.VIewModels.Base;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using IPS_CALC.EnumsAndDictinary;
+
 
 namespace IPS_CALC.VIewModels
 {
@@ -32,6 +34,13 @@ namespace IPS_CALC.VIewModels
             set => Set(ref _Density, value);
         }
 
+        private CargoType _CargoTypeSelected;
+        public CargoType CargoTypeSelected
+        {
+            get => _CargoTypeSelected;
+            set => Set(ref _CargoTypeSelected, value);
+        }
+
         public int Id { get; set; }
 
         public CargoEditViewModel(Cargo Cargo)
@@ -40,6 +49,7 @@ namespace IPS_CALC.VIewModels
             Id = Cargo.Id;
             Weight = Cargo.Weight;
             Density = Cargo.Density;
+            CargoTypeSelected = (CargoType)Cargo.Type;
         }
     }
 }

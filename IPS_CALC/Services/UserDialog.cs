@@ -46,8 +46,9 @@ namespace IPS_CALC.Services
             if (cargo_Editor_Window.ShowDialog() != true) return false;
 
             cargo.Name = cargoEditorViewModel.Name;
-            cargo.Density= cargoEditorViewModel.Density;
-            cargo.Weight= cargoEditorViewModel.Weight;
+            cargo.Density = cargoEditorViewModel.Density;
+            cargo.Weight = cargoEditorViewModel.Weight;
+            cargo.Type = (int)cargoEditorViewModel.CargoTypeSelected;
             return true;
         }
 

@@ -14,6 +14,7 @@ using System.ComponentModel;
 using System.Windows.Data;
 using IPS_CALC.Services.Interfaces;
 using IPS_CALC.Services;
+using System.Linq;
 
 namespace IPS_CALC.VIewModels
 {
@@ -110,7 +111,7 @@ namespace IPS_CALC.VIewModels
 
         private bool Can_NAME_CommandExecute(Object p) => true;
 
-        private void On_RedactCargoSelected_CommandExecuted(Object p) 
+        private void On_RedactCargoSelected_CommandExecuted(Object p)
         {
             var cargo_redact = CargoSelected;
 
@@ -121,6 +122,7 @@ namespace IPS_CALC.VIewModels
             CargosCollections = new ObservableCollection<Cargo>(_RepositoryCargo.Items);
 
             CargoSelected = cargo_redact;
+            OnPropertyChanged(PropertyName: nameof(CargoSelected));
         }
 
 
@@ -130,15 +132,23 @@ namespace IPS_CALC.VIewModels
 
 
 
-
-
-
+        public string CargoType => _CargoSelected != null ? CargoEnumDictinary.ElementAt(_CargoSelected.Type).Value : null;
 
         private Cargo _CargoSelected;
         /// <summary>
         /// Selected Cargo 
         /// </summary>
-        public Cargo CargoSelected { get => _CargoSelected; set => Set(ref _CargoSelected, value);}
+        public Cargo CargoSelected
+        { 
+            get => _CargoSelected;
+            set 
+            {
+                OnPropertyChanged(PropertyName: nameof(CargoType));
+                if (Set(ref _CargoSelected, value))
+                    OnPropertyChanged(PropertyName: nameof(CargoType));
+                
+            }
+        }
 
         #region Remove Cargo
 

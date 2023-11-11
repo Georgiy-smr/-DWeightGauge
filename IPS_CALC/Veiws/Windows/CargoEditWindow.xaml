@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IPS_CALC.Veiws.Windows" mc:Ignorable="d"
         xmlns:vm="clr-namespace:IPS_CALC.VIewModels"
-        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:toolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
         Title="CargoEditWindow" Height="310" Width="500"
         d:DataContext="{d:DesignInstance {x:Type vm:CargoEditViewModel}}"
         >
@@ -74,11 +74,25 @@
                 <TextBlock  Grid.Row="3" Grid.Column="0"
                         Text="Тип"
                         Margin="5"/>
-                <xctk:SplitButton Grid.Row="3" Grid.Column="1"
-                                  FontWeight="Regular"
-                                  Content="ХУЙ"
-                                  
-                    />
+                <ComboBox  
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Margin="5"
+                    ItemsSource="{Binding CargoEnumDictinary}"
+                    SelectedValue="{Binding CargoTypeSelected}"
+                    DisplayMemberPath="Value"
+                    SelectedValuePath="Key">
+                </ComboBox>
+                <!--<toolkit:SplitButton Grid.Row="3" Grid.Column="1"
+                                  FontWeight="Regular">
+
+                    <toolkit:SplitButton.DropDownContent>
+                        <CompositeCollection>
+                            <CollectionContainer Collection="{Binding CargoEnumDictinary.Values}"/>
+                        </CompositeCollection>
+                    </toolkit:SplitButton.DropDownContent>
+                </toolkit:SplitButton>-->
+
 
 
             </Grid>

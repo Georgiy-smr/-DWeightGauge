@@ -67,6 +67,7 @@
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
 
                             <TextBlock  Grid.Column="0" Grid.Row="0" Text="название" Margin="5"/>
@@ -77,6 +78,9 @@
 
                             <TextBlock  Grid.Column="0" Grid.Row="2" Text="Плотность" Margin="5"/>
                             <TextBlock  Grid.Column="1" Grid.Row="2"  Text="{Binding CargoSelected.Density}" Margin="5"/>
+
+                            <TextBlock  Grid.Column="0" Grid.Row="3" Text="Тип" Margin="5"/>
+                            <TextBlock  Grid.Column="1" Grid.Row="3"  Text="{Binding CargoType}" Margin="5"/>
 
                         </Grid>
                     </DockPanel>
