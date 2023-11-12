@@ -6,7 +6,7 @@ namespace IPS_CALC.Services.Interfaces
 {
     internal interface IUserDialog
     {
-        bool Edit(object item);
+        bool Edit(object item, IDictinaryEnumConvertor DictinaryEnum = null);
         bool Confirm(string Message, string Caption, bool Exlamination = false);
 
         bool RedactToAdded(object item, IEnumerable<object> Additionally);

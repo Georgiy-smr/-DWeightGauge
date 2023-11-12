@@ -16,6 +16,7 @@ namespace IPS_CALC.Services
              .AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()))
              .AddSingleton<Dispatcher>(provider => Dispatcher.CurrentDispatcher)
              .AddSingleton<IEventService, EventService>()
-            ;
+             .AddSingleton<IDictinaryEnumConvertor, DictinaryEnumConvertor>()
+             ;
     }
 }

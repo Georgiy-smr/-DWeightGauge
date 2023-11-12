@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using IPS_CALC.EnumsAndDictinary;
+using IPS_CALC.Services.Interfaces;
+using System.ComponentModel;
 
 
 namespace IPS_CALC.VIewModels
@@ -11,7 +13,7 @@ namespace IPS_CALC.VIewModels
     internal class CargoEditViewModel : ViewModel
     {
         private string _Name;
-
+        private readonly IDictinaryEnumConvertor _EnumConvertor;
         public string Name
         {
             get => _Name;
@@ -41,15 +43,19 @@ namespace IPS_CALC.VIewModels
             set => Set(ref _CargoTypeSelected, value);
         }
 
+        public Dictionary<CargoType, string> CargoEnumDictinary => _EnumConvertor.CargoEnumDictinary;
+
         public int Id { get; set; }
 
-        public CargoEditViewModel(Cargo Cargo)
+        public CargoEditViewModel(Cargo Cargo, IDictinaryEnumConvertor EnumConvertor)
         {
+            _EnumConvertor = EnumConvertor;
+
             Name = Cargo.Name;
             Id = Cargo.Id;
             Weight = Cargo.Weight;
             Density = Cargo.Density;
-            CargoTypeSelected = (CargoType)Cargo.Type;
+            CargoTypeSelected = _EnumConvertor.CargoTypeToEnum(Cargo.Type);
         }
     }
 }

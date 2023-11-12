@@ -14,7 +14,7 @@ namespace IPS_CALC.Services
 {
     internal class UserDialog : IUserDialog
     {
-        public bool Edit(object item)
+        public bool Edit(object item, IDictinaryEnumConvertor dictinaryEnum = null)
         {
             if(item == null)
                 throw new ArgumentNullException(nameof(item));
@@ -29,12 +29,12 @@ namespace IPS_CALC.Services
                     return EditIPS(IPS);
 
                 case Cargo Cargo:
-                    return EditCargo(Cargo);
+                    return EditCargo(Cargo, dictinaryEnum);
             }
         }
-        private bool EditCargo(Cargo cargo)
+        private bool EditCargo(Cargo cargo, IDictinaryEnumConvertor dictinaryEnum)
         {
-            var cargoEditorViewModel = new CargoEditViewModel(cargo);
+            var cargoEditorViewModel = new CargoEditViewModel(cargo, dictinaryEnum);
 
             var cargo_Editor_Window = new CargoEditWindow
             {

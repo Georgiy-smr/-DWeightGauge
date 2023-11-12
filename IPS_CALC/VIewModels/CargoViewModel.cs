@@ -20,6 +20,7 @@ namespace IPS_CALC.VIewModels
 {
     internal class CargoViewModel : ViewModel
     {
+        private readonly IDictinaryEnumConvertor _DictinaryEnumConvertor;
         private IUserDialog _UserDialog;
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace IPS_CALC.VIewModels
         {
             var new_cargo = new Cargo();
 
-            if (!_UserDialog.Edit(new_cargo)) return;
+            if (!_UserDialog.Edit(new_cargo, _DictinaryEnumConvertor)) return;
 
             CargosCollections.Add(_RepositoryCargo.Add(new_cargo));
 
@@ -115,7 +116,7 @@ namespace IPS_CALC.VIewModels
         {
             var cargo_redact = CargoSelected;
 
-            if (!_UserDialog.Edit(cargo_redact)) return;
+            if (!_UserDialog.Edit(cargo_redact, _DictinaryEnumConvertor)) return;
 
             _RepositoryCargo.Update(cargo_redact);
 
@@ -128,11 +129,7 @@ namespace IPS_CALC.VIewModels
 
         #endregion
 
-
-
-
-
-        public string CargoType => _CargoSelected != null ? CargoEnumDictinary.ElementAt(_CargoSelected.Type).Value : null;
+        public string CargoType => _CargoSelected != null ? _DictinaryEnumConvertor.CargoTypeToString(_CargoSelected.Type) : null;
 
         private Cargo _CargoSelected;
         /// <summary>
@@ -175,8 +172,13 @@ namespace IPS_CALC.VIewModels
         #endregion
 
 
-        public CargoViewModel(IRepository<Cargo> RepositoryCargo, IUserDialog UserDialog)
+        public CargoViewModel(
+            IRepository<Cargo> RepositoryCargo, 
+            IUserDialog UserDialog,
+            IDictinaryEnumConvertor DictinaryEnumConvertor
+            )
         {
+            _DictinaryEnumConvertor = DictinaryEnumConvertor;
             _UserDialog = UserDialog;
             _RepositoryCargo = RepositoryCargo;
             _CargoViewSource = new CollectionViewSource

@@ -29,6 +29,7 @@ namespace IPS_CALC.VIewModels
         private IRepository<Cargo> _RepositoryCargo;
         private readonly IMediator _Mediator;
         private readonly IEventService _EventService;
+        private readonly IDictinaryEnumConvertor _EnumDictinaryConvertor;
         private string _Title = "Калькулятор ГПМ";
 
         public string Title
@@ -90,7 +91,7 @@ namespace IPS_CALC.VIewModels
         }
         private bool CanShowCargosCommandExecute(Object p) => !(CurrentViewModel is CargoViewModel);
 
-        private void OnShowCargosCommandExecuted(Object p) => CurrentViewModel = new CargoViewModel(_RepositoryCargo, _UserDialog);
+        private void OnShowCargosCommandExecuted(Object p) => CurrentViewModel = new CargoViewModel(_RepositoryCargo, _UserDialog, _EnumDictinaryConvertor);
 
         #endregion
 
@@ -111,7 +112,8 @@ namespace IPS_CALC.VIewModels
                              IUserDialog UserDialog,
                              IMediator Mediator,
                              Dispatcher Dispatcher,
-                             IEventService EventService)
+                             IEventService EventService,
+                             IDictinaryEnumConvertor EnumDictinaryConvertor)
 		{
             _UserDialog = UserDialog;
 			_RepositoryIPS = RepositoryIPS;
@@ -119,6 +121,7 @@ namespace IPS_CALC.VIewModels
             _Mediator = Mediator;
             _Dispatcher = Dispatcher;
             _EventService = EventService;
+            _EnumDictinaryConvertor = EnumDictinaryConvertor;
             _EventService.SomeEvent += _EventService_SomeEvent;
         }
 

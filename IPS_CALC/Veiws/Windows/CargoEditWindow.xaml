@@ -83,18 +83,6 @@
                     DisplayMemberPath="Value"
                     SelectedValuePath="Key">
                 </ComboBox>
-                <!--<toolkit:SplitButton Grid.Row="3" Grid.Column="1"
-                                  FontWeight="Regular">
-
-                    <toolkit:SplitButton.DropDownContent>
-                        <CompositeCollection>
-                            <CollectionContainer Collection="{Binding CargoEnumDictinary.Values}"/>
-                        </CompositeCollection>
-                    </toolkit:SplitButton.DropDownContent>
-                </toolkit:SplitButton>-->
-
-
-
             </Grid>
         </DockPanel>
     </Grid>
