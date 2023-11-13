@@ -1,20 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
+using System.Xml.Linq;
 
 namespace IPS_CALC.EnumsAndDictinary
 {
   public enum CargoType
     {
-        //груз
+        [Display(Name = "Груз")]
         Cargo,
-        //Тарелка переходная
+        [Display(Name = "Тарелка переходная")]
         PlateIsTransitional,
-        //Колокол
+        [Display(Name = "Колокол")]
         Bell,
-        //Чаша
+        [Display(Name = "Чаша")]
         Сup,
-        //Гиря
+        [Display(Name = "Гиря")]
         Kettlebell
     }
 

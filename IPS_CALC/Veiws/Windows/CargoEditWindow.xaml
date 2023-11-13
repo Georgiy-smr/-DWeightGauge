@@ -7,8 +7,13 @@
         xmlns:vm="clr-namespace:IPS_CALC.VIewModels"
         xmlns:toolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
         Title="CargoEditWindow" Height="310" Width="500"
-        d:DataContext="{d:DesignInstance {x:Type vm:CargoEditViewModel}}"
-        >
+        xmlns:EnumConvertor="clr-namespace:IPS_CALC.Converters"
+        d:DataContext="{d:DesignInstance {x:Type vm:CargoEditViewModel}}">
+    
+    <Window.Resources>
+        <EnumConvertor:GeneralEnumConverter x:Key="GeneralEnumConverter"/>
+    </Window.Resources>
+
     <Grid>
         <DockPanel>
             <TextBlock Text="{Binding Id, StringFormat=Грузик:{0}}" 
@@ -74,15 +79,43 @@
                 <TextBlock  Grid.Row="3" Grid.Column="0"
                         Text="Тип"
                         Margin="5"/>
-                <ComboBox  
+                <!--<ComboBox  
                     Grid.Row="3"
                     Grid.Column="1"
                     Margin="5"
-                    ItemsSource="{Binding CargoEnumDictinary}"
+                    ItemsSource="{Binding CargoEnumDictionary}"
                     SelectedValue="{Binding CargoTypeSelected}"
                     DisplayMemberPath="Value"
-                    SelectedValuePath="Key">
-                </ComboBox>
+                    SelectedValuePath="Key"
+                    Tag="Key">
+                </ComboBox>-->
+
+                <toolkit:SplitButton Grid.Row="3" Grid.Column="1"
+                                     Content="{Binding CargoTypeSelected, Converter={StaticResource GeneralEnumConverter}}"
+                                     Template="{StaticResource ComboButtonControlTemplate}"
+                                     IsOpen="{Binding IsNameTypeSbOpened, Mode=TwoWay}">
+
+                    <toolkit:SplitButton.DropDownContent>
+                        <ItemsControl ItemsSource="{Binding EnumTypeCollections}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Button
+                                        Command="{Binding ElementChangedCommand}">
+                                        <TextBlock TextTrimming="WordEllipsis"
+                                            Margin="1 0 0 0"
+                                            Text="{Binding Element, Converter={StaticResource GeneralEnumConverter}}"/>
+                                    </Button>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </toolkit:SplitButton.DropDownContent>
+
+                </toolkit:SplitButton>
+                
+                
+                
+
+
             </Grid>
         </DockPanel>
     </Grid>

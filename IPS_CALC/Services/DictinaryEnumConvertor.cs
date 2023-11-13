@@ -8,9 +8,10 @@ using System.Text;
 
 namespace IPS_CALC.Services
 {
-    internal class DictinaryEnumConvertor : IDictinaryEnumConvertor
+    internal class DictinaryEnumConvertor 
+        : IDictinaryEnumConvertor
     {
-        public Dictionary<CargoType, string> CargoEnumDictinary { get; } = new Dictionary<CargoType, string>()
+        public Dictionary<CargoType, string> CargoEnumDictionary { get; } = new Dictionary<CargoType, string>()
         {
             { CargoType.Cargo, "Груз" },
             { CargoType.PlateIsTransitional, "Тарелка переходная" },
@@ -19,8 +20,8 @@ namespace IPS_CALC.Services
             { CargoType.Kettlebell, "Гиря" }
         };
         public string CargoTypeToString(int CargoIntType) =>
-            CargoIntType >= 0  && CargoEnumDictinary.Count - 1 >= CargoIntType ? 
-            CargoEnumDictinary.ElementAt(CargoIntType).Value : null;
+            CargoIntType >= 0  && CargoEnumDictionary.Count - 1 >= CargoIntType ? 
+            CargoEnumDictionary.ElementAt(CargoIntType).Value : null;
         public CargoType CargoTypeToEnum(int CargoIntType) => (CargoType)CargoIntType;
     }
 }

@@ -458,3 +458,5 @@ C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\bin\Debug\netcoreapp3.1
 C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\bin\Debug\netcoreapp3.1\FontAwesome5.dll
 C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\bin\Debug\netcoreapp3.1\DotNetProjects.Wpf.Extended.Toolkit.dll
 C:\Users\Гоша и Аня\-DWeightGauge\IPS_CALC\bin\Debug\netcoreapp3.1\DotNetProjects.Wpf.Extended.Toolkit.dll
+C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1\Template\Comboboxes.baml
+C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1\Template\Vectors.baml

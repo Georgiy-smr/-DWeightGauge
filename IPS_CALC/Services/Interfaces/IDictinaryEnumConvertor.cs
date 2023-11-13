@@ -7,7 +7,7 @@ namespace IPS_CALC.Services.Interfaces
 {
     internal interface IDictinaryEnumConvertor
     {
-        Dictionary<CargoType, string> CargoEnumDictinary { get; }
+        Dictionary<CargoType, string> CargoEnumDictionary { get; }
 
         CargoType CargoTypeToEnum(int CargoIntType);
         string CargoTypeToString(int CargoIntType);

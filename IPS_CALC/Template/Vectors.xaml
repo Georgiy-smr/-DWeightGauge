@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Arrow Down-->
+    <Style x:Key="ArrowDown" TargetType="{x:Type Path}">
+        <Setter Property="Data" Value="M6.94468 0L7.76312 0.818439L3.88156 4.7L0 0.818439L0.818439 0L3.88156 3.06312L6.94468 0Z"/>
+        <Setter Property="Stretch" Value="None"/>
+    </Style>
+
+</ResourceDictionary>

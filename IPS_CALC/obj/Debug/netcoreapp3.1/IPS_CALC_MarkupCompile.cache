@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Гоша и Аня\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1\
+C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1\
 IPS_CALC
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
-C:\Users\Гоша и Аня\-DWeightGauge\IPS_CALC\App.xaml
-11192572854
+C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\App.xaml
+13-1771369412
 
-38113726904
-253-1027504683
-Inftastructure\Commands\AppCommands.xaml;Style\Main.xaml;Template\ModelMainTemplate.xaml;Veiws\IPsView.xaml;Veiws\Windows\CargoEditToSelectedIpsWindow.xaml;Veiws\Windows\CargoEditWindow.xaml;Veiws\Windows\CargoRemoveToSelectedIpsWindow.xaml;Veiws\Windows\CargoView.xaml;Veiws\Windows\IPSEditorWindow.xaml;Veiws\Windows\IpsRedactWindow.xaml;Veiws\Windows\MainWindow.xaml;
+40-335942068
+253-1103759907
+Inftastructure\Commands\AppCommands.xaml;Style\Main.xaml;Template\Comboboxes.xaml;Template\ModelMainTemplate.xaml;Template\Vectors.xaml;Veiws\IPsView.xaml;Veiws\Windows\CargoEditToSelectedIpsWindow.xaml;Veiws\Windows\CargoEditWindow.xaml;Veiws\Windows\CargoRemoveToSelectedIpsWindow.xaml;Veiws\Windows\CargoView.xaml;Veiws\Windows\IPSEditorWindow.xaml;Veiws\Windows\IpsRedactWindow.xaml;Veiws\Windows\MainWindow.xaml;
 
 False
 
