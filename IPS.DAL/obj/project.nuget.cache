@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "EuNciO+0Y0lFbhX7TmgaOwY3r6TWa3DSUNEpiqOVi4aH+MiaSu4WBRy9mfDgyDl1Qh+witHu3jrjaYrrgKaG6Q==",
+  "dgSpecHash": "t19V7DOnJUF8bVxAm6BN4sHe+79bro7/go/Dqyzj9QlqIjlfSd1r89Up9m4rpMbMzJ9682aKfcwzols2JSe7PQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Альфапаскаль\\-DWeightGauge\\IPS.DAL\\IPS.DAL.csproj",
   "expectedPackageFiles": [
@@ -135,7 +135,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Пакет \"FontAwesome.WPF 4.7.0.9\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\", а не целевой платформы проекта \".NETStandard,Version=v2.1\". Этот пакет может быть не полностью совместим с вашим проектом.",
+      "message": "Package 'FontAwesome.WPF 4.7.0.9' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework '.NETStandard,Version=v2.1'. This package may not be fully compatible with your project.",
       "libraryId": "FontAwesome.WPF",
       "targetGraphs": [
         ".NETStandard,Version=v2.1"

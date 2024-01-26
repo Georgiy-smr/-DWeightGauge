@@ -44,3 +44,4 @@ C:\Users\Альфапаскаль\-DWeightGauge\IPS.DAL\obj\Debug\netstandard2.1
 C:\Users\Альфапаскаль\-DWeightGauge\IPS.DAL\obj\Debug\netstandard2.1\IPS.DAL.csproj.CopyComplete
 C:\Users\Альфапаскаль\-DWeightGauge\IPS.DAL\obj\Debug\netstandard2.1\IPS.DAL.dll
 C:\Users\Альфапаскаль\-DWeightGauge\IPS.DAL\obj\Debug\netstandard2.1\IPS.DAL.pdb
+C:\Users\Альфапаскаль\-DWeightGauge\IPS.DAL\obj\Debug\netstandard2.1\IPS.DAL.sourcelink.json

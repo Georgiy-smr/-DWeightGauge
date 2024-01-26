@@ -17,6 +17,7 @@
         <Menu IsMainMenu="True" DockPanel.Dock="Top">
             <MenuItem Header="ИПС" Command="{Binding ShowIpsViewCommnad}"/>
             <MenuItem Header="Грузы" Command="{Binding Path=ShowCargosCommand}"/>
+            <MenuItem Header="Калькулятор" Command="{Binding Path=ShowCalculatorCommand}"/>
         </Menu>
         <Grid>
             <ContentControl Content="{Binding CurrentViewModel}"/>

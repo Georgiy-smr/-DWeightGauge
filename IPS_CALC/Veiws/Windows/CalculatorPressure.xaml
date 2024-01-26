@@ -1,0 +1,154 @@
+﻿<UserControl x:Class="IPS_CALC.Veiws.Windows.CalculatorPressure"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" mc:Ignorable="d"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:IPS_CALC.Veiws.Windows"
+             xmlns:vm="clr-namespace:IPS_CALC.VIewModels"
+             xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
+             d:DesignHeight="450" d:DesignWidth="800"
+             Style="{StaticResource MyWindowStyle}"
+             d:DataContext="{d:DesignInstance {x:Type vm:CalculatorViewModel}}">
+    
+    <b:Interaction.Triggers>
+        <b:EventTrigger EventName="Loaded">
+            <b:InvokeCommandAction Command="{Binding Path=LoadIPSCommand}"/>
+        </b:EventTrigger>
+    </b:Interaction.Triggers>
+    
+    
+    <Grid>
+        <TabControl>
+            <TabItem Header="Калькулятор ГПМ">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" MinWidth="200"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <GroupBox Header="Выбранная ИПС">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            
+                            <ComboBox 
+                                Grid.Row="0" 
+                                Grid.ColumnSpan="2"
+                                ItemsSource="{Binding Path=CollectionIPS}">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Name}" ToolTip="{Binding Path=Id}"/>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                            <TextBox Grid.Row="1" Grid.Column="0"
+                                     Text="20.5"
+                                       Margin="5"/>
+                            <TextBlock Grid.Row="1" Grid.Column="1"
+                                     Text="°"
+                                     Margin="5">
+                            </TextBlock>
+                            <TextBox Grid.Row="2" Grid.Column="0"
+                                     Text="40.9"
+                                     Margin="5"/>
+                            <TextBlock Grid.Row="2" Grid.Column="1"
+                                       Text="%"
+                                       Margin="5"/>
+                            <TextBox Grid.Row="3" Grid.Column="0"
+                                     Text="100.59"
+                                     Margin="5"/>
+                            <TextBlock Grid.Row="3" Grid.Column="1"
+                                       Text="кПа"
+                                       Margin="5"/>
+                            <TextBlock Grid.Row="5" Grid.Column="0"
+                                       Text="Необходимое давление:"
+                                       Margin="5"/>
+                            <TextBox Grid.Row="6" Grid.Column="0"
+                                     Margin="5"/>
+                            <TextBlock Grid.Row="6" Grid.Column="1"
+                                       Text="бар"
+                                     Margin="5"/>
+                            
+                            <TextBlock Grid.Row="7" Grid.Column="0"
+                                       Text="Расчетная масса:"
+                                       Margin="5"/>
+                            <TextBlock Grid.Row="8" Grid.Column="0"
+                                       Text="1.0423213"
+                                       Margin="5"/>
+                            <TextBlock Grid.Row="8" Grid.Column="1"
+                                       Text="кг"
+                                       Margin="5"/>
+                            
+                            <TextBlock Grid.Row="9" Grid.Column="0"
+                                       Text="Масса подобранных грузов:"
+                                       Margin="5"/>
+                            <TextBlock Grid.Row="10" Grid.Column="0"
+                                       Text="1.023532"
+                                       Margin="5"/>
+                            <TextBlock Grid.Row="10" Grid.Column="1"
+                                       Text="кг"
+                                       Margin="5"/>
+                            
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Grid.Column="1" Header="Без добавочных грузов">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="0" Grid.Row="0"
+                                       Text="Показания эталона:"/>
+                            <TextBlock Grid.Column="1" Grid.Row="0"
+                                       Text="20.4324"/>
+                            <ListBox
+                                Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0"
+                                Margin="1"> 
+                            </ListBox>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Grid.Column="2" Header="C добавочными грузами">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="0" Grid.Row="0"
+                                       Text="Показания эталона:"/>
+                            <TextBlock Grid.Column="1" Grid.Row="0"
+                                       Text="22.4324"/>
+                            <ListBox
+                                Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0"
+                                Margin="1"> 
+                            </ListBox>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>

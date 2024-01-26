@@ -114,9 +114,9 @@ namespace IPS_CALC.VIewModels
 
         private ICommand _CommandLoadIPS;
         public ICommand LoadIPSCommand => _CommandLoadIPS ?? new LambdaCommandAsync(OnLoadIPSCommandExecuted, CaLoadIPSCommandExecute);
-        private bool CaLoadIPSCommandExecute(Object p) => true;
+        private bool CaLoadIPSCommandExecute(object p) => true;
 
-        private async Task OnLoadIPSCommandExecuted(Object p)
+        private async Task OnLoadIPSCommandExecuted(object p)
         {
             CollectionIPS = new ObservableCollection<CLASS.IPS>(await _RepositoryIPS.Items.ToArrayAsync());
             CollectionCargos = new ObservableCollection<Cargo>(await _RepositoryCargos.Items.ToArrayAsync());

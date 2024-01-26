@@ -10,4 +10,12 @@
     <DataTemplate DataType="{x:Type vm:CargoViewModel}">
         <vv:CargoView DataContext="{Binding}"/>
     </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:CalculatorViewModel}"> 
+        <vv:CalculatorPressure DataContext="{Binding}"/> 
+    </DataTemplate> 
+    
+
+    
+    
+    
 </ResourceDictionary>

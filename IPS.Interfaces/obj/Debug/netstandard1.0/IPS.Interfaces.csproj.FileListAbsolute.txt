@@ -18,3 +18,4 @@ C:\Users\Альфапаскаль\-DWeightGauge\IPS.Interfaces\obj\Debug\netstan
 C:\Users\Альфапаскаль\-DWeightGauge\IPS.Interfaces\obj\Debug\netstandard1.0\IPS.Interfaces.csproj.CoreCompileInputs.cache
 C:\Users\Альфапаскаль\-DWeightGauge\IPS.Interfaces\obj\Debug\netstandard1.0\IPS.Interfaces.dll
 C:\Users\Альфапаскаль\-DWeightGauge\IPS.Interfaces\obj\Debug\netstandard1.0\IPS.Interfaces.pdb
+C:\Users\Альфапаскаль\-DWeightGauge\IPS.Interfaces\obj\Debug\netstandard1.0\IPS.Interfaces.sourcelink.json

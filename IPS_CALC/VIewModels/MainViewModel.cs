@@ -63,6 +63,27 @@ namespace IPS_CALC.VIewModels
                     //Title = $"{CurrentViewModel.GetType()}";
             }
         }
+        
+        public MainViewModel(IRepository<Classes.IPS> RepositoryIPS,
+            IRepository<Classes.Cargo> RepositoryCargo,
+            IUserDialog UserDialog,
+            IMediator Mediator,
+            Dispatcher Dispatcher,
+            IEventService EventService,
+            IDictinaryEnumConvertor EnumDictinaryConvertor)
+        {
+            _UserDialog = UserDialog;
+            _RepositoryIPS = RepositoryIPS;
+            _RepositoryCargo = RepositoryCargo;
+            _Mediator = Mediator;
+            _Dispatcher = Dispatcher;
+            _EventService = EventService;
+            _EnumDictinaryConvertor = EnumDictinaryConvertor;
+            _EventService.SomeEvent += _EventService_SomeEvent;
+        }
+        
+        
+        
         #region ShowIpsViewCommnad
 
         private ICommand _CommandShowIPS;
@@ -73,7 +94,8 @@ namespace IPS_CALC.VIewModels
         }
         private bool CanShowIpsViewCommnadExecute(Object p) => !(CurrentViewModel is IpsViewModel);
 
-        private void OnShowIpsViewCommnadExecuted(Object p) => CurrentViewModel = new IpsViewModel(
+        private void OnShowIpsViewCommnadExecuted(Object p) => 
+            CurrentViewModel = new IpsViewModel(
             RepositoryIPS: _RepositoryIPS,
             UserDialog: _UserDialog,
             RepositoryCargos: _RepositoryCargo,
@@ -89,41 +111,56 @@ namespace IPS_CALC.VIewModels
             get => _CommandShowCargos != null ?
             _CommandShowCargos : new LambdaCommand(OnShowCargosCommandExecuted, CanShowCargosCommandExecute);
         }
-        private bool CanShowCargosCommandExecute(Object p) => !(CurrentViewModel is CargoViewModel);
+        private bool CanShowCargosCommandExecute(object p) =>
+            !(CurrentViewModel is CargoViewModel);
 
-        private void OnShowCargosCommandExecuted(Object p) => CurrentViewModel = new CargoViewModel(_RepositoryCargo, _UserDialog, _EnumDictinaryConvertor);
+        private void OnShowCargosCommandExecuted(object p) => 
+            CurrentViewModel = new CargoViewModel(_RepositoryCargo, _UserDialog, _EnumDictinaryConvertor);
 
         #endregion
 
+        #region ShowCalculatorGpm
+
+        private ICommand _CommandShowCalculator;
+        public ICommand ShowCalculatorCommand =>
+            _CommandShowCalculator ?? new LambdaCommand(OnShowCalculatorExecuted, CanShowCalculatorExecute);
+       
+        private bool CanShowCalculatorExecute(object p) =>
+            !(CurrentViewModel is CalculatorViewModel);
+       
+        private void OnShowCalculatorExecuted(object p) => 
+            CurrentViewModel = new CalculatorViewModel(_RepositoryIPS);
+
+        #endregion
+        
+        
+        
+        
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        #region Мусор
+
         public async Task Handle(PropertyViewModelChanged notification, CancellationToken cancellationToken)
         {
-
-
-            //await Task.Run(() => _Dispatcher.InvokeAsync(()=> HandeNotificationAsync(viewmodel.TestTitle)));
-            //await HandeNotificationAsync(viewmodel.TestTitle);
-            //HandeNotificationAsync(viewmodel.TestTitle)).ConfigureAwait(false)
-            await _Dispatcher.InvokeAsync(() => HandeNotificationAsync(((IpsViewModel)notification.ViewModel).TestTitle));
-
+            await _Dispatcher.InvokeAsync(() => 
+                HandeNotificationAsync(((IpsViewModel)notification.ViewModel)?.TestTitle));
         }
         private async Task HandeNotificationAsync(string title) => await Task.Run(() => Title = title);
-
-        public MainViewModel(IRepository<Classes.IPS> RepositoryIPS,
-                             IRepository<Classes.Cargo> RepositoryCargo,
-                             IUserDialog UserDialog,
-                             IMediator Mediator,
-                             Dispatcher Dispatcher,
-                             IEventService EventService,
-                             IDictinaryEnumConvertor EnumDictinaryConvertor)
-		{
-            _UserDialog = UserDialog;
-			_RepositoryIPS = RepositoryIPS;
-			_RepositoryCargo = RepositoryCargo;
-            _Mediator = Mediator;
-            _Dispatcher = Dispatcher;
-            _EventService = EventService;
-            _EnumDictinaryConvertor = EnumDictinaryConvertor;
-            _EventService.SomeEvent += _EventService_SomeEvent;
-        }
+        
 
         private async void _EventService_SomeEvent(string PropName, object VeiwModel)
         {
@@ -150,5 +187,7 @@ namespace IPS_CALC.VIewModels
                     break;
             }
         }
+
+        #endregion
     }
 }

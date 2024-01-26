@@ -54,12 +54,12 @@ namespace IPS_CALC.VIewModels
         /// Коллекция грузов в состве редактипуемой ИПС. 
         /// Через set указывается источник данных для сортрировки и фильтра.
         /// </summary>
-        private ObservableCollection<Models.Cargo> _Cargos;
+        private ObservableCollection<IPS.DAL.Cargo> _Cargos;
         /// <summary>
         /// Коллекция грузов в состве редактипуемой ИПС. 
         /// Через set указывается источник данных для сортрировки и фильтра.
         /// </summary>
-        public ObservableCollection<Models.Cargo> Cargos
+        public ObservableCollection<IPS.DAL.Cargo> Cargos
         {
             get => _Cargos;
             set
@@ -87,12 +87,12 @@ namespace IPS_CALC.VIewModels
         /// Коллекция грузов на удаление из состава ИПС.
         /// По set обновалят источник фильрации и сортировки.
         /// </summary>
-        private ObservableCollection<Models.Cargo> _SelectedCargos;
+        private ObservableCollection<IPS.DAL.Cargo> _SelectedCargos;
         /// <summary>
         /// Коллекция грузов на удаление из состава ИПС.
         /// По set обновалят источник фильрации и сортировки.
         /// </summary>
-        public ObservableCollection<Models.Cargo> SelectedCargos
+        public ObservableCollection<IPS.DAL.Cargo> SelectedCargos
         {
             get => _SelectedCargos;
             set
@@ -117,11 +117,11 @@ namespace IPS_CALC.VIewModels
         /// <summary>
         /// Выбранный груз в составе ИПС
         /// </summary>
-        private Models.Cargo _SelectedCargo;
+        private IPS.DAL.Cargo _SelectedCargo;
         /// <summary>
         /// Выбранный груз в составе ИПС
         /// </summary>
-        public Models.Cargo SelectedCargo
+        public IPS.DAL.Cargo SelectedCargo
         {
             get => _SelectedCargo;
             set => Set(ref _SelectedCargo, value);
@@ -129,11 +129,11 @@ namespace IPS_CALC.VIewModels
         /// <summary>
         /// Выбранный груз в коллекции грузов на удаление
         /// </summary>
-        private Models.Cargo _SelectedRemoveCargo;
+        private IPS.DAL.Cargo _SelectedRemoveCargo;
         /// <summary>
         /// Выбранный груз в коллекции грузов на удаление
         /// </summary>
-        public Models.Cargo SelectedRemoveCargo
+        public IPS.DAL.Cargo SelectedRemoveCargo
         {
             get => _SelectedRemoveCargo;
             set => Set(ref _SelectedRemoveCargo, value);
@@ -157,7 +157,7 @@ namespace IPS_CALC.VIewModels
             var cargo_To_Add = SelectedCargo;
 
             if (SelectedCargos is null)
-                SelectedCargos = new ObservableCollection<Models.Cargo>();
+                SelectedCargos = new ObservableCollection<IPS.DAL.Cargo>();
 
             SelectedCargos.Add(cargo_To_Add);
             Cargos.Remove(SelectedCargo);
@@ -184,7 +184,7 @@ namespace IPS_CALC.VIewModels
             var cargo_To_Add = SelectedRemoveCargo;
 
             if (SelectedCargos is null)
-                SelectedCargos = new ObservableCollection<Models.Cargo>();
+                SelectedCargos = new ObservableCollection<IPS.DAL.Cargo>();
 
             SelectedCargos.Remove(cargo_To_Add);
             Cargos.Add(cargo_To_Add);
@@ -203,13 +203,13 @@ namespace IPS_CALC.VIewModels
         {
             if (Cargos == null || Cargos.Count == 0) return;
 
-            var cargos_to_selected = new ObservableCollection<Models.Cargo>(SelectedCargos
-                ?? new ObservableCollection<Models.Cargo>());
-            var temp_coolections_cargo = new List<Models.Cargo>(Cargos);
+            var cargos_to_selected = new ObservableCollection<IPS.DAL.Cargo>(SelectedCargos
+                ?? new ObservableCollection<IPS.DAL.Cargo>());
+            var temp_coolections_cargo = new List<IPS.DAL.Cargo>(Cargos);
 
             foreach (var item in _Sort_Filt_CollectionCargos.View)
             {
-                var cargo = item as Models.Cargo;
+                var cargo = item as IPS.DAL.Cargo;
                 if (cargo != null)
                     cargos_to_selected.Add(cargo);
             }
@@ -236,13 +236,13 @@ namespace IPS_CALC.VIewModels
         {
             if (SelectedCargos == null || SelectedCargos.Count == 0) return;
 
-            var cargos = new ObservableCollection<Models.Cargo>(Cargos
-                ?? new ObservableCollection<Models.Cargo>());
-            var temp_coolections_cargo = new List<Models.Cargo>(Cargos);
+            var cargos = new ObservableCollection<IPS.DAL.Cargo>(Cargos
+                                                                 ?? new ObservableCollection<IPS.DAL.Cargo>());
+            var temp_coolections_cargo = new List<IPS.DAL.Cargo>(Cargos);
 
             foreach (var item in _Sort_Filt_CollectionSelectedCargos.View)
             {
-                var cargo = item as Models.Cargo;
+                var cargo = item as IPS.DAL.Cargo;
                 if (cargo != null)
                     cargos.Add(cargo);
             }
@@ -252,14 +252,14 @@ namespace IPS_CALC.VIewModels
         }
 
         #endregion
-        public CargoRemovedToSelectedIpsViewModel(Models.IPS IPS)
+        public CargoRemovedToSelectedIpsViewModel(IPS.DAL.IPS IPS)
         {
             _Sort_Filt_CollectionCargos = new CollectionViewSource
             {
                 SortDescriptions =
                 {
                     new SortDescription(
-                        nameof(Models.Cargo.Name),
+                        nameof(Cargo.Name),
                         ListSortDirection.Ascending)
                 }
             };
@@ -268,7 +268,7 @@ namespace IPS_CALC.VIewModels
                 SortDescriptions =
                 {
                     new SortDescription(
-                        nameof(Models.Cargo.Name),
+                        nameof(Cargo.Name),
                         ListSortDirection.Ascending)
                 }
             };
@@ -282,8 +282,8 @@ namespace IPS_CALC.VIewModels
 
             //if (cargoes.Length == 0) throw new ArgumentNullException("Нет свободных грузов на удаление");
 
-            Cargos = new ObservableCollection<Models.Cargo>(cargoes);
-            SelectedCargos = new ObservableCollection<Models.Cargo>();
+            Cargos = new ObservableCollection<Cargo>(cargoes);
+            SelectedCargos = new ObservableCollection<Cargo>();
         }
 
         /// <summary>
@@ -312,7 +312,7 @@ namespace IPS_CALC.VIewModels
         /// <param name="e"></param>
         private void _FilterCagros(object sender, FilterEventArgs e)
         {
-            if (!(e.Item is Models.Cargo Cargo) || string.IsNullOrEmpty(FilterKey)) return;
+            if (!(e.Item is Cargo Cargo) || string.IsNullOrEmpty(FilterKey)) return;
 
             if (!(Cargo.Name.Contains(FilterKey)))
                 e.Accepted = false;

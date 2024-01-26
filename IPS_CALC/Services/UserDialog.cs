@@ -108,7 +108,7 @@ namespace IPS_CALC.Services
             var selected_cargos = cargoEditorToSelectedIpsViewModel.SelectedCargos;
             if(selected_cargos is null) return false;
             if(!selected_cargos.Any()) return false;
-            foreach (var item in selected_cargos)
+            foreach (Cargo item in selected_cargos)
             {
                 var ipsToCargo = new IPS2Cargo()
                 {
