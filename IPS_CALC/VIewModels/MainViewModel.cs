@@ -2,6 +2,7 @@
 using IPS.Interfaces;
 using IPS_CALC.Inftastructure.Commands;
 using IPS_CALC.Inftastructure.Mediatr;
+using IPS_CALC.Models;
 using IPS_CALC.Services;
 using IPS_CALC.Services.Interfaces;
 using IPS_CALC.VIewModels.Base;
@@ -17,6 +18,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
+using Xceed.Wpf.Toolkit;
 using Classes = IPS.DAL;
 
 namespace IPS_CALC.VIewModels
@@ -30,6 +32,7 @@ namespace IPS_CALC.VIewModels
         private readonly IMediator _Mediator;
         private readonly IEventService _EventService;
         private readonly IDictinaryEnumConvertor _EnumDictinaryConvertor;
+        private readonly ICalculate<CalculationResult> _Calculator;
         private string _Title = "Калькулятор ГПМ";
 
         public string Title
@@ -70,7 +73,8 @@ namespace IPS_CALC.VIewModels
             IMediator Mediator,
             Dispatcher Dispatcher,
             IEventService EventService,
-            IDictinaryEnumConvertor EnumDictinaryConvertor)
+            IDictinaryEnumConvertor EnumDictinaryConvertor,
+            ICalculate<CalculationResult> calculate)
         {
             _UserDialog = UserDialog;
             _RepositoryIPS = RepositoryIPS;
@@ -80,10 +84,11 @@ namespace IPS_CALC.VIewModels
             _EventService = EventService;
             _EnumDictinaryConvertor = EnumDictinaryConvertor;
             _EventService.SomeEvent += _EventService_SomeEvent;
+            _Calculator = calculate;
         }
-        
-        
-        
+
+
+
         #region ShowIpsViewCommnad
 
         private ICommand _CommandShowIPS;
@@ -129,25 +134,9 @@ namespace IPS_CALC.VIewModels
             !(CurrentViewModel is CalculatorViewModel);
        
         private void OnShowCalculatorExecuted(object p) => 
-            CurrentViewModel = new CalculatorViewModel(_RepositoryIPS);
+            CurrentViewModel = new CalculatorViewModel(_RepositoryIPS,  _Calculator);
 
         #endregion
-        
-        
-        
-        
-
-
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         
         
         

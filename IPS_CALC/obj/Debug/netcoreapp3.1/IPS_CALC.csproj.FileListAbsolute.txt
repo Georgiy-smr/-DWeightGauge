@@ -462,3 +462,7 @@ C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1
 C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1\Template\Vectors.baml
 C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1\Veiws\Windows\CalculatorPressure.g.cs
 C:\Users\Альфапаскаль\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1\Veiws\Windows\CalculatorPressure.baml
+C:\Users\Гоша и Аня\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1\Template\Comboboxes.baml
+C:\Users\Гоша и Аня\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1\Template\Vectors.baml
+C:\Users\Гоша и Аня\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1\Veiws\Windows\CalculatorPressure.g.cs
+C:\Users\Гоша и Аня\-DWeightGauge\IPS_CALC\obj\Debug\netcoreapp3.1\Veiws\Windows\CalculatorPressure.baml

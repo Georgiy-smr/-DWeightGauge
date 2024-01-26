@@ -50,7 +50,8 @@
                             <ComboBox 
                                 Grid.Row="0" 
                                 Grid.ColumnSpan="2"
-                                ItemsSource="{Binding Path=CollectionIPS}">
+                                ItemsSource="{Binding Path=CollectionIPS}"
+                                SelectedItem="{Binding IpsSelected}">
                                 <ComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <TextBlock Text="{Binding Name}" ToolTip="{Binding Path=Id}"/>
@@ -58,20 +59,20 @@
                                 </ComboBox.ItemTemplate>
                             </ComboBox>
                             <TextBox Grid.Row="1" Grid.Column="0"
-                                     Text="20.5"
-                                       Margin="5"/>
+                                     Text="{Binding Temperature}"
+                                     Margin="5"/>
                             <TextBlock Grid.Row="1" Grid.Column="1"
                                      Text="°"
                                      Margin="5">
                             </TextBlock>
                             <TextBox Grid.Row="2" Grid.Column="0"
-                                     Text="40.9"
+                                     Text="{Binding Humidity}"
                                      Margin="5"/>
                             <TextBlock Grid.Row="2" Grid.Column="1"
                                        Text="%"
                                        Margin="5"/>
                             <TextBox Grid.Row="3" Grid.Column="0"
-                                     Text="100.59"
+                                     Text="{Binding Baro}"
                                      Margin="5"/>
                             <TextBlock Grid.Row="3" Grid.Column="1"
                                        Text="кПа"
@@ -80,7 +81,8 @@
                                        Text="Необходимое давление:"
                                        Margin="5"/>
                             <TextBox Grid.Row="6" Grid.Column="0"
-                                     Margin="5"/>
+                                     Margin="5"
+                                     Text="{Binding TargetPressure, UpdateSourceTrigger=PropertyChanged}"/>
                             <TextBlock Grid.Row="6" Grid.Column="1"
                                        Text="бар"
                                      Margin="5"/>
@@ -89,7 +91,7 @@
                                        Text="Расчетная масса:"
                                        Margin="5"/>
                             <TextBlock Grid.Row="8" Grid.Column="0"
-                                       Text="1.0423213"
+                                       Text="{Binding Result.EstimatedWeight, Mode=OneWay, StringFormat=N6}"
                                        Margin="5"/>
                             <TextBlock Grid.Row="8" Grid.Column="1"
                                        Text="кг"
