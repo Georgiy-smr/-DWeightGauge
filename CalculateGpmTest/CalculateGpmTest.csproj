@@ -21,4 +21,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\IPS.DAL\IPS.DAL.csproj" />
+    <ProjectReference Include="..\IPS_CALC\IPS_CALC.csproj" />
+  </ItemGroup>
+
 </Project>

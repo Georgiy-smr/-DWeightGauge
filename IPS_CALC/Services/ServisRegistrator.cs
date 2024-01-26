@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
 using System.Windows.Threading;
+using IPS_CALC.Models;
+using IPS_CALC.Services.CalculatorIps;
 using IPS_CALC.Services.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -17,6 +19,7 @@ namespace IPS_CALC.Services
              .AddSingleton<Dispatcher>(provider => Dispatcher.CurrentDispatcher)
              .AddSingleton<IEventService, EventService>()
              .AddSingleton<IDictinaryEnumConvertor, DictinaryEnumConvertor>()
+             .AddSingleton<ICalculate<CalculationResult>, CalculatorWeightGuage>()
              ;
     }
 }

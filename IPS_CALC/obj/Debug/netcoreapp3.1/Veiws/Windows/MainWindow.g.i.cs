@@ -58,7 +58,7 @@ namespace IPS_CALC {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/IPS_CALC;V1.0.0.0;component/veiws/windows/mainwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/IPS_CALC;component/veiws/windows/mainwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Veiws\Windows\MainWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

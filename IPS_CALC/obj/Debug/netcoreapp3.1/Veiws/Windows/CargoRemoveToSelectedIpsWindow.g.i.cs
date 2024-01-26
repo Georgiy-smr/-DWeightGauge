@@ -61,7 +61,7 @@ namespace IPS_CALC.Veiws.Windows {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/IPS_CALC;V1.0.0.0;component/veiws/windows/cargoremovetoselectedipswindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/IPS_CALC;component/veiws/windows/cargoremovetoselectedipswindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Veiws\Windows\CargoRemoveToSelectedIpsWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
