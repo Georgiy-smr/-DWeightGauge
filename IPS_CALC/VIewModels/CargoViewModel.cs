@@ -71,6 +71,8 @@ namespace IPS_CALC.VIewModels
                     _CargoViewSource.View.Refresh();
             }
         }
+
+
         #region LoadCargoCommand
 
         private ICommand _CommandLoadCargo;
@@ -118,6 +120,7 @@ namespace IPS_CALC.VIewModels
 
             if (!_UserDialog.Edit(cargo_redact, _DictinaryEnumConvertor)) return;
 
+            
             _RepositoryCargo.Update(cargo_redact);
 
             CargosCollections = new ObservableCollection<Cargo>(_RepositoryCargo.Items);

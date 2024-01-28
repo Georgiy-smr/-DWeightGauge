@@ -8,6 +8,8 @@
     ".NETCoreApp,Version=v3.1": {
       "IPS_CALC/1.0.0": {
         "dependencies": {
+          "DotNetProjects.Extended.Wpf.Toolkit": "5.0.106",
+          "FontAwesome": "4.7.0",
           "IPS.DAL": "1.0.0",
           "MaterialDesignThemes": "4.9.0",
           "MediatR": "12.1.1",
@@ -20,6 +22,35 @@
         },
         "runtime": {
           "IPS_CALC.dll": {}
+        }
+      },
+      "DotNetProjects.Extended.Wpf.Toolkit/5.0.106": {
+        "runtime": {
+          "lib/netcoreapp3.0/DotNetProjects.Wpf.Extended.Toolkit.dll": {
+            "assemblyVersion": "5.0.106.0",
+            "fileVersion": "5.0.106.0"
+          }
+        }
+      },
+      "FontAwesome/4.7.0": {},
+      "FontAwesome.WPF/4.7.0.9": {
+        "runtime": {
+          "lib/net40/FontAwesome.WPF.dll": {
+            "assemblyVersion": "4.7.0.37774",
+            "fileVersion": "4.7.0.9"
+          }
+        }
+      },
+      "FontAwesome5/2.1.11": {
+        "runtime": {
+          "lib/netcoreapp3.1/FontAwesome5.Net.dll": {
+            "assemblyVersion": "2.1.11.0",
+            "fileVersion": "2.1.11.0"
+          },
+          "lib/netcoreapp3.1/FontAwesome5.dll": {
+            "assemblyVersion": "2.1.11.0",
+            "fileVersion": "2.1.11.0"
+          }
         }
       },
       "MaterialDesignColors/2.1.4": {
@@ -1751,6 +1782,8 @@
       },
       "IPS.DAL/1.0.0": {
         "dependencies": {
+          "FontAwesome.WPF": "4.7.0.9",
+          "FontAwesome5": "2.1.11",
           "IPS.Interfaces": "1.0.0",
           "Microsoft.EntityFrameworkCore": "3.1.9",
           "Microsoft.EntityFrameworkCore.Relational": "3.1.9",
@@ -1775,6 +1808,34 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "DotNetProjects.Extended.Wpf.Toolkit/5.0.106": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EX5uG2TIlX3MvPPKiePY9rwsOuVqlUmCF4DKxouv+c4Y+YP3G/tEj3TDwKMlAoWVNX3slphHGURswuIJr6D28w==",
+      "path": "dotnetprojects.extended.wpf.toolkit/5.0.106",
+      "hashPath": "dotnetprojects.extended.wpf.toolkit.5.0.106.nupkg.sha512"
+    },
+    "FontAwesome/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-n4H/brfszElyoZ4kmGh8E75uqvLzLvFr3h2PFVdPH1LwUmWIpeqdaW2pcC4oZAhg7sESyObh0IZpAI8COCNeUg==",
+      "path": "fontawesome/4.7.0",
+      "hashPath": "fontawesome.4.7.0.nupkg.sha512"
+    },
+    "FontAwesome.WPF/4.7.0.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SXE080rnyWMm9Dt0BZzMxh89/o9teuSaqL1N+0O/XM/F/HU8JuZA4XaEKxjBigwZPHHU3/udTa0QMYCHkmH43Q==",
+      "path": "fontawesome.wpf/4.7.0.9",
+      "hashPath": "fontawesome.wpf.4.7.0.9.nupkg.sha512"
+    },
+    "FontAwesome5/2.1.11": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OGwy+ZJoJR7U71eA3BenwP7rdVviVYp8p6ptdBEhoMRuRsSV4vGM/LypVBhonBI43WSxXBysSoE5uQ2SkYKNvA==",
+      "path": "fontawesome5/2.1.11",
+      "hashPath": "fontawesome5.2.1.11.nupkg.sha512"
     },
     "MaterialDesignColors/2.1.4": {
       "type": "package",

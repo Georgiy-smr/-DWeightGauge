@@ -22,10 +22,5 @@ namespace IPS_CALC.VIewModels
 			set => Set(ref _NameIps, value);
 		}
 
-
-
-
-
-
 	}
 }

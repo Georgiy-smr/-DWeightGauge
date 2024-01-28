@@ -10,6 +10,7 @@ using System.ComponentModel;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Collections.Specialized;
+using MaterialDesignThemes.Wpf;
 
 namespace IPS_CALC.VIewModels
 {
@@ -46,6 +47,30 @@ namespace IPS_CALC.VIewModels
             set => Set(ref _CargoTypeSelected, value);
         }
 
+        private int _OrderNumeric;
+
+        public int OrderNumeric
+        {
+            get => _OrderNumeric;
+            set => Set(ref _OrderNumeric, value);
+        }
+        private decimal _NominalWeigth;
+
+        public decimal NominalWeigth
+        {
+            get => _NominalWeigth;
+            set => Set(ref _NominalWeigth, value);
+        }
+        public Cargo EditCargo => new Cargo
+        {
+            Name = this.Name,
+            Density = this.Density,
+            Weight = this.Weight,
+            Type = (int)this.CargoTypeSelected,
+            NominalWeight = this.NominalWeigth,
+            OrderNumerical = this.OrderNumeric
+        };
+
         public Dictionary<CargoType, string> CargoEnumDictionary => _EnumConvertor.CargoEnumDictionary;
 
         public int Id { get; set; }
@@ -58,8 +83,10 @@ namespace IPS_CALC.VIewModels
             Id = Cargo.Id;
             Weight = Cargo.Weight;
             Density = Cargo.Density;
+            OrderNumeric = Cargo.OrderNumerical;
+            NominalWeigth = Cargo.NominalWeight;
             CargoTypeSelected = _EnumConvertor.CargoTypeToEnum(Cargo.Type);
-
+            
             foreach (var e in Enum.GetValues(typeof(CargoType)).Cast<CargoType>())
             {
                 EnumTypeCollections.Add(new BaseStackPanelViewModel<CargoType>() { Element = e });
@@ -73,7 +100,6 @@ namespace IPS_CALC.VIewModels
             }
 
             EnumTypeCollections.CollectionChanged += EnumTypeCollections_CollectionChanged;
-
 
         }
 

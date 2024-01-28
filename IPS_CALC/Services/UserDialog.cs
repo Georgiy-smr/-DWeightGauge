@@ -49,6 +49,9 @@ namespace IPS_CALC.Services
             cargo.Density = cargoEditorViewModel.Density;
             cargo.Weight = cargoEditorViewModel.Weight;
             cargo.Type = (int)cargoEditorViewModel.CargoTypeSelected;
+            cargo.OrderNumerical = cargoEditorViewModel.OrderNumeric;
+            cargo.NominalWeight = cargoEditorViewModel.NominalWeigth;
+
             return true;
         }
 

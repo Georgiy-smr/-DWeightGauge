@@ -41,7 +41,16 @@
                                      
                                 <ListBox.ItemTemplate>
                                     <DataTemplate>
-                                        <TextBlock Text="{Binding Name}" ToolTip="{Binding Path=Id}"/>
+                                        <!--<TextBlock Text="{Binding Name}" ToolTip="{Binding Path=ID}"/>-->
+                                        <TextBlock>
+                                            <TextBlock.Text>
+                                                <MultiBinding StringFormat="{}{0}">
+                                                    <Binding Path="Name" />
+                                                    <Binding Path="NominalWeight" />
+                                                    <Binding Path="OrderNumerical" />
+                                                </MultiBinding>
+                                            </TextBlock.Text>
+                                        </TextBlock>
                                     </DataTemplate>
                                 </ListBox.ItemTemplate>
                             </ListBox>
@@ -68,6 +77,8 @@
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
 
                             <TextBlock  Grid.Column="0" Grid.Row="0" Text="название" Margin="5"/>
@@ -81,6 +92,10 @@
 
                             <TextBlock  Grid.Column="0" Grid.Row="3" Text="Тип" Margin="5"/>
                             <TextBlock  Grid.Column="1" Grid.Row="3"  Text="{Binding CargoType}" Margin="5"/>
+                            <TextBlock  Grid.Column="0" Grid.Row="4" Text="Порядковый номер" Margin="5"/>
+                            <TextBlock  Grid.Column="1" Grid.Row="4"  Text="{Binding CargoSelected.OrderNumerical}" Margin="5"/>
+                            <TextBlock  Grid.Column="0" Grid.Row="5" Text="Номинальная масса" Margin="5"/>
+                            <TextBlock  Grid.Column="1" Grid.Row="5"  Text="{Binding CargoSelected.NominalWeight}" Margin="5"/>
 
                         </Grid>
                     </DockPanel>

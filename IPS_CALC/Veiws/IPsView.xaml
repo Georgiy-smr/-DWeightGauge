@@ -59,11 +59,14 @@
                             <DataGrid ItemsSource="{Binding SelectedIps.IPS2Cargoes}"
                                       AutoGenerateColumns="False">
                                 <DataGrid.Columns>
-                                    <DataGridTextColumn Header = "Наименование " 
+                                    <DataGridTextColumn Header = "Груз  " 
                                      Binding = "{Binding Cargo.Name}" 
                                      IsReadOnly = "True"/>
-                                    <DataGridTextColumn Header = "Масса" 
-                                     Binding = "{Binding Cargo.Weight}" 
+                                    <DataGridTextColumn Header = "Порядковый номер  " 
+                                     Binding = "{Binding Cargo.OrderNumerical}" 
+                                     IsReadOnly = "True"/>
+                                    <DataGridTextColumn Header = "Номинальная масса" 
+                                     Binding = "{Binding Cargo.NominalWeight}" 
                                      IsReadOnly = "True"/>
                                 </DataGrid.Columns>
                             </DataGrid>
@@ -99,6 +102,7 @@
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
 
                             <TextBlock  Grid.Column="0" Grid.Row="0" Text="Название" Margin="5"/>
@@ -125,7 +129,11 @@
 
                             <TextBlock  Grid.Column="0" Grid.Row="7" Text="бетта" Margin="5"/>
                             <TextBlock  Grid.Column="1" Grid.Row="7"  Text="{Binding SelectedIps.BettaCoefficient}" Margin="5"/>
-
+                            
+                            <TextBlock  Grid.Column="0" Grid.Row="8" 
+                                        Text="Суммарная масса" Margin="5"/>
+                            <TextBlock  Grid.Column="1" Grid.Row="8" 
+                                        Text="{Binding SumSelecedIpsCargoes, Mode=OneWay}" Margin="5"/>
 
                         </Grid>
 

@@ -26,11 +26,17 @@ namespace IPS.DAL.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<decimal>("Density")
-                        .HasColumnType("decimal(18,6)");
+                        .HasColumnType("decimal(18,1)");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("NominalWeight")
+                        .HasColumnType("decimal(8,3)");
+
+                    b.Property<int>("OrderNumerical")
+                        .HasColumnType("int");
 
                     b.Property<int>("Type")
                         .HasColumnType("int");

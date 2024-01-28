@@ -105,8 +105,29 @@ namespace IPS_CALC.VIewModels
         {
             get => _SelectedIps;
 
-            set => Set(ref _SelectedIps, value); 
+            set
+            {
+                if (
+                Set(ref _SelectedIps, value))
+                    OnPropertyChanged(nameof(SumSelecedIpsCargoes));
+            }
         }
+
+        public double SumSelecedIpsCargoes
+        {
+            get
+            {
+                if(SelectedIps is null)
+                    return 0;
+                if (SelectedIps.IPS2Cargoes.Any(x => x.Cargo == null))
+                    return 0;
+
+                return (double)(SelectedIps.IPS2Cargoes.Sum(x => x.Cargo.Weight) + SelectedIps.Weight);
+            }
+        }
+     
+           
+
 
         #endregion
 

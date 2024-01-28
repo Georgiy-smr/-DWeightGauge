@@ -9,7 +9,7 @@ namespace TestProjectCalc
     public class UnitTest1
     {
         [Fact]
-        public void TestResultCalc()
+        public void TestEstimatedWeight()
         {
             ICalculate<CalculationResult> calculator = new CalculatorWeightGuage();
 
@@ -30,7 +30,12 @@ namespace TestProjectCalc
             var result = calculator.Calc(conditions, 60, ips);
             var exp = Math.Round(result.EstimatedWeight, 8);
             Assert.Equal(30.57178055, exp);
-
         }
+
+
+
+
+
+
     }
 }

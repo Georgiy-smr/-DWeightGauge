@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:IPS_CALC.Veiws.Windows" mc:Ignorable="d"
         xmlns:vm="clr-namespace:IPS_CALC.VIewModels"
         xmlns:toolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
-        Title="CargoEditWindow" Height="310" Width="500"
+        Title="CargoEditWindow" Height="400" Width="500"
         xmlns:EnumConvertor="clr-namespace:IPS_CALC.Converters"
         d:DataContext="{d:DesignInstance {x:Type vm:CargoEditViewModel}}">
     
@@ -75,10 +75,25 @@
                 <TextBlock  Grid.Row="2" Grid.Column="2"
                         Text="кг/м^3"
                         Margin="5"/>
+                <TextBlock  Grid.Row="5" Grid.Column="2"
+                        Text="кг"
+                        Margin="5"/>
 
                 <TextBlock  Grid.Row="3" Grid.Column="0"
                         Text="Тип"
                         Margin="5"/>
+                <TextBlock  Grid.Row="4" Grid.Column="0"
+                        Text="Порядковый номер"
+                        Margin="5"/>
+                <TextBox  Grid.Row="4" Grid.Column="1" 
+                      Text="{Binding OrderNumeric}"
+                      Margin="3"/>
+                <TextBlock  Grid.Row="5" Grid.Column="0"
+                        Text="Номинальная масса"
+                        Margin="5"/>
+                <TextBox  Grid.Row="5" Grid.Column="1" 
+                      Text="{Binding NominalWeigth}"
+                      Margin="3"/>
                 <!--<ComboBox  
                     Grid.Row="3"
                     Grid.Column="1"

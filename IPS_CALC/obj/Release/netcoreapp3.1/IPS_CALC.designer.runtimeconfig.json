@@ -6,9 +6,8 @@
       "version": "3.1.0"
     },
     "additionalProbingPaths": [
-      "C:\\Users\\Альфапаскаль\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Альфапаскаль\\.nuget\\packages",
-      "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      "C:\\Users\\Гоша и Аня\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Гоша и Аня\\.nuget\\packages"
     ],
     "configProperties": {
       "System.Reflection.Metadata.MetadataUpdater.IsSupported": false,

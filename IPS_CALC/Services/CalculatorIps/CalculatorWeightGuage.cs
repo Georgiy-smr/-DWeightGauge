@@ -67,6 +67,8 @@ namespace IPS_CALC.Services.CalculatorIps
 
             var estimated_weight = _EstimatedWeight;
 
+            var carg = SelectionCargo(SelectedIps, estimated_weight);
+
             return new CalculationResult()
             {
                 EstimatedWeight = estimated_weight
@@ -75,12 +77,47 @@ namespace IPS_CALC.Services.CalculatorIps
 
         private IEnumerable<IPS.DAL.Cargo> SelectionCargo(IPS.DAL.IPS Ips, double TargetWeight)
         {
-            var cargos = Ips.IPS2Cargoes.Select(x => x.Cargo).ToList();
+            //все грузы
+            var all_cargos = Ips.IPS2Cargoes.Select(x => x.Cargo).OrderBy(x => x.OrderNumerical).ToList();
+            //колокол
+            var kol = all_cargos.FirstOrDefault(x => x.Type == (int)CargoType.Bell);
+            //Проверяем массу ИПС + Кол <> TargetWeight
+            //Проверяем массу ИПС + ТП <> TargetWeight
 
-            var kol = cargos.FirstOrDefault(x => x.Type == (int)CargoType.Bell)?.Weight;
+            //Добавляем подходящий груз в коллекцию масс
+            //Если условия не подходят выдаем массу ИПС (или ошибку лучше дать это декаратору)
+
+            var cargoes = all_cargos.Where(x => x.Type != (int)CargoType.Bell &&
+                            x.Type != (int)CargoType.PlateIsTransitional);
+
+            var group = cargoes
+                .GroupBy(x => x.NominalWeight)
+                .OrderByDescending(x => x.Key).ToList();
 
 
+            var allSum = cargoes.Sum(x => x.Weight);
 
+            var ourcargoes = new List<IPS.DAL.Cargo>
+            {
+                kol
+            };
+
+            foreach (var nominal in group)
+            {
+
+                foreach (var wieght in nominal)
+                {
+                    if (30.57178055 - (double)(wieght.Weight + ourcargoes.Sum(x => x.Weight)) > 0)
+                    {
+                        ourcargoes.Add(wieght);
+                    }
+                    else
+                        break;
+                    
+                }
+            }
+
+            var sum = ourcargoes.Sum(x => x.Weight);
 
             return new List<IPS.DAL.Cargo>();
         }

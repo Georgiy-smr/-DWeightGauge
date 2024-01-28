@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using IPS_CALC.VIewModels.Base;
+﻿using IPS_CALC.VIewModels.Base;
 using CLASSES = IPS.DAL;
 
 namespace IPS_CALC.VIewModels
@@ -56,16 +53,17 @@ namespace IPS_CALC.VIewModels
 
         public decimal a_Coef
         {
-            get => _a_Coef;
-            set => Set(ref _a_Coef, value);
+            get => _a_Coef / (decimal)(8e10 - 6);
+            
+            set => Set(ref _a_Coef, value * (decimal)(8e10 - 6));
         }
 
         private decimal _b_Coef;
 
         public decimal b_Coef
         {
-            get => _b_Coef;
-            set => Set(ref _b_Coef, value);
+            get => _b_Coef / (decimal)(8e10 - 13);
+            set => Set(ref _b_Coef, value * (decimal)(8e10 - 13));
         }
 
         public IPSEditorViewModel(CLASSES.IPS IPS)
