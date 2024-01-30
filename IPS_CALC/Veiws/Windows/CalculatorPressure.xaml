@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:IPS_CALC.Veiws.Windows"
              xmlns:vm="clr-namespace:IPS_CALC.VIewModels"
              xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
-             d:DesignHeight="450" d:DesignWidth="800"
+             d:DesignHeight="500" d:DesignWidth="800"
              Style="{StaticResource MyWindowStyle}"
              d:DataContext="{d:DesignInstance {x:Type vm:CalculatorViewModel}}">
     
@@ -29,6 +29,10 @@
                     <GroupBox Header="Выбранная ИПС">
                         <Grid>
                             <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
@@ -101,12 +105,30 @@
                                        Text="Масса подобранных грузов:"
                                        Margin="5"/>
                             <TextBlock Grid.Row="10" Grid.Column="0"
-                                       Text="1.023532"
+                                       Text="{Binding AllCargoesWeight}"
                                        Margin="5"/>
                             <TextBlock Grid.Row="10" Grid.Column="1"
                                        Text="кг"
                                        Margin="5"/>
-                            
+                            <TextBlock Grid.Row="11" Grid.Column="0"
+                                       Text="Масса без гирь:"
+                                       Margin="5"/>
+                            <TextBlock Grid.Row="12" Grid.Column="0"
+                                       Text="{Binding CargoesWeightWhereNoKettlebell}"
+                                       Margin="5"/>
+                            <TextBlock Grid.Row="12" Grid.Column="1"
+                                       Text="кг"
+                                       Margin="5"/>
+                            <TextBlock Grid.Row="13" Grid.Column="0"
+                                       Text="Масса гирь:"
+                                       Margin="5"/>
+                            <TextBlock Grid.Row="14" Grid.Column="0"
+                                       Text="{Binding KettlebellCargoes}"
+                                       Margin="5"/>
+                            <TextBlock Grid.Row="14" Grid.Column="1"
+                                       Text="г"
+                                       Margin="5"/>
+
                         </Grid>
                     </GroupBox>
                     <GroupBox Grid.Column="1" Header="Без добавочных грузов">
@@ -120,12 +142,24 @@
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             <TextBlock Grid.Column="0" Grid.Row="0"
-                                       Text="Показания эталона:"/>
+                                       Text="Показания эталона: "/>
                             <TextBlock Grid.Column="1" Grid.Row="0"
-                                       Text="20.4324"/>
+                                       Text="{Binding ActualPressureWhereNoKettlebell}"/>
                             <ListBox
-                                Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0"
-                                Margin="1"> 
+                                Grid.Row="1" 
+                                Grid.ColumnSpan="2"
+                                Grid.Column="0"
+                                Margin="1"
+                                ItemsSource="{Binding Result.CargoesWhereNOKettlebell}">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <DockPanel>
+                                            <TextBlock DockPanel.Dock="Top" Text="{Binding Name}" ToolTip="{Binding Path=Id}"/>
+                                            <TextBlock DockPanel.Dock="Bottom" Text="{Binding Weight, StringFormat={}   {0} кг}"/>
+                                        </DockPanel>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+
                             </ListBox>
                         </Grid>
                     </GroupBox>
@@ -140,12 +174,24 @@
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             <TextBlock Grid.Column="0" Grid.Row="0"
-                                       Text="Показания эталона:"/>
+                                       Text="Показания эталона: "/>
                             <TextBlock Grid.Column="1" Grid.Row="0"
-                                       Text="22.4324"/>
+                                       Text="{Binding ActualPressureAllCargoes}"/>
                             <ListBox
-                                Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0"
-                                Margin="1"> 
+                                Grid.Row="1"
+                                Grid.ColumnSpan="2"
+                                Grid.Column="0"
+                                Margin="1"
+                                ItemsSource="{Binding Result.CargoesWhereKettlebell}">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <DockPanel>
+                                            <TextBlock DockPanel.Dock="Top" Text="{Binding Name}" ToolTip="{Binding Path=Id}"/>
+                                            <TextBlock DockPanel.Dock="Bottom" Text="{Binding Weight, StringFormat={}   {0} кг}"/>
+                                        </DockPanel>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                                
                             </ListBox>
                         </Grid>
                     </GroupBox>

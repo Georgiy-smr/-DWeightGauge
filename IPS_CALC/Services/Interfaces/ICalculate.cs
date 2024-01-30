@@ -8,9 +8,9 @@ namespace IPS_CALC.Services.Interfaces
         /// Вернуть калькуляцию давления
         /// </summary>
         /// <param name="Conditions">Условия</param>
-        /// <param name="RequiredPressure">Запрашиваемое давление</param>
+        /// <param name="Required">Запрашиваемая величина(давление, масса)</param>
         /// <param name="SelectedIps">Выбранная ипс</param>
         /// <returns></returns>
-        TResult Calc(EnvironmentalСonditions Conditions, double RequiredPressure, IPS.DAL.IPS SelectedIps);
+        TResult Calc(EnvironmentalСonditions Conditions, double Required, IPS.DAL.IPS SelectedIps);
     }
 }

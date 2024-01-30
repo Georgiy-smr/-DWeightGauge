@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IPS_CALC" mc:Ignorable="d"
         DataContext="{Binding MainWindowViewModel, Source={StaticResource Locator}}"
-        Title="{Binding Path=Title}" Height="450" Width="800"
+        Title="{Binding Path=Title}" Height="500" Width="800"
         Style="{StaticResource MyWindowStyle}">
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">

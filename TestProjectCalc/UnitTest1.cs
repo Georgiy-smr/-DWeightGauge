@@ -8,10 +8,13 @@ namespace TestProjectCalc
 {
     public class UnitTest1
     {
+        /// <summary>
+        /// Проверка расчета массы по требуемому давлению
+        /// </summary>
         [Fact]
         public void TestEstimatedWeight()
         {
-            ICalculate<CalculationResult> calculator = new CalculatorWeightGuage();
+            ICalculate<CalculationResultCargo> calculator = new CalculatorWeightGuage();
 
             var conditions = new EnvironmentalСonditions
             {
@@ -24,8 +27,8 @@ namespace TestProjectCalc
                 Square = (decimal)0.5,
                 LowLimit = (decimal)0,
                 MaxLimit = (decimal)60,
-                AlfaCoefficient = (decimal)8e10 - 6,
-                BettaCoefficient = (decimal)10.855e-13
+                AlfaCoefficient = (decimal)8,
+                BettaCoefficient = (decimal)10.855
             };
             var result = calculator.Calc(conditions, 60, ips);
             var exp = Math.Round(result.EstimatedWeight, 8);
@@ -33,9 +36,32 @@ namespace TestProjectCalc
         }
 
 
+        /// <summary>
+        /// Проверка расчета давления по требуемой массе
+        /// </summary>
+        [Fact]
+        public void TestCalcPressure()
+        {
+            ICalculate<CalculationResultPressure> calculator = new CalculatorPressureGuage();
 
-
-
+            var conditions = new EnvironmentalСonditions
+            {
+                Temperature = 20,
+                Humidity = 50,
+                Baro = 100
+            };
+            var ips = new IPS.DAL.IPS
+            {
+                Square = (decimal)0.5,
+                LowLimit = (decimal)0,
+                MaxLimit = (decimal)60,
+                AlfaCoefficient = (decimal)8,
+                BettaCoefficient = (decimal)10.855
+            };
+            var result = calculator.Calc(conditions, 30, ips);
+            var exp = Math.Round(result.ActualPressure, 5);
+            Assert.Equal(58.87783, exp);
+        }
 
     }
 }

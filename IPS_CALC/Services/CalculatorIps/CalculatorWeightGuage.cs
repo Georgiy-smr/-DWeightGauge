@@ -1,13 +1,14 @@
 ﻿using IPS_CALC.EnumsAndDictinary;
 using IPS_CALC.Models;
 using IPS_CALC.Services.Interfaces;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace IPS_CALC.Services.CalculatorIps
 {
-    public class CalculatorWeightGuage : ICalculate<CalculationResult>
+    public class CalculatorWeightGuage : ICalculate<CalculationResultCargo>
     {
         /// <summary>
         /// Требуемое давление
@@ -52,16 +53,15 @@ namespace IPS_CALC.Services.CalculatorIps
                                   (1 + _DeformationCoefficient * _RequiredPressure * 100000)) / 10000;
 
 
-
-        public CalculationResult Calc(
+        public CalculationResultCargo Calc(
             EnvironmentalСonditions Conditions,
             double RequiredPressure, 
             IPS.DAL.IPS SelectedIps)
         {
             _Square = (double)SelectedIps.Square;
-            _TemperatureCoefficientOfLinearExpansion = (double)SelectedIps.AlfaCoefficient;
+            _TemperatureCoefficientOfLinearExpansion = (double)SelectedIps.AlfaCoefficient * 1e-6;
             _Temperature = Conditions.Temperature;
-            _DeformationCoefficient = (double)SelectedIps.BettaCoefficient;
+            _DeformationCoefficient = (double)(SelectedIps.BettaCoefficient) * 1e-13;
             _RequiredPressure = RequiredPressure;
 
 
@@ -69,16 +69,25 @@ namespace IPS_CALC.Services.CalculatorIps
 
             var carg = SelectionCargo(SelectedIps, estimated_weight);
 
-            return new CalculationResult()
+            return new CalculationResultCargo()
             {
-                EstimatedWeight = estimated_weight
+                EstimatedWeight = estimated_weight,
+                Cargoes = carg,
+                CargoesWhereKettlebell = carg.Where(x => x.Type == (int)CargoType.Kettlebell),
+                CargoesWhereNOKettlebell = carg.Where(x => x.Type != (int)CargoType.Kettlebell)
             };
         }
+
+
+
 
         private IEnumerable<IPS.DAL.Cargo> SelectionCargo(IPS.DAL.IPS Ips, double TargetWeight)
         {
             //все грузы
-            var all_cargos = Ips.IPS2Cargoes.Select(x => x.Cargo).OrderBy(x => x.OrderNumerical).ToList();
+            var all_cargos = Ips.IPS2Cargoes.
+                Select(x => x.Cargo).
+                OrderBy(x => x.OrderNumerical).
+                ToList();
             //колокол
             var kol = all_cargos.FirstOrDefault(x => x.Type == (int)CargoType.Bell);
             //Проверяем массу ИПС + Кол <> TargetWeight
@@ -97,7 +106,7 @@ namespace IPS_CALC.Services.CalculatorIps
 
             var allSum = cargoes.Sum(x => x.Weight);
 
-            var ourcargoes = new List<IPS.DAL.Cargo>
+            var selectedcargoes = new List<IPS.DAL.Cargo>
             {
                 kol
             };
@@ -107,19 +116,20 @@ namespace IPS_CALC.Services.CalculatorIps
 
                 foreach (var wieght in nominal)
                 {
-                    if (30.57178055 - (double)(wieght.Weight + ourcargoes.Sum(x => x.Weight)) > 0)
+                    //Будующая суммарная масса
+                    var newsumm_cargo = (double)
+                        (wieght.Weight + Ips.Weight + selectedcargoes.Sum(x => x.Weight));
+
+                    if (TargetWeight - newsumm_cargo > 0)
                     {
-                        ourcargoes.Add(wieght);
+                        selectedcargoes.Add(wieght);
                     }
-                    else
-                        break;
-                    
+                    else break;
                 }
             }
+            //var sum = selectedcargoes.Sum(x => x.Weight) + Ips.Weight;
 
-            var sum = ourcargoes.Sum(x => x.Weight);
-
-            return new List<IPS.DAL.Cargo>();
+            return selectedcargoes;
         }
 
     }

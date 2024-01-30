@@ -24,10 +24,10 @@ namespace IPS.DAL
         [Column(TypeName = "decimal(18,2)")]
         public decimal Density { get; set; }
 
-        [Column(TypeName = "decimal(18,3)")]
+        [Column(TypeName = "decimal(18,7)")]
         public decimal AlfaCoefficient{ get; set; }
 
-        [Column(TypeName = "decimal(18,3)")]
+        [Column(TypeName = "decimal(18,13)")]
         public decimal BettaCoefficient { get; set; }
         public ICollection<IPS2Cargo> IPS2Cargoes { get; set; } = new HashSet<IPS2Cargo>();
 

@@ -10095,19 +10095,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Гоша и Аня\\.nuget\\packages\\": {}
+    "C:\\Users\\Альфапаскаль\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Гоша и Аня\\-DWeightGauge\\TestProjectCalc\\TestProjectCalc.csproj",
+      "projectUniqueName": "C:\\Users\\Альфапаскаль\\-DWeightGauge\\TestProjectCalc\\TestProjectCalc.csproj",
       "projectName": "TestProjectCalc",
-      "projectPath": "C:\\Users\\Гоша и Аня\\-DWeightGauge\\TestProjectCalc\\TestProjectCalc.csproj",
-      "packagesPath": "C:\\Users\\Гоша и Аня\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Гоша и Аня\\-DWeightGauge\\TestProjectCalc\\obj\\",
+      "projectPath": "C:\\Users\\Альфапаскаль\\-DWeightGauge\\TestProjectCalc\\TestProjectCalc.csproj",
+      "packagesPath": "C:\\Users\\Альфапаскаль\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Альфапаскаль\\-DWeightGauge\\TestProjectCalc\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Гоша и Аня\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Альфапаскаль\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10121,8 +10126,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Гоша и Аня\\-DWeightGauge\\IPS_CALC\\IPS_CALC.csproj": {
-              "projectPath": "C:\\Users\\Гоша и Аня\\-DWeightGauge\\IPS_CALC\\IPS_CALC.csproj"
+            "C:\\Users\\Альфапаскаль\\-DWeightGauge\\IPS_CALC\\IPS_CALC.csproj": {
+              "projectPath": "C:\\Users\\Альфапаскаль\\-DWeightGauge\\IPS_CALC\\IPS_CALC.csproj"
             }
           }
         }
@@ -10174,7 +10179,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   },

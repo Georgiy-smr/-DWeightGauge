@@ -19,7 +19,8 @@ namespace IPS_CALC.Services
              .AddSingleton<Dispatcher>(provider => Dispatcher.CurrentDispatcher)
              .AddSingleton<IEventService, EventService>()
              .AddSingleton<IDictinaryEnumConvertor, DictinaryEnumConvertor>()
-             .AddSingleton<ICalculate<CalculationResult>, CalculatorWeightGuage>()
+             .AddSingleton<ICalculate<CalculationResultCargo>, CalculatorWeightGuage>()
+             .AddSingleton<ICalculate<CalculationResultPressure>, CalculatorPressureGuage>()
              ;
     }
 }

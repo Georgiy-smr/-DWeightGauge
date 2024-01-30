@@ -5,6 +5,7 @@ using IPS_CALC.Inftastructure.Mediatr;
 using IPS_CALC.Models;
 using IPS_CALC.Services;
 using IPS_CALC.Services.Interfaces;
+using IPS_CALC.Veiws.Windows;
 using IPS_CALC.VIewModels.Base;
 using MediatR;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
@@ -32,7 +33,8 @@ namespace IPS_CALC.VIewModels
         private readonly IMediator _Mediator;
         private readonly IEventService _EventService;
         private readonly IDictinaryEnumConvertor _EnumDictinaryConvertor;
-        private readonly ICalculate<CalculationResult> _Calculator;
+        private readonly ICalculate<CalculationResultCargo> _CalculatorCargo;
+        private readonly ICalculate<CalculationResultPressure> _CalculatorPressure;
         private string _Title = "Калькулятор ГПМ";
 
         public string Title
@@ -74,7 +76,9 @@ namespace IPS_CALC.VIewModels
             Dispatcher Dispatcher,
             IEventService EventService,
             IDictinaryEnumConvertor EnumDictinaryConvertor,
-            ICalculate<CalculationResult> calculate)
+            ICalculate<CalculationResultCargo> calculateCargo,
+            ICalculate<CalculationResultPressure> calculatePressure
+            )
         {
             _UserDialog = UserDialog;
             _RepositoryIPS = RepositoryIPS;
@@ -84,7 +88,8 @@ namespace IPS_CALC.VIewModels
             _EventService = EventService;
             _EnumDictinaryConvertor = EnumDictinaryConvertor;
             _EventService.SomeEvent += _EventService_SomeEvent;
-            _Calculator = calculate;
+            _CalculatorCargo = calculateCargo;
+            _CalculatorPressure = calculatePressure;
         }
 
 
@@ -134,11 +139,9 @@ namespace IPS_CALC.VIewModels
             !(CurrentViewModel is CalculatorViewModel);
        
         private void OnShowCalculatorExecuted(object p) => 
-            CurrentViewModel = new CalculatorViewModel(_RepositoryIPS,  _Calculator);
+            CurrentViewModel = new CalculatorViewModel(_RepositoryIPS,  _CalculatorCargo, _CalculatorPressure);
 
         #endregion
-        
-        
         
         
         #region Мусор

@@ -53,17 +53,17 @@ namespace IPS_CALC.VIewModels
 
         public decimal a_Coef
         {
-            get => _a_Coef / (decimal)(8e10 - 6);
+            get => _a_Coef;
             
-            set => Set(ref _a_Coef, value * (decimal)(8e10 - 6));
+            set => Set(ref _a_Coef, value);
         }
 
         private decimal _b_Coef;
 
         public decimal b_Coef
         {
-            get => _b_Coef / (decimal)(8e10 - 13);
-            set => Set(ref _b_Coef, value * (decimal)(8e10 - 13));
+            get => _b_Coef;
+            set => Set(ref _b_Coef, value);
         }
 
         public IPSEditorViewModel(CLASSES.IPS IPS)
